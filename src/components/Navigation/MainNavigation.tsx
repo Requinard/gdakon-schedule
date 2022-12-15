@@ -1,7 +1,6 @@
 import {
     BottomNavigation,
     BottomNavigationAction,
-    Container,
     Paper,
     styled,
 } from "@mui/material";
@@ -23,31 +22,29 @@ export const MainNavigation = () => {
     const { t } = useTranslation("MainNavigation");
     return (
         <MainNavigationContainer>
-            <Container>
-                <BottomNavigation showLabels value={location.pathname}>
-                    <BottomNavigationAction
-                        label={"test"}
-                        icon={<BugReport />}
-                        component={Link}
-                        to={"/dev"}
-                        value={"/dev"}
-                    />
-                    <BottomNavigationAction
-                        label={t("home")}
-                        value={"/"}
-                        to={"/"}
-                        component={Link}
-                        icon={<HomeOutlined />}
-                    />
-                    <BottomNavigationAction
-                        label={t("schedule")}
-                        value={"/schedule"}
-                        to={"/schedule"}
-                        component={Link}
-                        icon={<Today />}
-                    />
-                </BottomNavigation>
-            </Container>
+            <BottomNavigation sx={{ width: "100%" }} value={location.pathname}>
+                <BottomNavigationAction
+                    label={"test"}
+                    icon={<BugReport />}
+                    component={Link}
+                    to={"/dev"}
+                    value={"/dev"}
+                />
+                <BottomNavigationAction
+                    label={t("home")}
+                    value={"/"}
+                    to={"/"}
+                    component={Link}
+                    icon={<HomeOutlined />}
+                />
+                <BottomNavigationAction
+                    label={t("schedule")}
+                    value={"/schedule"}
+                    to={"/schedule"}
+                    component={Link}
+                    icon={<Today />}
+                />
+            </BottomNavigation>
         </MainNavigationContainer>
     );
 };
