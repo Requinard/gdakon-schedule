@@ -1,0 +1,12 @@
+{
+  "MainNavigation": {
+    "home": "Home",
+    "schedule": "Event Schedule"
+  },
+  "EventSchedule": {
+    "title": "Event Schedule"
+  },
+  "Home": {
+    "title": "Home"
+  }
+}

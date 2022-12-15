@@ -2,6 +2,7 @@ import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
+import "./i18n";
 
 import React from "react";
 import ReactDOM from "react-dom/client";
@@ -12,7 +13,16 @@ import { App } from "./App";
 
 const theme = createTheme({
     palette: {
-        mode: "dark",
+        mode: "light",
+        primary: {
+            main: "#3a3d80",
+            dark: "#22244b",
+        },
+        secondary: {
+            light: "#51ff53",
+            main: "#1cde1e",
+            dark: "#0e6f0f",
+        },
     },
 });
 
