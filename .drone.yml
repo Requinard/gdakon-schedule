@@ -1,0 +1,13 @@
+kind: pipeline
+type: kubernetes
+name: Build
+
+steps:
+  - image: node:lts
+    name: install deps
+    commands:
+      - yarn install
+  - image: node:lts
+    name: run tests
+    commands:
+      - yarn test
