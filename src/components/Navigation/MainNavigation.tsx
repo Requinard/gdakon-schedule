@@ -6,7 +6,9 @@ import {
     styled,
 } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
-import { BugReport, HomeOutlined, Today } from "@mui/icons-material";
+import BugReport from "@mui/icons-material/BugReport";
+import HomeOutlined from "@mui/icons-material/HomeOutlined";
+import Today from "@mui/icons-material/Today";
 import { useTranslation } from "react-i18next";
 
 const MainNavigationContainer = styled(Paper)({
