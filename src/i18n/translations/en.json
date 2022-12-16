@@ -1,14 +1,26 @@
 {
-  "MainNavigation": {
-    "home": "Home",
-    "schedule": "Event Schedule",
-    "language": "Language Settings"
-  },
-  "EventSchedule": {
-    "title": "Event Schedule",
-    "expired": "Expired"
-  },
-  "Home": {
-    "title": "Home"
-  }
+    "MainNavigation": {
+        "home": "Home",
+        "schedule": "Event Schedule",
+        "language": "Language Settings"
+    },
+    "EventSchedule": {
+        "title": "Event Schedule",
+        "expired": "Expired"
+    },
+    "Home": {
+        "title": "Gdakon 2023",
+        "upcoming": "Upcoming Events",
+        "current": "Current Events"
+    },
+    "CurrentEvent": {
+        "title": "Current Events",
+        "no_items": "There are no events currently going on",
+        "until": "Until {{time}}"
+    },
+    "UpcomingEvent": {
+        "title": "Upcoming Events",
+        "no_items": "There are no events currently going on",
+        "starting_in": "Starting {{time}}"
+    }
 }

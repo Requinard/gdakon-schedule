@@ -27,20 +27,19 @@ export const MainNavigation = () => {
             <Divider />
             <BottomNavigation value={location.pathname} showLabels={true}>
                 <BottomNavigationAction
-                    label={t("schedule")}
-                    value={"/schedule"}
-                    to={"/schedule"}
-                    component={Link}
-                    icon={<Today />}
-                />
-                <BottomNavigationAction
                     label={t("home")}
                     value={"/"}
                     to={"/"}
                     component={Link}
                     icon={<HomeOutlined />}
                 />
-
+                <BottomNavigationAction
+                    label={t("schedule")}
+                    value={"/schedule"}
+                    to={"/schedule"}
+                    component={Link}
+                    icon={<Today />}
+                />
                 <LocaleNavigation />
             </BottomNavigation>
         </MainNavigationContainer>

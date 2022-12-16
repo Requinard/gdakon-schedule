@@ -2,5 +2,10 @@
   "MainNavigation": {
     "home": "Home",
     "schedule": "Event Schedule"
-  }
+  },
+    "CurrentEvent": {
+        "title": "Currentski Eventsski",
+        "no_items": "jestem jablko",
+        "until": "Nada {{time}}"
+    }
 }
