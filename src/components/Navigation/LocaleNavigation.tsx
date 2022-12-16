@@ -23,15 +23,18 @@ export const LocaleNavigation = () => {
     const handleClose = useCallback(() => setAnchor(null), [setAnchor]);
 
     const setLanguage = useCallback(
-        (locale: string) =>
+        (locale: string) => {
             match(locale)
                 .with("pl", () => {
                     i18n.changeLanguage(locale);
                 })
                 .otherwise(() => {
                     i18n.changeLanguage("en");
-                }),
-        [i18n]
+                });
+
+            handleClose();
+        },
+        [i18n, handleClose]
     );
     return (
         <>

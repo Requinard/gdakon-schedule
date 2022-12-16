@@ -24,6 +24,7 @@ export const UpcomingEventsCard = () => {
             chain(data)
                 .filter((event) => dayjs().isSame(event.startTime, "day"))
                 .filter((event) => dayjs().isBefore(event.startTime))
+                .slice(0, 10)
                 .value(),
         [data]
     );
@@ -38,7 +39,7 @@ export const UpcomingEventsCard = () => {
                     </Alert>
                 </CardContent>
             )}
-            <List>
+            <List dense>
                 {current.map((event) => (
                     <ListItem key={event.id}>
                         <ListItemText

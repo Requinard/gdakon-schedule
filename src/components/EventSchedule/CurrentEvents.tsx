@@ -24,6 +24,7 @@ export const CurrentEventCard = () => {
                 .filter((event) =>
                     dayjs().isBetween(event.startTime, event.endTime)
                 )
+                .slice(0, 10)
                 .value(),
         [data]
     );
@@ -38,7 +39,7 @@ export const CurrentEventCard = () => {
                     </Alert>
                 </CardContent>
             )}
-            <List>
+            <List dense>
                 {current.map((event) => (
                     <ListItem key={event.id}>
                         <ListItemText
