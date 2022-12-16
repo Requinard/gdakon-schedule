@@ -25,14 +25,7 @@ export const MainNavigation = () => {
     return (
         <MainNavigationContainer elevation={3}>
             <Divider />
-            <BottomNavigation value={location.pathname}>
-                <BottomNavigationAction
-                    label={"test"}
-                    icon={<BugReport />}
-                    component={Link}
-                    to={"/dev"}
-                    value={"/dev"}
-                />
+            <BottomNavigation value={location.pathname} showLabels={true}>
                 <BottomNavigationAction
                     label={t("schedule")}
                     value={"/schedule"}

@@ -10,7 +10,8 @@ type EventScheduleDayProps = {
     events: NormalizedEventScheduleItem[];
 };
 
-export const EventScheduleDay = ({ day, events }: EventScheduleDayProps) => {
+export const EventScheduleGroup = ({ day, events }: EventScheduleDayProps) => {
+    // @ts-expect-error somehow theme is not typed here
     const large = useMediaQuery((theme) => theme.breakpoints.up("md"));
     return (
         <>

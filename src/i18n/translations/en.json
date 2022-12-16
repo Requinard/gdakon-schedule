@@ -1,10 +1,12 @@
 {
   "MainNavigation": {
     "home": "Home",
-    "schedule": "Event Schedule"
+    "schedule": "Event Schedule",
+    "language": "Language Settings"
   },
   "EventSchedule": {
-    "title": "Event Schedule"
+    "title": "Event Schedule",
+    "expired": "Expired"
   },
   "Home": {
     "title": "Home"

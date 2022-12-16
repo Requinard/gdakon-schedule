@@ -11,7 +11,7 @@ import { useTranslation } from "react-i18next";
 import { match } from "ts-pattern";
 
 export const LocaleNavigation = () => {
-    const { t, i18n } = useTranslation();
+    const { t, i18n } = useTranslation("MainNavigation");
 
     const [anchor, setAnchor] = useState<null | HTMLElement>(null);
     const handleClick = useCallback(
@@ -36,7 +36,7 @@ export const LocaleNavigation = () => {
     return (
         <>
             <BottomNavigationAction
-                label={"Locale"}
+                label={t("language")}
                 onClick={handleClick}
                 icon={<TranslateIcon />}
             />
@@ -53,6 +53,10 @@ export const LocaleNavigation = () => {
                     horizontal: "center",
                 }}
             >
+                <MenuItem disabled>
+                    <ListItemIcon> </ListItemIcon>
+                    <ListItemText>{t("language")}</ListItemText>
+                </MenuItem>
                 <MenuItem
                     selected={i18n.language === "en"}
                     onClick={() => setLanguage("en")}
@@ -65,7 +69,7 @@ export const LocaleNavigation = () => {
                     onClick={() => setLanguage("pl")}
                 >
                     <ListItemIcon>🇵🇱</ListItemIcon>
-                    <ListItemText>Polish</ListItemText>
+                    <ListItemText>Polski</ListItemText>
                 </MenuItem>
             </Menu>
         </>
