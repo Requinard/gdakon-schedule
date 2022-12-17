@@ -4,10 +4,12 @@ import type { TypedUseSelectorHook } from "react-redux";
 import { createLogger } from "redux-logger";
 
 import { gdakonService } from "./gdakon.service";
+import { settingsSlice } from "./settings.slice";
 
 const logger = createLogger({});
 export const store = configureStore({
     reducer: {
+        [settingsSlice.name]: settingsSlice.reducer,
         [gdakonService.reducerPath]: gdakonService.reducer,
     },
     middleware: (getDefaultMiddleware) =>

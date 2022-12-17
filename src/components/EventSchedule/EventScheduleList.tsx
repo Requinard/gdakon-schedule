@@ -5,16 +5,18 @@ import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
 import { useGetEventScheduleQuery } from "../../store/gdakon.service";
+import { useNow } from "../../hooks/useNow";
 
 import { EventScheduleGroup } from "./EventScheduleGroup";
 
 export const EventScheduleList = () => {
     const { t } = useTranslation("EventSchedule");
+    const now = useNow();
     const { data = [] } = useGetEventScheduleQuery({});
 
     const eventGroups = useMemo(() => {
         const [upcoming, expired] = partition(data, (event) =>
-            dayjs().isBefore(event.endTime)
+            now.isBefore(event.endTime)
         );
 
         const upcomingGroups = chain(upcoming)
@@ -26,7 +28,7 @@ export const EventScheduleList = () => {
         }
 
         return upcomingGroups;
-    }, [data]);
+    }, [data, now]);
 
     return (
         <>

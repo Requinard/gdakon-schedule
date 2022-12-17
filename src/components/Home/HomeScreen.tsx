@@ -9,6 +9,7 @@ import { CurrentEventCard } from "../EventSchedule/CurrentEvents";
 const HomeGrid = styled(Grid)({
     flex: 1,
     flexGrow: 1,
+    alignItems: "center",
 });
 
 const calcX = (y: number, ly: number) =>

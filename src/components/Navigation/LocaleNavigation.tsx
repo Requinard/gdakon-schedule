@@ -10,6 +10,8 @@ import TranslateIcon from "@mui/icons-material/Translate";
 import { useTranslation } from "react-i18next";
 import { match } from "ts-pattern";
 
+import { SettingsMenu } from "../Settings/SettingsMenu";
+
 export const LocaleNavigation = () => {
     const { t, i18n } = useTranslation("MainNavigation");
 
@@ -22,20 +24,6 @@ export const LocaleNavigation = () => {
     );
     const handleClose = useCallback(() => setAnchor(null), [setAnchor]);
 
-    const setLanguage = useCallback(
-        (locale: string) => {
-            match(locale)
-                .with("pl", () => {
-                    i18n.changeLanguage(locale);
-                })
-                .otherwise(() => {
-                    i18n.changeLanguage("en");
-                });
-
-            handleClose();
-        },
-        [i18n, handleClose]
-    );
     return (
         <>
             <BottomNavigationAction
@@ -43,38 +31,7 @@ export const LocaleNavigation = () => {
                 onClick={handleClick}
                 icon={<TranslateIcon />}
             />
-            <Menu
-                anchorEl={anchor}
-                open={anchor !== null}
-                onClose={handleClose}
-                anchorOrigin={{
-                    vertical: "top",
-                    horizontal: "center",
-                }}
-                transformOrigin={{
-                    vertical: "bottom",
-                    horizontal: "center",
-                }}
-            >
-                <MenuItem disabled>
-                    <ListItemIcon> </ListItemIcon>
-                    <ListItemText>{t("language")}</ListItemText>
-                </MenuItem>
-                <MenuItem
-                    selected={i18n.language === "en"}
-                    onClick={() => setLanguage("en")}
-                >
-                    <ListItemIcon>🇬🇧</ListItemIcon>
-                    <ListItemText>English</ListItemText>
-                </MenuItem>
-                <MenuItem
-                    selected={i18n.language === "pl"}
-                    onClick={() => setLanguage("pl")}
-                >
-                    <ListItemIcon>🇵🇱</ListItemIcon>
-                    <ListItemText>Polski</ListItemText>
-                </MenuItem>
-            </Menu>
+            <SettingsMenu anchorEl={anchor} onClose={handleClose} />
         </>
     );
 };

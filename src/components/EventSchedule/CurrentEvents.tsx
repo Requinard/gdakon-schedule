@@ -6,33 +6,39 @@ import {
     Card,
     CardContent,
     CardHeader,
+    Collapse,
     List,
     ListItem,
     ListItemText,
 } from "@mui/material";
+import { TransitionGroup } from "react-transition-group";
 
 import { dayjs } from "../../utilities/dayjs";
 import { useGetEventScheduleQuery } from "../../store/gdakon.service";
+import { useTicker } from "../../hooks/useTicker";
+import { useNow } from "../../hooks/useNow";
 
 export const CurrentEventCard = () => {
     const { t } = useTranslation("CurrentEvent");
+    const now = useNow();
     const { data = [] } = useGetEventScheduleQuery({});
 
-    const current = useMemo(
+    const currentEvents = useMemo(
         () =>
             chain(data)
                 .filter((event) =>
-                    dayjs().isBetween(event.startTime, event.endTime)
+                    now.isBetween(event.startTime, event.endTime)
                 )
-                .slice(0, 10)
                 .value(),
-        [data]
+        [data, now]
     );
+
+    const visibleItems = useTicker(currentEvents);
 
     return (
         <Card>
             <CardHeader title={t("title")} />
-            {current.length === 0 && (
+            {visibleItems.length === 0 && (
                 <CardContent>
                     <Alert variant={"standard"} severity={"info"}>
                         {t("no_items")}
@@ -40,16 +46,20 @@ export const CurrentEventCard = () => {
                 </CardContent>
             )}
             <List dense>
-                {current.map((event) => (
-                    <ListItem key={event.id}>
-                        <ListItemText
-                            primary={event.name}
-                            secondary={t("until", {
-                                time: dayjs(event.endTime).format("LT"),
-                            })}
-                        />
-                    </ListItem>
-                ))}
+                <TransitionGroup>
+                    {visibleItems.map((event) => (
+                        <Collapse key={event.id}>
+                            <ListItem>
+                                <ListItemText
+                                    primary={event.name}
+                                    secondary={t("until", {
+                                        time: dayjs(event.endTime).format("LT"),
+                                    })}
+                                />
+                            </ListItem>
+                        </Collapse>
+                    ))}
+                </TransitionGroup>
             </List>
         </Card>
     );
