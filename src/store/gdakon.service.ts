@@ -1,7 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react";
 
-import * as gdakonEvents from "../../public/gdakon.events.json";
-
+import * as gdakonEvents from "./gdakon.events.json";
 import {
     NormalizedEventScheduleItem,
     normalizeEventScheduleResponse,

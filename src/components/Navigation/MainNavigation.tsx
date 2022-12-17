@@ -13,12 +13,7 @@ import { useTranslation } from "react-i18next";
 
 import { SettingsNavigationAction } from "./SettingsNavigationAction";
 
-const MainNavigationContainer = styled(Paper)({
-    position: "fixed",
-    bottom: 0,
-    left: 0,
-    right: 0,
-});
+const MainNavigationContainer = styled(Paper)({});
 export const MainNavigation = () => {
     const location = useLocation();
     const { t } = useTranslation("MainNavigation");

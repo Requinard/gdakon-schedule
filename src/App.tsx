@@ -5,11 +5,15 @@ import { MainNavigation } from "./components/Navigation/MainNavigation";
 
 export const App = () => {
     return (
-        <Box height={"100vh"} width={"100vw"} overflow={"hidden"}>
+        <Box
+            height={"100vh"}
+            width={"100vw"}
+            display={"flex"}
+            flexDirection={"column"}
+        >
             <Box
-                sx={{ paddingBottom: 8, paddingTop: 4 }}
-                height={"100%"}
-                overflow={"auto"}
+                overflow={window.location.pathname === "/" ? "hidden" : "auto"}
+                flexGrow={1}
             >
                 <AppRouter />
             </Box>

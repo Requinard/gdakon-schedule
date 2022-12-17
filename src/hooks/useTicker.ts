@@ -9,6 +9,10 @@ export const useTicker = <T>(items: T[], amount = 3, interval = 3000): T[] => {
     const [ticker, setTicker] = useState<T[]>([]);
 
     useInterval(() => {
+        if (amount >= items.length) {
+            setTicker(items);
+            return;
+        }
         const overshoot = tickerRef.current - items.length + amount;
         const newEvents = items.slice(tickerRef.current, tickerRef.current + 3);
 
