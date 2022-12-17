@@ -4,7 +4,7 @@ import { EventScheduleList } from "./EventScheduleList";
 
 export const EventScheduleRoute = () => {
     return (
-        <Container>
+        <Container sx={{ pt: 4 }}>
             <EventScheduleList />
         </Container>
     );

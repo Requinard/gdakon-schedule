@@ -7,7 +7,6 @@ import { DevRoute } from "./components/DevRoute";
 export const AppRouter = () => (
     <Routes>
         <Route path={"/"} element={<HomeRoute />} />
-        <Route path={"/home"} element={<HomeRoute />} />
         <Route path={"/schedule"} element={<EventScheduleRoute />} />
         <Route path={"/dev"} element={<DevRoute />} />
     </Routes>

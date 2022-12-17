@@ -12,7 +12,12 @@ import { useTranslation } from "react-i18next";
 
 import { SettingsNavigationAction } from "./SettingsNavigationAction";
 
-const MainNavigationContainer = styled(Paper)({});
+const MainNavigationContainer = styled(Paper)({
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    right: 0,
+});
 export const MainNavigation = () => {
     const location = useLocation();
     const { t } = useTranslation("MainNavigation");
@@ -23,7 +28,7 @@ export const MainNavigation = () => {
                 <BottomNavigationAction
                     label={t("home")}
                     value={"/"}
-                    to={"/home"}
+                    to={"/"}
                     component={Link}
                     icon={<HomeOutlined />}
                 />

@@ -1,4 +1,4 @@
-import { Container, Grid, Stack, styled } from "@mui/material";
+import { Box, Container, Grid, Stack, styled } from "@mui/material";
 import { animated, useSpring } from "@react-spring/web";
 import { useGesture } from "react-use-gesture";
 import { CSSProperties, useEffect, useRef } from "react";
@@ -68,38 +68,48 @@ export const HomeScreen = () => {
     }, []);
 
     return (
-        <animated.div
-            ref={domTarget}
-            style={{
-                transform: "perspective(600px)",
-                rotateX: outerX,
-                rotateY: outerY,
-                scale: 1.05,
-                flexDirection: "column",
-                justifyContent: "center",
-                height: "100%",
-                display: "flex",
-            }}
+        <Box
+            display={"flex"}
+            height={"100%"}
+            flexDirection={"column"}
+            flex={1}
+            overflow={"hidden"}
+            alignItems={"stretch"}
         >
-            <img
-                src={"https://gdakon.org/Images/Convention/bg.webp"}
-                height={"100%"}
-                width={"100%"}
-                style={imageStyle}
-            />
-            <Container maxWidth={"xl"}>
-                <HomeGrid container spacing={2}>
-                    <Grid item xs={12} md={7}>
-                        <img src={logoUrl} width={"100%"} height={"auto"} />
-                    </Grid>
-                    <Grid item xs={12} md={5}>
-                        <Stack spacing={2}>
-                            <UpcomingEventsCard />
-                            <CurrentEventCard />
-                        </Stack>
-                    </Grid>
-                </HomeGrid>
-            </Container>
-        </animated.div>
+            <animated.div
+                ref={domTarget}
+                style={{
+                    transform: "perspective(600px)",
+                    rotateX: outerX,
+                    rotateY: outerY,
+                    scale: 1.05,
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    flex: 1,
+                    height: "100%",
+                    display: "flex",
+                }}
+            >
+                <img
+                    src={"https://gdakon.org/Images/Convention/bg.webp"}
+                    height={"100%"}
+                    width={"100%"}
+                    style={imageStyle}
+                />
+                <Container maxWidth={"xl"}>
+                    <HomeGrid container spacing={2}>
+                        <Grid item xs={12} md={7}>
+                            <img src={logoUrl} width={"100%"} height={"auto"} />
+                        </Grid>
+                        <Grid item xs={12} md={5}>
+                            <Stack spacing={2}>
+                                <UpcomingEventsCard />
+                                <CurrentEventCard />
+                            </Stack>
+                        </Grid>
+                    </HomeGrid>
+                </Container>
+            </animated.div>
+        </Box>
     );
 };
