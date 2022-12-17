@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { chain } from "lodash-es";
+import { chain } from "lodash";
 import { useTranslation } from "react-i18next";
 import {
     Alert,

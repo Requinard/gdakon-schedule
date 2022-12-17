@@ -1,16 +1,15 @@
 import { useMemo } from "react";
-import { chain } from "lodash-es";
+import { chain } from "lodash";
 import { useTranslation } from "react-i18next";
 import {
+    Alert,
     Card,
     CardContent,
     CardHeader,
+    Collapse,
     List,
     ListItem,
-    Typography,
     ListItemText,
-    Alert,
-    Collapse,
 } from "@mui/material";
 import { TransitionGroup } from "react-transition-group";
 

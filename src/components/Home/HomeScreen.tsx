@@ -1,4 +1,4 @@
-import { Container, Grid, Stack, styled, Typography } from "@mui/material";
+import { Container, Grid, Stack, styled } from "@mui/material";
 import { animated, useSpring } from "@react-spring/web";
 import { useGesture } from "react-use-gesture";
 import { CSSProperties, useEffect, useRef } from "react";

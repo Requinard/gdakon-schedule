@@ -1,14 +1,7 @@
 import { MouseEvent, useCallback, useState } from "react";
-import {
-    BottomNavigationAction,
-    ListItemIcon,
-    ListItemText,
-    Menu,
-    MenuItem,
-} from "@mui/material";
+import { BottomNavigationAction } from "@mui/material";
 import SettingsIcon from "@mui/icons-material/Settings";
 import { useTranslation } from "react-i18next";
-import { match } from "ts-pattern";
 
 import { SettingsMenu } from "../Settings/SettingsMenu";
 

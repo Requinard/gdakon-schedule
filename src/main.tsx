@@ -5,7 +5,7 @@ import "./i18n";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { Provider as StoreProvider } from "react-redux";
 
 import { App } from "./App";
@@ -31,9 +31,9 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         <StoreProvider store={store}>
             <ThemeProvider theme={theme}>
                 <CssBaseline />
-                <BrowserRouter>
+                <HashRouter>
                     <App />
-                </BrowserRouter>
+                </HashRouter>
             </ThemeProvider>
         </StoreProvider>
     </React.StrictMode>

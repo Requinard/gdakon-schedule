@@ -6,7 +6,6 @@ import {
     styled,
 } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
-import BugReport from "@mui/icons-material/BugReport";
 import HomeOutlined from "@mui/icons-material/HomeOutlined";
 import Today from "@mui/icons-material/Today";
 import { useTranslation } from "react-i18next";
@@ -24,7 +23,7 @@ export const MainNavigation = () => {
                 <BottomNavigationAction
                     label={t("home")}
                     value={"/"}
-                    to={"/"}
+                    to={"/home"}
                     component={Link}
                     icon={<HomeOutlined />}
                 />
