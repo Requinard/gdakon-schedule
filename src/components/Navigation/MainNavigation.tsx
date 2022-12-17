@@ -11,7 +11,7 @@ import HomeOutlined from "@mui/icons-material/HomeOutlined";
 import Today from "@mui/icons-material/Today";
 import { useTranslation } from "react-i18next";
 
-import { LocaleNavigation } from "./LocaleNavigation";
+import { SettingsNavigationAction } from "./SettingsNavigationAction";
 
 const MainNavigationContainer = styled(Paper)({
     position: "fixed",
@@ -40,7 +40,7 @@ export const MainNavigation = () => {
                     component={Link}
                     icon={<Today />}
                 />
-                <LocaleNavigation />
+                <SettingsNavigationAction />
             </BottomNavigation>
         </MainNavigationContainer>
     );

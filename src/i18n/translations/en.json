@@ -2,7 +2,7 @@
     "MainNavigation": {
         "home": "Home",
         "schedule": "Event Schedule",
-        "language": "Language Settings"
+        "Settings": "Settings"
     },
     "EventSchedule": {
         "title": "Event Schedule",

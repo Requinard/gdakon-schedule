@@ -6,14 +6,14 @@ import {
     Menu,
     MenuItem,
 } from "@mui/material";
-import TranslateIcon from "@mui/icons-material/Translate";
+import SettingsIcon from "@mui/icons-material/Settings";
 import { useTranslation } from "react-i18next";
 import { match } from "ts-pattern";
 
 import { SettingsMenu } from "../Settings/SettingsMenu";
 
-export const LocaleNavigation = () => {
-    const { t, i18n } = useTranslation("MainNavigation");
+export const SettingsNavigationAction = () => {
+    const { t } = useTranslation("MainNavigation");
 
     const [anchor, setAnchor] = useState<null | HTMLElement>(null);
     const handleClick = useCallback(
@@ -27,9 +27,10 @@ export const LocaleNavigation = () => {
     return (
         <>
             <BottomNavigationAction
-                label={t("language")}
+                label={t("settings")}
+                value={"/settings"}
                 onClick={handleClick}
-                icon={<TranslateIcon />}
+                icon={<SettingsIcon />}
             />
             <SettingsMenu anchorEl={anchor} onClose={handleClose} />
         </>
