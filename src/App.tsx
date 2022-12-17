@@ -14,6 +14,7 @@ export const App = () => {
             <Box
                 overflow={window.location.pathname === "/" ? "hidden" : "auto"}
                 flexGrow={1}
+                pt={4}
             >
                 <AppRouter />
             </Box>

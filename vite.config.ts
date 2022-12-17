@@ -7,7 +7,8 @@ import { VitePWA } from "vite-plugin-pwa";
 export default defineConfig({
     base: "/gdakon-schedule/",
     optimizeDeps: {
-        exclude: ["lodash"],
+        exclude:
+            import.meta.VITE_ENVIRONMENT === "production" ? ["lodash"] : [],
     },
     plugins: [
         react(),
