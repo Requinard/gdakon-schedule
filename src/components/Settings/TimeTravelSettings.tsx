@@ -22,16 +22,16 @@ const EnableTimeTravel = () => {
     );
 
     return (
-        <MenuItem
-            sx={{ minWidth: 500, maxWidth: "100%" }}
-            onClick={() => dispatch(toggleTimeTravel(!enabled))}
-        >
+        <MenuItem onClick={() => dispatch(toggleTimeTravel(!enabled))}>
             <ListItemText
                 primary={"Enable time travel"}
-                secondary={"Debug setting to deal with time related issues"}
+                secondary={"Move time (for debugging)"}
+                secondaryTypographyProps={{
+                    noWrap: true,
+                }}
             />
             <ListItemSecondaryAction>
-                <Switch edge={"end"} checked={enabled} color={"secondary"} />
+                <Switch checked={enabled} color={"secondary"} />
             </ListItemSecondaryAction>
         </MenuItem>
     );

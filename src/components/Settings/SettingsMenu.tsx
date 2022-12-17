@@ -21,6 +21,12 @@ export const SettingsMenu = ({ anchorEl, onClose }: SettingsMenuProps) => {
                 vertical: "bottom",
                 horizontal: "center",
             }}
+            PaperProps={{
+                style: {
+                    width: 500,
+                    maxWidth: "95%",
+                },
+            }}
         >
             <LanguageSettings />
             <TimeTravelSettings />
