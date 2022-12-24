@@ -1,6 +1,6 @@
 import { Box, Container, Grid, Stack, styled } from "@mui/material";
 import { animated, useSpring } from "@react-spring/web";
-import { useGesture } from "react-use-gesture";
+import { useGesture } from "@use-gesture/react";
 import { CSSProperties, useEffect, useRef } from "react";
 
 import { UpcomingEventsCard } from "../EventSchedule/UpcomingEvents";
