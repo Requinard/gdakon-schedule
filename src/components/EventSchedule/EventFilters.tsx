@@ -4,6 +4,7 @@ import { chain, noop, size } from "lodash";
 
 import { dayjs } from "../../utilities/dayjs";
 import { NormalizedEventScheduleItem } from "../../store/gdakon.types";
+import { useAppSelector } from "../../store";
 
 import { useEventFilter } from "./EventFilter.Provider";
 
@@ -11,6 +12,7 @@ import CheckedIcon from "~icons/ic/baseline-check-circle-outline";
 import DayIcon from "~icons/mdi/calendar-today";
 import RoomIcon from "~icons/ic/baseline-room";
 import ResetIcon from "~icons/ic/baseline-refresh";
+import BookmarkIcon from "~icons/mdi/bookmark";
 
 export const EventFilters = () => {
     const { original } = useEventFilter();
@@ -39,6 +41,7 @@ export const EventFilters = () => {
             mb={2}
             gap={2}
         >
+            <BookmarkedFilterChip />
             {days.map((day) => (
                 <DayFilterChip day={day} key={day} />
             ))}
@@ -113,6 +116,29 @@ const RoomFilterChip = ({ room }: { room: string }) => {
             color={isEnabled(room) ? "secondary" : undefined}
             onDelete={noop}
             deleteIcon={isEnabled(room) ? <CheckedIcon /> : undefined}
+        />
+    );
+};
+
+const BookmarkedFilterChip = () => {
+    const bookmarks = useAppSelector((state) => state.bookmarks.events);
+    const { isEnabled, toggleFilter } = useEventFilter();
+
+    const filter = useCallback(
+        (event: NormalizedEventScheduleItem) => bookmarks.includes(event.id),
+        [bookmarks]
+    );
+
+    return (
+        <Chip
+            onClick={() => toggleFilter("bookmarks", filter)}
+            label={"Bookmarks"}
+            color={isEnabled("bookmarks") ? "secondary" : undefined}
+            avatar={
+                <Avatar>
+                    <BookmarkIcon />
+                </Avatar>
+            }
         />
     );
 };

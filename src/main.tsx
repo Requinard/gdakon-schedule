@@ -7,9 +7,10 @@ import ReactDOM from "react-dom/client";
 import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 import { HashRouter } from "react-router-dom";
 import { Provider as StoreProvider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
 
 import { App } from "./App";
-import { store } from "./store";
+import { persistor, store } from "./store";
 
 const theme = createTheme({
     palette: {
@@ -32,7 +33,9 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
             <ThemeProvider theme={theme}>
                 <CssBaseline />
                 <HashRouter>
-                    <App />
+                    <PersistGate persistor={persistor}>
+                        <App />
+                    </PersistGate>
                 </HashRouter>
             </ThemeProvider>
         </StoreProvider>

@@ -64,22 +64,12 @@ export const EventFilterProvider = ({
 
     const filtered = useMemo(() => {
         const filters = Object.values(filterStorage);
-        console.debug(filters);
 
         if (filters.length === 0) {
-            console.debug("not applying filters");
             return events;
         }
 
-        console.debug("applying filters");
-
-        const result = events.filter((it) =>
-            some(filters, (filter) => filter(it))
-        );
-
-        console.debug(result);
-
-        return result;
+        return events.filter((it) => some(filters, (filter) => filter(it)));
     }, [filterStorage, events]);
 
     const reset = useCallback(() => setFilterStorage({}), [setFilterStorage]);
