@@ -21,7 +21,7 @@ export const useEventSubtitle = (
                 t("starting", { time: now.to(event.startTime) })
             )
             .with("current", () => t("taking_place"))
-            .otherwise(() => dayjs(event.startTime).format("LLL"));
+            .otherwise(() => dayjs(event.startTime).format("lll"));
 
         if (room !== null) {
             return [timestamp, room].join(" - ");
