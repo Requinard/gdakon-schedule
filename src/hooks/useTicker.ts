@@ -9,7 +9,7 @@ const getItemsFromTicker = <T>(
     amount: number,
     index: number
 ): T[] => {
-    if (amount > items.length) {
+    if (amount >= items.length) {
         return items;
     }
 

@@ -2,13 +2,13 @@ import { TransitionGroup } from "react-transition-group";
 import { Collapse } from "@mui/material";
 import { PropsWithChildren, ReactElement } from "react";
 
-import { EventScheduleItem } from "../../store/gdakon.types";
+import { NormalizedEventScheduleItem } from "../../store/gdakon.types";
 import { useTicker } from "../../hooks/useTicker";
 
 import { EventListItem } from "./EventListItem";
 
 type EventListProps = {
-    events: EventScheduleItem[];
+    events: NormalizedEventScheduleItem[];
     amount?: number;
     emptyComponent?: ReactElement;
 };

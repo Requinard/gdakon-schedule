@@ -1,64 +1,51 @@
-import {
-    Alert,
-    Box,
-    Card,
-    CardContent,
-    List,
-    ListSubheader,
-    Typography,
-} from "@mui/material";
+import { Card, CardHeader, List } from "@mui/material";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import { useCurrentEvents } from "../../hooks/useCurrentEvents";
 import { useUpcomingEvents } from "../../hooks/useUpcomingEvents";
+import { ListSection } from "../Common/ListSection";
+import { SquareAlert } from "../Common/SquareAlert";
 
 import { EventList } from "./EventList";
 
-import ScheduleIcon from "~icons/ic/sharp-schedule?width=1.9em&height=1.9em";
+import ScheduleIcon from "~icons/ic/sharp-schedule?width=2rem&height=2rem";
 
 export const OverviewCard = () => {
+    const { t } = useTranslation("Schedule", { keyPrefix: "Overview" });
     const current = useCurrentEvents();
     const upcoming = useUpcomingEvents();
     return (
-        <Card>
-            <CardContent>
-                <Box
-                    display={"flex"}
-                    flexDirection={"row"}
-                    alignItems={"center"}
-                >
-                    <Box
-                        display={"flex"}
-                        width={50}
-                        height={50}
-                        mr={1}
-                        justifyContent={"center"}
-                        alignItems={"center"}
-                    >
-                        <ScheduleIcon />
-                    </Box>
-                    <Box display={"flex"} flex={1}>
-                        <Typography variant={"h4"}>Up Next</Typography>
-                    </Box>
-                </Box>
-            </CardContent>
+        <Card sx={{ bgcolor: "background.default" }}>
+            <CardHeader
+                avatar={<ScheduleIcon />}
+                title={t("title")}
+                titleTypographyProps={{ variant: "h5" }}
+            />
+
             <List>
-                <ListSubheader>Current Events</ListSubheader>
+                <ListSection
+                    title={t("current_title")}
+                    subtitle={t("current", { count: current.length })}
+                />
                 <EventList
                     events={current}
                     emptyComponent={
-                        <Alert severity={"info"}>
-                            There are no events taking place right now
-                        </Alert>
+                        <SquareAlert severity={"info"}>
+                            {t("current_none")}
+                        </SquareAlert>
                     }
                 />
-                <ListSubheader>Up next</ListSubheader>
+                <ListSection
+                    title={t("upcoming_title")}
+                    subtitle={t("upcoming", { count: upcoming.length })}
+                />
                 <EventList
                     events={upcoming}
                     emptyComponent={
-                        <Alert severity={"info"}>
-                            There are no events starting soon
-                        </Alert>
+                        <SquareAlert severity={"info"}>
+                            {t("upcoming_none")}
+                        </SquareAlert>
                     }
                 />
             </List>

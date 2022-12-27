@@ -1,4 +1,23 @@
 {
+    "Schedule": {
+        "Overview": {
+            "title": "Up Next",
+            "upcoming_zero": "",
+            "upcoming_one": "There is 1 event starting soon",
+            "upcoming_other": "There are {{count}} events starting soon",
+            "upcoming_title": "Upcoming Events",
+            "upcoming_none": "There are no events starting soon",
+            "current_title": "Current Events",
+            "current_none": "There are no events taking place right now",
+            "current_zero": "",
+            "current_one": "There is 1 event taking place right now",
+            "current_other": "There are {{count}} events taking place right now"
+        },
+        "Event": {
+            "taking_place": "Taking place right now",
+            "starting": "Starting {{time}}"
+        }
+    },
     "MainNavigation": {
         "home": "Home",
         "schedule": "Event Schedule",
