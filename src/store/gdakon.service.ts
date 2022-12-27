@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react";
 
-import * as gdakonEvents from "./gdakon.events.json";
+import gdakonSchedule from "./gdakon.events.json";
 import {
     NormalizedEventScheduleItem,
     normalizeEventScheduleResponse,
@@ -9,13 +9,26 @@ import {
 export const gdakonService = createApi({
     reducerPath: "gdakon.service",
     baseQuery: fetchBaseQuery({
-        baseUrl: "https://gdakon.org/api",
+        baseUrl: "https://gdakon.org",
     }),
     endpoints: (builder) => ({
         getEventSchedule: builder.query<NormalizedEventScheduleItem[], unknown>(
             {
+                // query: () => ({
+                //     url: "/events/presenter.ashx"
+                // }),
+                // transformResponse: (data: EventScheduleResponse) => {
+                //     console.debug("transforming");
+                //     try {
+                //         console.debug(data);
+                //         return normalizeEventScheduleResponse(data);
+                //     } catch (e) {
+                //         console.error(e);
+                //         return [];
+                //     }
+                // },
                 queryFn: () => ({
-                    data: normalizeEventScheduleResponse(gdakonEvents),
+                    data: normalizeEventScheduleResponse(gdakonSchedule),
                 }),
             }
         ),

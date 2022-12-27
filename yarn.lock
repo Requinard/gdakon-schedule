@@ -4343,6 +4343,7 @@ __metadata:
     ts-pattern: ^4.0.6
     typescript: ^4.9.3
     unplugin-icons: ^0.14.15
+    use-immer: ^0.8.1
     usehooks-ts: ^2.9.1
     vite: ^4.0.0
     vite-plugin-checker: ^0.5.3
@@ -6812,6 +6813,16 @@ __metadata:
   dependencies:
     punycode: ^2.1.0
   checksum: 7167432de6817fe8e9e0c9684f1d2de2bb688c94388f7569f7dbdb1587c9f4ca2a77962f134ec90be0cc4d004c939ff0d05acc9f34a0db39a3c797dada262633
+  languageName: node
+  linkType: hard
+
+"use-immer@npm:^0.8.1":
+  version: 0.8.1
+  resolution: "use-immer@npm:0.8.1"
+  peerDependencies:
+    immer: ">=2.0.0"
+    react: ^16.8.0 || ^17.0.1 || ^18.0.0
+  checksum: 9ffc1a201a92b6b026c420718e6a00e72ba48b62420bb515927b379bb1d791b5b4766b57c755b4851c0e1f80000e639bc1cf8e73424e44466741c159391d35dd
   languageName: node
   linkType: hard
 

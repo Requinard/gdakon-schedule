@@ -5,7 +5,7 @@ import { checker } from "vite-plugin-checker";
 import Icons from "unplugin-icons/vite";
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig((env) => ({
     optimizeDeps: {
         exclude: process.env.NODE_ENV === "production" ? ["lodash"] : [],
     },
@@ -28,4 +28,4 @@ export default defineConfig({
             },
         }),
     ],
-});
+}));

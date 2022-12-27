@@ -1,4 +1,10 @@
-import { Box, Divider, Typography, useMediaQuery } from "@mui/material";
+import {
+    Box,
+    Divider,
+    Typography,
+    useMediaQuery,
+    useTheme,
+} from "@mui/material";
 import { Masonry } from "@mui/lab";
 
 import { NormalizedEventScheduleItem } from "../../store/gdakon.types";
@@ -11,8 +17,8 @@ type EventScheduleDayProps = {
 };
 
 export const EventScheduleGroup = ({ day, events }: EventScheduleDayProps) => {
-    // @ts-expect-error somehow theme is not typed here
-    const large = useMediaQuery((theme) => theme.breakpoints.up("md"));
+    const theme = useTheme();
+    const large = useMediaQuery(theme.breakpoints.up("md"));
     return (
         <>
             <Typography variant={"h4"} paragraph>

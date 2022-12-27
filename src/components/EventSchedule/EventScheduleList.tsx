@@ -3,18 +3,18 @@ import dayjs from "dayjs";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-import { useGetEventScheduleQuery } from "../../store/gdakon.service";
 import { useNow } from "../../hooks/useNow";
 
 import { EventScheduleGroup } from "./EventScheduleGroup";
+import { useEventFilter } from "./EventFilter.Provider";
 
 export const EventScheduleList = () => {
     const { t } = useTranslation("EventSchedule");
     const now = useNow();
-    const { data = [] } = useGetEventScheduleQuery({});
+    const { filtered } = useEventFilter();
 
     const eventGroups = useMemo(() => {
-        const [upcoming, expired] = partition(data, (event) =>
+        const [upcoming, expired] = partition(filtered, (event) =>
             now.isBefore(event.endTime)
         );
 
@@ -27,7 +27,7 @@ export const EventScheduleList = () => {
         }
 
         return upcomingGroups;
-    }, [data, now]);
+    }, [filtered, now]);
 
     return (
         <>
