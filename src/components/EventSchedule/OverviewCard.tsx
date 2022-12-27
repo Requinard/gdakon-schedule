@@ -12,7 +12,6 @@ import React from "react";
 import { useCurrentEvents } from "../../hooks/useCurrentEvents";
 import { useUpcomingEvents } from "../../hooks/useUpcomingEvents";
 
-import { EventListItem } from "./EventListItem";
 import { EventList } from "./EventList";
 
 import ScheduleIcon from "~icons/ic/sharp-schedule?width=1.9em&height=1.9em";

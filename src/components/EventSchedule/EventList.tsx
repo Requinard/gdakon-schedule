@@ -1,6 +1,6 @@
 import { TransitionGroup } from "react-transition-group";
 import { Collapse } from "@mui/material";
-import { PropsWithChildren, ReactElement, ReactNode } from "react";
+import { PropsWithChildren, ReactElement } from "react";
 
 import { EventScheduleItem } from "../../store/gdakon.types";
 import { useTicker } from "../../hooks/useTicker";
