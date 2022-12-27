@@ -1,10 +1,9 @@
-import { Box, Container, Grid, Stack, styled } from "@mui/material";
+import { Box, Container, Grid, styled } from "@mui/material";
 import { animated, useSpring } from "@react-spring/web";
 import { useMove } from "@use-gesture/react";
 import { CSSProperties } from "react";
 
-import { UpcomingEventsCard } from "../EventSchedule/UpcomingEvents";
-import { CurrentEventCard } from "../EventSchedule/CurrentEvents";
+import { OverviewCard } from "../EventSchedule/OverviewCard";
 
 import logoUrl from "./gdakon-20230-logo.png";
 
@@ -96,10 +95,7 @@ export const HomeScreen = () => {
                             />
                         </Grid>
                         <Grid item xs={12} md={5}>
-                            <Stack spacing={2}>
-                                <UpcomingEventsCard />
-                                <CurrentEventCard />
-                            </Stack>
+                            <OverviewCard />
                         </Grid>
                     </HomeGrid>
                 </Container>
