@@ -1,18 +1,23 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
+    ListItem,
     ListItemSecondaryAction,
     ListItemText,
     ListSubheader,
     MenuItem,
     Switch,
+    TextField,
 } from "@mui/material";
 import { useCallback } from "react";
 import dayjs, { Dayjs } from "dayjs";
+import { DateTimePicker } from "@mui/x-date-pickers";
 
 import { useAppDispatch, useAppSelector } from "../../store";
 import {
     setTimeTravelAmount,
     toggleTimeTravel,
 } from "../../store/settings.slice";
+import { useNow } from "../../hooks/useNow";
 
 const EnableTimeTravel = () => {
     const dispatch = useAppDispatch();
@@ -37,16 +42,16 @@ const EnableTimeTravel = () => {
     );
 };
 
-const TimeTravelDestinations = () => {
+const TimeTravelPicker = () => {
+    const now = useNow();
     const dispatch = useAppDispatch();
-    const { disabled, amount } = useAppSelector((state) => ({
-        disabled: !state.settings.timetravel.enabled,
-        amount: state.settings.timetravel.amount,
-    }));
 
-    const travelTo = useCallback(
-        (timestamp: Dayjs) => {
-            const diff = timestamp.diff(dayjs());
+    const changeTimeTravelAmount = useCallback(
+        (value: Dayjs | null) => {
+            if (value === null) {
+                return;
+            }
+            const diff = value.diff(dayjs(), "milliseconds");
 
             dispatch(setTimeTravelAmount(diff));
         },
@@ -54,62 +59,28 @@ const TimeTravelDestinations = () => {
     );
 
     return (
-        <>
-            <MenuItem disabled>
-                <ListItemText
-                    primary={dayjs().add(amount, "milliseconds").format("LLLL")}
-                    secondary={"Date according to time travel"}
-                />
-            </MenuItem>
-            <MenuItem disabled={disabled} onClick={() => travelTo(dayjs())}>
-                <ListItemText
-                    primary={"Reset"}
-                    secondary={"Back to normal time"}
-                />
-            </MenuItem>
-            <MenuItem
-                disabled={disabled}
-                onClick={() =>
-                    travelTo(dayjs("Thu Mar 09 2023 16:30:00 GMT+0100"))
-                }
-            >
-                <ListItemText
-                    primary={"Before Opening"}
-                    secondary={"30 minutes to opening"}
-                />
-            </MenuItem>
-            <MenuItem
-                disabled={disabled}
-                onClick={() =>
-                    travelTo(dayjs("Thu Mar 09 2023 17:05:00 GMT+0100"))
-                }
-            >
-                <ListItemText
-                    primary={"During Opening"}
-                    secondary={"Event is ongoing"}
-                />
-            </MenuItem>
-            <MenuItem
-                disabled={disabled}
-                onClick={() =>
-                    travelTo(dayjs("Sun Mar 13 2023 17:45:00 GMT+0100"))
-                }
-            >
-                <ListItemText
-                    primary={"After Con"}
-                    secondary={"All stuff is done"}
-                />
-            </MenuItem>
-        </>
+        <ListItem>
+            <DateTimePicker
+                value={now}
+                onChange={changeTimeTravelAmount}
+                renderInput={(props) => (
+                    <TextField
+                        fullWidth
+                        size={"small"}
+                        {...props}
+                        label={"Time Travel Date"}
+                    />
+                )}
+            />
+        </ListItem>
     );
 };
-
 export const TimeTravelSettings = () => {
     return (
         <>
             <ListSubheader>Time Travel</ListSubheader>
             <EnableTimeTravel />
-            <TimeTravelDestinations />
+            <TimeTravelPicker />
         </>
     );
 };
