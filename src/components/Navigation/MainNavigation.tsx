@@ -10,8 +10,8 @@ import { useTranslation } from "react-i18next";
 
 import { SettingsNavigationAction } from "./SettingsNavigationAction";
 
-import Today from "~icons/mdi/today";
-import HomeOutlined from "~icons/mdi/home-outlined";
+import Today from "~icons/ic/outline-today";
+import HomeOutlined from "~icons/ic/outline-home";
 
 const MainNavigationContainer = styled(Paper)({
     position: "absolute",
