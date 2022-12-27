@@ -1,7 +1,8 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
-import eslintPlugin from "vite-plugin-eslint";
 import { VitePWA } from "vite-plugin-pwa";
+import { checker } from "vite-plugin-checker";
+import Icons from "unplugin-icons/vite";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -10,7 +11,16 @@ export default defineConfig({
     },
     plugins: [
         react(),
-        eslintPlugin({}),
+        Icons({
+            compiler: "jsx",
+            jsx: "react",
+        }),
+        checker({
+            typescript: true,
+            eslint: {
+                lintCommand: "eslint ./src",
+            },
+        }),
         VitePWA({
             registerType: "autoUpdate",
             workbox: {

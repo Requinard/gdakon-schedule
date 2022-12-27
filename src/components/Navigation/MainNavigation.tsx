@@ -6,11 +6,12 @@ import {
     styled,
 } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
-import HomeOutlined from "@mui/icons-material/HomeOutlined";
-import Today from "@mui/icons-material/Today";
 import { useTranslation } from "react-i18next";
 
 import { SettingsNavigationAction } from "./SettingsNavigationAction";
+
+import Today from "~icons/mdi/today";
+import HomeOutlined from "~icons/mdi/home-outlined";
 
 const MainNavigationContainer = styled(Paper)({
     position: "absolute",

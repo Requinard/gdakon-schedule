@@ -1,9 +1,10 @@
 import { MouseEvent, useCallback, useState } from "react";
 import { BottomNavigationAction } from "@mui/material";
-import SettingsIcon from "@mui/icons-material/Settings";
 import { useTranslation } from "react-i18next";
 
 import { SettingsMenu } from "../Settings/SettingsMenu";
+
+import SettingsIcon from "~icons/mdi/settings";
 
 export const SettingsNavigationAction = () => {
     const { t } = useTranslation("MainNavigation");

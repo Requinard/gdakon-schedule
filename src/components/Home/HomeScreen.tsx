@@ -1,7 +1,7 @@
 import { Box, Container, Grid, Stack, styled } from "@mui/material";
 import { animated, useSpring } from "@react-spring/web";
-import { useGesture } from "@use-gesture/react";
-import { CSSProperties, useEffect, useRef } from "react";
+import { useMove } from "@use-gesture/react";
+import { CSSProperties } from "react";
 
 import { UpcomingEventsCard } from "../EventSchedule/UpcomingEvents";
 import { CurrentEventCard } from "../EventSchedule/CurrentEvents";
@@ -21,8 +21,8 @@ const calcX = (factor: number) => (y: number, ly: number) =>
 const calcY = (factor: number) => (x: number, lx: number) =>
     (x - lx - window.innerWidth / 2) / factor;
 
-const calcOuterX = calcX(1000);
-const calcOuterY = calcY(1000);
+const calcOuterX = calcX(150);
+const calcOuterY = calcY(100);
 
 const imageStyle: CSSProperties = {
     position: "absolute",
@@ -35,37 +35,24 @@ const imageStyle: CSSProperties = {
     filter: "blur(6px)",
 };
 export const HomeScreen = () => {
-    const [{ x, y, outerX, outerY }, api] = useSpring(() => ({
+    const [{ x, y, outerX, outerY, scale }, api] = useSpring(() => ({
         x: 0,
         y: 0,
+        scale: 1,
         outerX: 0,
         outerY: 0,
         config: { mass: 3, tension: 350, friction: 80 },
     }));
 
-    const domTarget = useRef(null);
-
-    useGesture(
-        {
-            onMove: ({ xy: [px, py] }) =>
-                api({
-                    outerX: calcOuterX(py, y.get()),
-                    outerY: calcOuterY(px, x.get()),
-                }),
-        },
-        { domTarget, eventOptions: { passive: false } }
+    const bind = useMove(
+        (params) =>
+            api.start({
+                outerX: calcOuterX(params.xy[1], y.get()),
+                outerY: calcOuterY(params.xy[0], x.get()),
+                scale: 1.1,
+            }),
+        { mouseOnly: true }
     );
-
-    useEffect(() => {
-        const preventDefault = (e: Event) => e.preventDefault();
-        document.addEventListener("gesturestart", preventDefault);
-        document.addEventListener("gesturechange", preventDefault);
-
-        return () => {
-            document.removeEventListener("gesturestart", preventDefault);
-            document.removeEventListener("gesturechange", preventDefault);
-        };
-    }, []);
 
     return (
         <Box
@@ -77,21 +64,23 @@ export const HomeScreen = () => {
             alignItems={"stretch"}
         >
             <animated.div
-                ref={domTarget}
+                {...bind()}
                 style={{
-                    transform: "perspective(600px)",
                     rotateX: outerX,
                     rotateY: outerY,
-                    scale: 1.05,
+                    transform: "perspective(600px)",
+                    scale: scale,
                     flexDirection: "column",
                     justifyContent: "center",
                     flex: 1,
                     height: "100%",
                     display: "flex",
+                    touchAction: "none",
                 }}
             >
                 <img
                     src={"https://gdakon.org/Images/Convention/bg.webp"}
+                    alt={"A spooky scary background image"}
                     height={"100%"}
                     width={"100%"}
                     style={imageStyle}
@@ -99,7 +88,12 @@ export const HomeScreen = () => {
                 <Container maxWidth={"xl"}>
                     <HomeGrid container spacing={2}>
                         <Grid item xs={12} md={7}>
-                            <img src={logoUrl} width={"100%"} height={"auto"} />
+                            <img
+                                alt={"A spooky version of the Gdakon logo"}
+                                src={logoUrl}
+                                width={"100%"}
+                                height={"auto"}
+                            />
                         </Grid>
                         <Grid item xs={12} md={5}>
                             <Stack spacing={2}>
