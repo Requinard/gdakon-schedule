@@ -1,7 +1,7 @@
 /**
  * Loop through a list in a circular manner.
  */
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useInterval } from "usehooks-ts";
 
 const getItemsFromTicker = <T>(
@@ -18,7 +18,7 @@ const getItemsFromTicker = <T>(
 
     const subItems = items.slice(index, index + amount);
 
-    if (overshoot) {
+    if (overshoot > 0) {
         subItems.push(...items.slice(0, overshoot));
     }
 
@@ -26,9 +26,12 @@ const getItemsFromTicker = <T>(
 };
 export const useTicker = <T>(items: T[], amount = 3, interval = 3000): T[] => {
     const tickerRef = useRef(0);
-    const [ticker, setTicker] = useState<T[]>(
-        getItemsFromTicker(items, amount, 0)
-    );
+    const [ticker, setTicker] = useState<T[]>([]);
+
+    useEffect(() => {
+        setTicker(getItemsFromTicker(items, amount, 0));
+    }, [items, setTicker]);
+
     useInterval(() => {
         const newTicker = getItemsFromTicker(items, amount, tickerRef.current);
 

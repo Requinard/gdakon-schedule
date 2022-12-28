@@ -2,19 +2,19 @@ import { useMemo } from "react";
 import { chain } from "lodash";
 
 import { useGetEventScheduleQuery } from "../store/gdakon.service";
+import { NormalizedEventScheduleItem } from "../store/gdakon.types";
 
 import { useNow } from "./useNow";
 
-export const useUpcomingEvents = () => {
+export const useUpcomingEvents = (events: NormalizedEventScheduleItem[]) => {
     const now = useNow();
-    const { data = [] } = useGetEventScheduleQuery({});
 
     return useMemo(
         () =>
-            chain(data)
+            chain(events)
                 .filter((event) => now.isSame(event.startTime, "day"))
                 .filter((event) => now.isBefore(event.startTime))
                 .value(),
-        [data, now]
+        [events, now]
     );
 };

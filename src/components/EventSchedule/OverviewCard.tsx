@@ -6,6 +6,7 @@ import { useCurrentEvents } from "../../hooks/useCurrentEvents";
 import { useUpcomingEvents } from "../../hooks/useUpcomingEvents";
 import { ListSection } from "../Common/ListSection";
 import { SquareAlert } from "../Common/SquareAlert";
+import { useGetEventScheduleQuery } from "../../store/gdakon.service";
 
 import { EventList } from "./EventList";
 
@@ -13,8 +14,9 @@ import ScheduleIcon from "~icons/ic/sharp-schedule?width=2rem&height=2rem";
 
 export const OverviewCard = () => {
     const { t } = useTranslation("Schedule", { keyPrefix: "Overview" });
-    const current = useCurrentEvents();
-    const upcoming = useUpcomingEvents();
+    const { data = [] } = useGetEventScheduleQuery({});
+    const current = useCurrentEvents(data);
+    const upcoming = useUpcomingEvents(data);
 
     return (
         <Card>
