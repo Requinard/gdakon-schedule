@@ -63,6 +63,7 @@ export const EventScheduleItemCard = ({
                     gap: 1,
                     display: "flex",
                     flexDirection: "row",
+                    flexWrap: "wrap",
                 }}
             >
                 <BookmarkedFilterChip show={isBookmarked} />

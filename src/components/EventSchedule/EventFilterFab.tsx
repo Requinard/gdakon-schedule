@@ -4,6 +4,7 @@ import { size } from "lodash";
 import { useEventFilter } from "./EventFilter.Provider";
 
 import RemoveFilterIcon from "~icons/mdi/filter-off-outline";
+
 export const EventFilterFab = () => {
     const { reset, filters } = useEventFilter();
 
@@ -11,7 +12,7 @@ export const EventFilterFab = () => {
         <Fab
             sx={{
                 position: "absolute",
-                bottom: 32,
+                bottom: 80,
                 right: 32,
             }}
             color={"secondary"}
