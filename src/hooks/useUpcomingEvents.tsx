@@ -1,7 +1,6 @@
 import { useMemo } from "react";
 import { chain } from "lodash";
 
-import { useGetEventScheduleQuery } from "../store/gdakon.service";
 import { NormalizedEventScheduleItem } from "../store/gdakon.types";
 
 import { useNow } from "./useNow";

@@ -6,7 +6,7 @@ import { BackgroundBanner } from "../images/BackgroundBanner";
 
 export const HomeHorizontal = () => {
     return (
-        <Stack p={1} spacing={2} sx={{ pt: 4, position: "relative" }}>
+        <>
             <Box
                 position={"absolute"}
                 top={0}
@@ -19,11 +19,13 @@ export const HomeHorizontal = () => {
             >
                 <BackgroundBanner />
             </Box>
-            <Box pt={4}>
-                <Logo />
-            </Box>
+            <Stack p={1} spacing={2} sx={{ pt: 4, position: "relative" }}>
+                <Box pt={4}>
+                    <Logo />
+                </Box>
 
-            <OverviewCard />
-        </Stack>
+                <OverviewCard />
+            </Stack>
+        </>
     );
 };
