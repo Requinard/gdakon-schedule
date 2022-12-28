@@ -1,6 +1,6 @@
-import { Avatar, Box, Chip } from "@mui/material";
+import { Avatar, Chip } from "@mui/material";
 import { useCallback, useMemo } from "react";
-import { chain, noop, size } from "lodash";
+import { noop, size } from "lodash";
 
 import { dayjs } from "../../utilities/dayjs";
 import { NormalizedEventScheduleItem } from "../../store/gdakon.types";
@@ -13,48 +13,9 @@ import DayIcon from "~icons/mdi/calendar-today";
 import RoomIcon from "~icons/ic/baseline-room";
 import ResetIcon from "~icons/ic/baseline-refresh";
 import BookmarkIcon from "~icons/mdi/bookmark";
+import ClockIcon from "~icons/mdi/clock-outline";
 
-export const EventFilters = () => {
-    const { original } = useEventFilter();
-
-    const days = useMemo(() => {
-        return chain(original)
-            .map((it) => dayjs(it.startTime).format("L"))
-            .uniq()
-            .value();
-    }, [original]);
-
-    const rooms = useMemo(() => {
-        return chain(original)
-            .map((it) => it.roomName)
-            .compact()
-            .uniq()
-            .value();
-    }, [original]);
-
-    return (
-        <Box
-            display={"flex"}
-            flexDirection={"row"}
-            flexWrap={"wrap"}
-            mt={2}
-            mb={2}
-            gap={2}
-        >
-            <BookmarkedFilterChip />
-            {days.map((day) => (
-                <DayFilterChip day={day} key={day} />
-            ))}
-            {rooms.map((room) => (
-                <RoomFilterChip room={room} key={room} />
-            ))}
-
-            <ResetChip />
-        </Box>
-    );
-};
-
-const ResetChip = () => {
+export const ResetChip = () => {
     const { reset, filters } = useEventFilter();
 
     if (size(filters) === 0) {
@@ -73,36 +34,41 @@ const ResetChip = () => {
     );
 };
 
-const DayFilterChip = ({ day }: { day: string }) => {
+export const DayFilterChip = ({ timestamp }: { timestamp: number }) => {
     const { isEnabled, toggleFilter } = useEventFilter();
 
+    const name = useMemo(() => dayjs(timestamp).format("L"), [timestamp]);
+
     const filter = useCallback((it: NormalizedEventScheduleItem) => {
-        console.debug("comparing", it.startTime, day);
-        return dayjs(day, "L").isSame(it.startTime, "day");
+        return dayjs(timestamp).isSame(it.startTime, "day");
     }, []);
 
     return (
         <Chip
-            onClick={() => toggleFilter(day, filter)}
-            label={day}
+            onClick={() => toggleFilter(name, filter)}
+            label={name}
             avatar={
                 <Avatar>
                     <DayIcon />
                 </Avatar>
             }
-            color={isEnabled(day) ? "secondary" : undefined}
-            deleteIcon={isEnabled(day) ? <CheckedIcon /> : undefined}
+            color={isEnabled(name) ? "secondary" : undefined}
+            deleteIcon={isEnabled(name) ? <CheckedIcon /> : undefined}
         />
     );
 };
 
-const RoomFilterChip = ({ room }: { room: string }) => {
+export const RoomFilterChip = ({ room }: { room: string | null }) => {
     const { isEnabled, toggleFilter } = useEventFilter();
 
     const filter = useCallback(
         (it: NormalizedEventScheduleItem) => it.roomName === room,
         [room]
     );
+
+    if (room === null) {
+        return null;
+    }
 
     return (
         <Chip
@@ -120,7 +86,20 @@ const RoomFilterChip = ({ room }: { room: string }) => {
     );
 };
 
-const BookmarkedFilterChip = () => {
+export const HourChip = ({ timestamp }: { timestamp: number }) => {
+    return (
+        <Chip
+            label={dayjs(timestamp).format("LT")}
+            avatar={
+                <Avatar>
+                    <ClockIcon />
+                </Avatar>
+            }
+        />
+    );
+};
+
+export const BookmarkedFilterChip = ({ show }: { show: boolean }) => {
     const bookmarks = useAppSelector((state) => state.bookmarks.events);
     const { isEnabled, toggleFilter } = useEventFilter();
 
@@ -129,10 +108,14 @@ const BookmarkedFilterChip = () => {
         [bookmarks]
     );
 
+    if (!show) {
+        return null;
+    }
+
     return (
         <Chip
             onClick={() => toggleFilter("bookmarks", filter)}
-            label={"Bookmarks"}
+            label={"Bookmarked"}
             color={isEnabled("bookmarks") ? "secondary" : undefined}
             avatar={
                 <Avatar>

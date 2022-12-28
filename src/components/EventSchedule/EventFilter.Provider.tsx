@@ -10,6 +10,8 @@ import { noop, some } from "lodash";
 
 import { NormalizedEventScheduleItem } from "../../store/gdakon.types";
 
+import { EventFilterFab } from "./EventFilterFab";
+
 type EventFilterProviderProps = {
     events: NormalizedEventScheduleItem[];
 };
@@ -86,6 +88,7 @@ export const EventFilterProvider = ({
             }}
         >
             {children}
+            <EventFilterFab />
         </EventFilterContext.Provider>
     );
 };

@@ -13,6 +13,13 @@ import { useEventSubtitle } from "../../hooks/useEventSubtitle";
 import { useAppDispatch, useAppSelector } from "../../store";
 import { toggleEventBookmark } from "../../store/bookmarks";
 
+import {
+    BookmarkedFilterChip,
+    DayFilterChip,
+    HourChip,
+    RoomFilterChip,
+} from "./EventChips";
+
 import AddBookmarkIcon from "~icons/mdi/bookmark-outline";
 import BookmarkIcon from "~icons/mdi/bookmark";
 
@@ -49,6 +56,20 @@ export const EventScheduleItemCard = ({
                     </IconButton>
                 }
             />
+            <CardContent
+                sx={{
+                    pt: 0,
+                    pb: 0,
+                    gap: 1,
+                    display: "flex",
+                    flexDirection: "row",
+                }}
+            >
+                <BookmarkedFilterChip show={isBookmarked} />
+                <DayFilterChip timestamp={event.startTime} />
+                <HourChip timestamp={event.startTime} />
+                <RoomFilterChip room={room} />
+            </CardContent>
             <CardContent>
                 <Typography>{description}</Typography>
             </CardContent>

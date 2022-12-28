@@ -15,8 +15,9 @@ export const OverviewCard = () => {
     const { t } = useTranslation("Schedule", { keyPrefix: "Overview" });
     const current = useCurrentEvents();
     const upcoming = useUpcomingEvents();
+
     return (
-        <Card sx={{ bgcolor: "background.default" }}>
+        <Card>
             <CardHeader
                 avatar={<ScheduleIcon />}
                 title={t("title")}

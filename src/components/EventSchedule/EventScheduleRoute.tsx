@@ -4,14 +4,12 @@ import { useGetEventScheduleQuery } from "../../store/gdakon.service";
 
 import { EventScheduleList } from "./EventScheduleList";
 import { EventFilterProvider } from "./EventFilter.Provider";
-import { EventFilters } from "./EventFilters";
 
 export const EventScheduleRoute = () => {
     const { data = [] } = useGetEventScheduleQuery({});
     return (
         <EventFilterProvider events={data}>
-            <Container>
-                <EventFilters />
+            <Container maxWidth={"xl"} sx={{ pt: 4 }}>
                 <EventScheduleList />
             </Container>
         </EventFilterProvider>
