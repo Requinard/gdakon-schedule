@@ -31,7 +31,11 @@ export const EventScheduleGroup = ({ day, events }: EventScheduleDayProps) => {
             <Box pb={2} pt={1}>
                 <Divider />
             </Box>
-            <Masonry columns={large ? 3 : 1} spacing={2}>
+            <Masonry
+                columns={large ? 3 : 1}
+                sx={{ width: "100%", margin: 0 }}
+                spacing={1}
+            >
                 {events.map((event) => (
                     <EventScheduleItemCard event={event} key={event.id} />
                 ))}
