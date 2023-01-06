@@ -1,8 +1,10 @@
 import { Box, Container, styled } from "@mui/material";
 import { PropsWithChildren } from "react";
 
+import BGImage from "../../assets/bg.webp?blur&imagetools";
+
 export const BannerHeroContainer = styled(Box)({
-    backgroundImage: "url(https://gdakon.org/Images/Convention/bg.webp)",
+    backgroundImage: `url(${BGImage})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     height: 600,

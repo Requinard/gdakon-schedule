@@ -1,8 +1,10 @@
 import { Image } from "mui-image";
 
+import BackgroundImage from "../../assets/bg.webp?blur=8&imagetools";
+
 export const BackgroundBanner = () => (
     <Image
-        src={"https://gdakon.org/Images/Convention/bg.webp"}
+        src={BackgroundImage}
         alt={
             "A spooky background banner that shows the organisation being chased by all manner of creepies and crawlies!"
         }

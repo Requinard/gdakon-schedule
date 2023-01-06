@@ -9,8 +9,8 @@ import {
     PERSIST,
     persistReducer,
     persistStore,
-    REGISTER,
     PURGE,
+    REGISTER,
     REHYDRATE,
 } from "redux-persist";
 
