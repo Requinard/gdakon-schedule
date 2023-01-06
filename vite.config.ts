@@ -12,7 +12,7 @@ import PackageJSON from "./package.json";
 // https://vitejs.dev/config/
 export default defineConfig({
     optimizeDeps: {
-        exclude: process.env.NODE_ENV === "production" ? ["lodash-es"] : [],
+        exclude: ["lodash-es"],
     },
     define: {
         APP_NAME: JSON.stringify(PackageJSON.name),
