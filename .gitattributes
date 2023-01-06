@@ -4,14 +4,14 @@
 # Overwrite the above and declare files that will always have
 # LF line endings on checkin and checkout. No ESLint/Prettier
 # issues for those files.
-*.js text eol=crlf
-*.jsx text eol=crlf
+*.js text eol=lf
+*.jsx text eol=lf
 # If you're using TypeScript, also add .ts, .tsx files
-*.ts text eol=crlf
-*.tsx text eol=crlf
+*.ts text eol=lf
+*.tsx text eol=lf
 # If you're using Prettier, you probably want LF in .json, .md, .css,
 # and all the other files you're formatting with Prettier.
-*.json text eol=crlf
+*.json text eol=lf
 # An alternative is to ditch the above and make everything have LF on
 # checkin/checkout, but I'm not sure what will happen with binary files.
 # * text eol=lf
