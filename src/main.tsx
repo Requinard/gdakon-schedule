@@ -5,7 +5,7 @@ import "./i18n";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { Provider as StoreProvider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 
@@ -26,6 +26,18 @@ const theme = createTheme({
             dark: "#0e6f0f",
         },
     },
+    components: {
+        MuiCardHeader: {
+            defaultProps: {
+                titleTypographyProps: {
+                    variant: "h5",
+                },
+                subheaderTypographyProps: {
+                    variant: "subtitle1",
+                },
+            },
+        },
+    },
 });
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
@@ -34,11 +46,11 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
             <ThemeProvider theme={theme}>
                 <LocaleProvider>
                     <CssBaseline />
-                    <HashRouter>
+                    <BrowserRouter>
                         <PersistGate persistor={persistor}>
                             <App />
                         </PersistGate>
-                    </HashRouter>
+                    </BrowserRouter>
                 </LocaleProvider>
             </ThemeProvider>
         </StoreProvider>

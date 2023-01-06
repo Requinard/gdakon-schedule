@@ -47,9 +47,10 @@ export const HomeParallax = () => {
             <AnimatedPage
                 style={{
                     transform: xy.to(background),
+                    scale: 1.05,
                 }}
             >
-                <Box height={"100%"} sx={{ scale: 1.5 }}>
+                <Box height={"100%"}>
                     <BackgroundBanner />
                 </Box>
             </AnimatedPage>

@@ -5,10 +5,18 @@ import { checker } from "vite-plugin-checker";
 import Icons from "unplugin-icons/vite";
 import html from "vite-plugin-html-config";
 import { imagetools } from "vite-imagetools";
+
+//@ts-expect-error but its on?
+import PackageJSON from "./package.json";
+
 // https://vitejs.dev/config/
 export default defineConfig({
     optimizeDeps: {
-        exclude: process.env.NODE_ENV === "production" ? ["lodash"] : [],
+        exclude: process.env.NODE_ENV === "production" ? ["lodash-es"] : [],
+    },
+    define: {
+        APP_NAME: JSON.stringify(PackageJSON.name),
+        APP_VERSION: JSON.stringify(PackageJSON.version),
     },
     plugins: [
         react(),
@@ -34,6 +42,7 @@ export default defineConfig({
         Icons({
             compiler: "jsx",
             jsx: "react",
+            defaultStyle: "width=24px;height=24px;",
         }),
         checker({
             typescript: true,

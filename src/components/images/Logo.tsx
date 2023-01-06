@@ -1,6 +1,6 @@
 import { Image } from "mui-image";
 
-import logoUrl from "../Home/gdakon-20230-logo.png";
+import logoUrl from "../../assets/gdakon-20230-logo.png?format=webp&imagetools";
 
 export const Logo = () => {
     return (
@@ -9,6 +9,7 @@ export const Logo = () => {
             alt={"A stylized, spooky version of the Gdakon logo."}
             width={"100%"}
             height={"auto"}
+            duration={200}
         />
     );
 };

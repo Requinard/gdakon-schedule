@@ -1,11 +1,10 @@
-import { Card, CardHeader, List } from "@mui/material";
+import { Card, CardHeader, List, Alert } from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
 import { useCurrentEvents } from "../../hooks/useCurrentEvents";
 import { useUpcomingEvents } from "../../hooks/useUpcomingEvents";
 import { ListSection } from "../Common/ListSection";
-import { SquareAlert } from "../Common/SquareAlert";
 import { useGetEventScheduleQuery } from "../../store/gdakon.service";
 
 import { EventList } from "./EventList";
@@ -34,9 +33,7 @@ export const OverviewCard = () => {
                 <EventList
                     events={current}
                     emptyComponent={
-                        <SquareAlert severity={"info"}>
-                            {t("current_none")}
-                        </SquareAlert>
+                        <Alert severity={"info"}>{t("current_none")}</Alert>
                     }
                 />
                 <ListSection
@@ -46,9 +43,7 @@ export const OverviewCard = () => {
                 <EventList
                     events={upcoming}
                     emptyComponent={
-                        <SquareAlert severity={"info"}>
-                            {t("upcoming_none")}
-                        </SquareAlert>
+                        <Alert severity={"info"}>{t("upcoming_none")}</Alert>
                     }
                 />
             </List>

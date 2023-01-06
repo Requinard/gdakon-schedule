@@ -1461,7 +1461,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@date-io/dayjs@npm:^2.15.0, @date-io/dayjs@npm:^2.16.0":
+"@date-io/dayjs@npm:^2.15.0":
   version: 2.16.0
   resolution: "@date-io/dayjs@npm:2.16.0"
   dependencies:
@@ -2773,7 +2773,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash@npm:^4":
+"@types/lodash-es@npm:^4":
+  version: 4.17.6
+  resolution: "@types/lodash-es@npm:4.17.6"
+  dependencies:
+    "@types/lodash": "*"
+  checksum: 9bd239dd525086e278821949ce12fbdd4f100a060fed9323fc7ad5661113e1641f28a7ebab617230ed3474680d8f4de705c1928b48252bb684be6ec9eed715db
+  languageName: node
+  linkType: hard
+
+"@types/lodash@npm:*":
   version: 4.14.191
   resolution: "@types/lodash@npm:4.14.191"
   checksum: ba0d5434e10690869f32d5ea49095250157cae502f10d57de0a723fd72229ce6c6a4979576f0f13e0aa9fbe3ce2457bfb9fa7d4ec3d6daba56730a51906d1491
@@ -3020,24 +3029,6 @@ __metadata:
     "@typescript-eslint/types": 5.47.0
     eslint-visitor-keys: ^3.3.0
   checksum: 2191c079154bdfd1b85b8cd24baa6c0f55c73527c6c8460789483555b4eb5c72e3dc6d1aa4bbac2cf7b86b474588b45682a8deb151e9d903cf72c8f336141f1f
-  languageName: node
-  linkType: hard
-
-"@use-gesture/core@npm:10.2.23":
-  version: 10.2.23
-  resolution: "@use-gesture/core@npm:10.2.23"
-  checksum: 2516eb82ee3355b40f1e4eb6fb218082f8196486245a6794d10e13a3698b7d3a7501c57a1e8f61c9958105ee80255b266618242fdc80056f7ab6d62ae1ef2169
-  languageName: node
-  linkType: hard
-
-"@use-gesture/react@npm:^10.0.0":
-  version: 10.2.23
-  resolution: "@use-gesture/react@npm:10.2.23"
-  dependencies:
-    "@use-gesture/core": 10.2.23
-  peerDependencies:
-    react: ">= 16.8.0"
-  checksum: 44127907ecc5b87296d14cd0cc86b6031d87ee11ae98df33810e4d986aa58290ec48624010776eeb50c13f2ad62b3439a549c02fba4cef5913b6c8b21b72222e
   languageName: node
   linkType: hard
 
@@ -4550,7 +4541,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "gdakon-schedule@workspace:."
   dependencies:
-    "@date-io/dayjs": ^2.16.0
     "@emotion/react": ^11.10.5
     "@emotion/styled": ^11.10.5
     "@fontsource/roboto": ^4.5.8
@@ -4562,19 +4552,18 @@ __metadata:
     "@reduxjs/toolkit": ^1.9.1
     "@requinard/eslint-config": ^0.3.2
     "@svgr/core": ^6.5.1
-    "@types/lodash": ^4
+    "@types/lodash-es": ^4
     "@types/mui-image": ^1.0.1
     "@types/react": ^18.0.26
     "@types/react-dom": ^18.0.9
     "@types/react-transition-group": ^4
     "@types/redux-logger": ^3
     "@types/redux-persist": ^4.3.1
-    "@use-gesture/react": ^10.0.0
     "@vitejs/plugin-react-swc": ^3.0.0
     dayjs: ^1.11.7
     eslint: ^8.29.0
     i18next: ^22.4.5
-    lodash: ^4.17.21
+    lodash-es: ^4.17.21
     mui-image: ^1.0.7
     prettier: ^2.8.1
     react: ^18.2.0
@@ -4595,6 +4584,7 @@ __metadata:
     vite-plugin-checker: ^0.5.3
     vite-plugin-html-config: ^1.0.11
     vite-plugin-pwa: ^0.14.0
+    vite-plugin-version-mark: ^0.0.4
   languageName: unknown
   linkType: soft
 
@@ -5395,6 +5385,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lodash-es@npm:^4.17.21":
+  version: 4.17.21
+  resolution: "lodash-es@npm:4.17.21"
+  checksum: 05cbffad6e2adbb331a4e16fbd826e7faee403a1a04873b82b42c0f22090f280839f85b95393f487c1303c8a3d2a010048bf06151a6cbe03eee4d388fb0a12d2
+  languageName: node
+  linkType: hard
+
 "lodash.debounce@npm:^4.0.8":
   version: 4.0.8
   resolution: "lodash.debounce@npm:4.0.8"
@@ -5423,7 +5420,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.20, lodash@npm:^4.17.21":
+"lodash@npm:^4.17.20":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
@@ -7406,6 +7403,13 @@ __metadata:
     workbox-build: ^6.5.4
     workbox-window: ^6.5.4
   checksum: b6e2ba73b75bea5bff83418a3ffd484af8efd06556a5f5ccbb76426f00f84548b575d27d5b4c005c3cd44eab450c8e39417a7568073bfe4d92201a7e846f6bea
+  languageName: node
+  linkType: hard
+
+"vite-plugin-version-mark@npm:^0.0.4":
+  version: 0.0.4
+  resolution: "vite-plugin-version-mark@npm:0.0.4"
+  checksum: 474cd9208f04dbcca12ca722aef6d39e5a778108773df93a4ae4edc006e5fe55f6b06d34b767dad56b1a5a9e8bac035b507328cf16021ab3e1aa1c63f335b657
   languageName: node
   linkType: hard
 

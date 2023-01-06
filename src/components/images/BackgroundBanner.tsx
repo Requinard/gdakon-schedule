@@ -1,6 +1,6 @@
 import { Image } from "mui-image";
 
-import BackgroundImage from "../../assets/bg.webp?blur=8&imagetools";
+import BackgroundImage from "../../assets/bg.webp?blur=3&imagetools";
 
 export const BackgroundBanner = () => (
     <Image

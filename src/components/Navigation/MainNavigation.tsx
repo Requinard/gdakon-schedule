@@ -8,10 +8,9 @@ import {
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import { SettingsNavigationAction } from "./SettingsNavigationAction";
-
 import Today from "~icons/ic/outline-today";
 import HomeOutlined from "~icons/ic/outline-home";
+import SettingsIcon from "~icons/mdi/settings";
 
 const MainNavigationContainer = styled(Paper)({
     position: "absolute",
@@ -40,7 +39,13 @@ export const MainNavigation = () => {
                     component={Link}
                     icon={<Today />}
                 />
-                <SettingsNavigationAction />
+                <BottomNavigationAction
+                    label={"About"}
+                    value={"/about"}
+                    to={"/about"}
+                    component={Link}
+                    icon={<SettingsIcon />}
+                />
             </BottomNavigation>
         </MainNavigationContainer>
     );

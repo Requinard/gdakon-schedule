@@ -59,7 +59,7 @@ const TimeTravelPicker = () => {
     );
 
     return (
-        <ListItem>
+        <ListItem sx={{ mt: 1, mb: 1 }}>
             <DateTimePicker
                 value={now}
                 onChange={changeTimeTravelAmount}
