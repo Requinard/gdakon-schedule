@@ -6,7 +6,7 @@
         }
     },
     "EventSchedule": {
-        "title": "Harmonogram imprez",
+        "title": "Punkty programu",
         "EventChips": {
             "BookmarkChip": {
                 "label": "Zakładka"
@@ -18,18 +18,18 @@
         "Overview": {
             "title": "Ne",
             "current": {
-                "title": "Do następnego",
+                "title": "Bieżące wydarzenia",
                 "empty": "W tej chwili nie odbywają się żadne wydarzenia",
                 "subtitle_zero": "",
                 "subtitle_one": "W tej chwili odbywa się 1 wydarzenie",
-                "subtitle_other": "W tej chwili odbywa się {{count}} wydarzeń"
+                "subtitle_other": "W tej chwili odbywa się {{count}} wydarzenia"
             },
             "upcoming": {
                 "title": "Nadchodzące wydarzenia",
                 "empty": "Nie ma żadnych wydarzeń rozpoczynających się w najbliższym czasie",
                 "subtitle_zero": "",
                 "subtitle_one": "Wkrótce rozpocznie się 1 wydarzenie",
-                "subtitle_other": "Wkrótce rozpocznie się 5 wydarzeń"
+                "subtitle_other": "Wkrótce rozpoczną się {{count}} wydarzenia"
             }
         }
     },
@@ -38,11 +38,11 @@
         "OnlineCheck": {
             "offline": {
                 "title": "Jesteś offline",
-                "description": "Mamy lokalnie zbuforowane dane, ale nie możemy ich zaktualizować do czasu ponownego połączenia z Internetem"
+                "description": "Mamy zapisane dane lokalnie, ale nie możemy ich zaktualizować do czasu ponownego połączenia z internetem"
             },
             "online": {
                 "title": "Jesteś podłączony do internetu",
-                "description": "Będziemy aktualizować wszystko dla Ciebie"
+                "description": "Będziemy aktualizować dane na bieżąco"
             }
         }
     },
@@ -67,7 +67,7 @@
                 "subtitle": "Poruszanie się w czasie"
             },
             "TimeTravelPicker": {
-                "label": "Czas podróży Data"
+                "label": "Zmień czas"
             }
         }
     }
