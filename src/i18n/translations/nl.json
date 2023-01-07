@@ -1,0 +1,74 @@
+{
+    "Main": {},
+    "About": {
+        "AboutCard": {
+            "title": "Over"
+        }
+    },
+    "EventSchedule": {
+        "title": "Panel Rooster",
+        "EventChips": {
+            "BookmarkChip": {
+                "label": "Opgeslagen"
+            }
+        },
+        "EventListVirtualized": {
+            "header": "$t(EventSchedule:title)"
+        },
+        "Overview": {
+            "title": "Straks op Gdakon",
+            "current": {
+                "title": "Huidige panels",
+                "empty": "Op het moment is er niets te doen",
+                "subtitle_zero": "",
+                "subtitle_one": "Er neemt nu 1 panel plaats",
+                "subtitle_other": "Er nemen {{count}} panels plaats"
+            },
+            "upcoming": {
+                "title": "Opkomende Panels",
+                "empty": "Er zijn geen panels die binnenkort starten",
+                "subtitle_zero": "",
+                "subtitle_one": "1 panel start binnenkort",
+                "subtitle_other": "Er starten binnenkort {{count}} panels"
+            }
+        }
+    },
+    "Home": {
+        "title": "Gdakon 2023",
+        "OnlineCheck": {
+            "offline": {
+                "title": "Je bent offline",
+                "description": "We hebben de bestaande data lokaal opgeslagen. Maak verbinding met het internet om nieuwe data op te halen"
+            },
+            "online": {
+                "title": "Je bent verbonden met het internet!",
+                "description": "Data word automatisch gesynchroniseerd"
+            }
+        }
+    },
+    "Navigation": {
+        "MainNavigation": {
+            "home": "Start",
+            "schedule": "$t(EventSchedule:title)",
+            "about": "$t(About:AboutCard.title)"
+        }
+    },
+    "Settings": {
+        "LanguageSettings": {
+            "title": "Taal- en Lokalisatieinstellingen",
+            "english": "Engels",
+            "polish": "Pools",
+            "dutch": "Nederlands"
+        },
+        "TimeTravelSettings": {
+            "title": "Tijdreizen",
+            "EnableTimeTravel": {
+                "title": "Gebruik tijdreizen",
+                "subtitle": "Verplaats de applicatietijd"
+            },
+            "TimeTravelPicker": {
+                "label": "Tijdreisdatum"
+            }
+        }
+    }
+}

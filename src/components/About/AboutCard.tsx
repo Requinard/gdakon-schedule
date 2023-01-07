@@ -6,6 +6,7 @@ import {
     ListItemIcon,
     ListItemText,
 } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 import { LanguageSettings } from "../Settings/LanguageSettings";
 import { TimeTravelSettings } from "../Settings/TimeTravelSettings";
@@ -14,9 +15,10 @@ import { OnlineCheck } from "../Home/OnlineCheck";
 import GitIcon from "~icons/mdi/git";
 
 export const AboutCard = () => {
+    const { t } = useTranslation("About");
     return (
         <Card>
-            <CardHeader title={"About"} />
+            <CardHeader title={t("AboutCard.title")} />
             <OnlineCheck showIfOnline />
             <List>
                 <ListItem>

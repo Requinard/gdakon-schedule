@@ -13,7 +13,7 @@ import ScheduleIcon from "~icons/ic/sharp-schedule";
 
 export const OverviewCard = () => {
     const theme = useTheme();
-    const { t } = useTranslation("Schedule", { keyPrefix: "Overview" });
+    const { t } = useTranslation("EventSchedule");
     const { data = [] } = useGetEventScheduleQuery({});
     const current = useCurrentEvents(data);
     const upcoming = useUpcomingEvents(data);
@@ -34,23 +34,31 @@ export const OverviewCard = () => {
 
             <List>
                 <ListSection
-                    title={t("current_title")}
-                    subtitle={t("current", { count: current.length })}
+                    title={t("Overview.current.title")}
+                    subtitle={t("Overview.current.subtitle", {
+                        count: current.length,
+                    })}
                 />
                 <EventList
                     events={current}
                     emptyComponent={
-                        <Alert severity={"info"}>{t("current_none")}</Alert>
+                        <Alert severity={"info"}>
+                            {t("Overview.current.empty")}
+                        </Alert>
                     }
                 />
                 <ListSection
-                    title={t("upcoming_title")}
-                    subtitle={t("upcoming", { count: upcoming.length })}
+                    title={t("Overview.upcoming.title")}
+                    subtitle={t("Overview.upcoming.subtitle", {
+                        count: upcoming.length,
+                    })}
                 />
                 <EventList
                     events={upcoming}
                     emptyComponent={
-                        <Alert severity={"info"}>{t("upcoming_none")}</Alert>
+                        <Alert severity={"info"}>
+                            {t("Overview.upcoming.empty")}
+                        </Alert>
                     }
                 />
             </List>

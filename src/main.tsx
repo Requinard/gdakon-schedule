@@ -1,7 +1,7 @@
 import "@fontsource/roboto/latin.css";
 
 import "./i18n";
-
+import "./utilities/dayjs";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";

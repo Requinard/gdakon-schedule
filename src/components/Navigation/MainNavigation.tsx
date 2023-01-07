@@ -20,27 +20,27 @@ const MainNavigationContainer = styled(Paper)({
 });
 export const MainNavigation = () => {
     const location = useLocation();
-    const { t } = useTranslation("MainNavigation");
+    const { t } = useTranslation("Navigation");
     return (
         <MainNavigationContainer elevation={3}>
             <Divider />
             <BottomNavigation value={location.pathname} showLabels={true}>
                 <BottomNavigationAction
-                    label={t("home")}
+                    label={t("MainNavigation.home")}
                     value={"/"}
                     to={"/"}
                     component={Link}
                     icon={<HomeOutlined />}
                 />
                 <BottomNavigationAction
-                    label={t("schedule")}
+                    label={t("MainNavigation.schedule")}
                     value={"/schedule"}
                     to={"/schedule"}
                     component={Link}
                     icon={<Today />}
                 />
                 <BottomNavigationAction
-                    label={"About"}
+                    label={t("MainNavigation.about")}
                     value={"/about"}
                     to={"/about"}
                     component={Link}

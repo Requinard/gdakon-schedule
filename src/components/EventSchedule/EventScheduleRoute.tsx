@@ -9,7 +9,7 @@ export const EventScheduleRoute = () => {
     const { data = [] } = useGetEventScheduleQuery({});
     return (
         <EventFilterProvider events={data}>
-            <Container maxWidth={"xl"} sx={{ pt: 4, pb: 4 }}>
+            <Container maxWidth={"xl"} sx={{ pb: 4 }}>
                 <EventListVirtualized />
             </Container>
         </EventFilterProvider>

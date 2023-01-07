@@ -3,9 +3,9 @@ import { useMemo } from "react";
 import { flatMap, groupBy, keys, map, values } from "lodash";
 import { Box, Breadcrumbs, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import dayjs from "dayjs";
 
 import { NormalizedEventScheduleItem } from "../../store/gdakon.types";
-import { dayjs } from "../../utilities/dayjs";
 
 import { useEventFilter } from "./EventFilter.Provider";
 import { EventScheduleItemCard } from "./EventScheduleItemCard";
@@ -41,10 +41,10 @@ export const EventListVirtualized = () => {
             groupContent={(index) => (
                 <Breadcrumbs
                     separator={<Typography variant={"h4"}>{">"}</Typography>}
-                    sx={{ bgcolor: "background.default", pt: 1, pb: 1 }}
+                    sx={{ bgcolor: "background.default", pt: 3, pb: 3 }}
                 >
                     <Typography variant={"h4"}>
-                        {t("EventScheduleList.group_header_first")}
+                        {t("EventListVirtualized.header")}
                     </Typography>
                     <Typography variant={"h4"}>{groups[index]}</Typography>
                 </Breadcrumbs>

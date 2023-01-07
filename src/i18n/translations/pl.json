@@ -1,11 +1,74 @@
 {
-    "MainNavigation": {
-        "home": "Home",
-        "schedule": "Event Schedule"
+    "Main": {},
+    "About": {
+        "AboutCard": {
+            "title": "Informacje"
+        }
     },
-    "CurrentEvent": {
-        "title": "Currentski Eventsski",
-        "no_items": "jestem jablko",
-        "until": "Nada {{time}}"
+    "EventSchedule": {
+        "title": "Harmonogram imprez",
+        "EventChips": {
+            "BookmarkChip": {
+                "label": "Zakładka"
+            }
+        },
+        "EventListVirtualized": {
+            "header": "$t(EventSchedule:title)"
+        },
+        "Overview": {
+            "title": "Ne",
+            "current": {
+                "title": "Do następnego",
+                "empty": "W tej chwili nie odbywają się żadne wydarzenia",
+                "subtitle_zero": "",
+                "subtitle_one": "W tej chwili odbywa się 1 wydarzenie",
+                "subtitle_other": "W tej chwili odbywa się {{count}} wydarzeń"
+            },
+            "upcoming": {
+                "title": "Nadchodzące wydarzenia",
+                "empty": "Nie ma żadnych wydarzeń rozpoczynających się w najbliższym czasie",
+                "subtitle_zero": "",
+                "subtitle_one": "Wkrótce rozpocznie się 1 wydarzenie",
+                "subtitle_other": "Wkrótce rozpocznie się 5 wydarzeń"
+            }
+        }
+    },
+    "Home": {
+        "title": "Gdakon 2023",
+        "OnlineCheck": {
+            "offline": {
+                "title": "Jesteś offline",
+                "description": "Mamy lokalnie zbuforowane dane, ale nie możemy ich zaktualizować do czasu ponownego połączenia z Internetem"
+            },
+            "online": {
+                "title": "Jesteś podłączony do internetu",
+                "description": "Będziemy aktualizować wszystko dla Ciebie"
+            }
+        }
+    },
+    "Navigation": {
+        "MainNavigation": {
+            "home": "Dom",
+            "schedule": "$t(EventSchedule:title)",
+            "about": "$t(About:AboutCard.title)"
+        }
+    },
+    "Settings": {
+        "LanguageSettings": {
+            "title": "Wybór języka i lokalizacji",
+            "english": "Angielski",
+            "polish": "Polski",
+            "dutch": "Holenderski"
+        },
+        "TimeTravelSettings": {
+            "title": "Podróż w czasie",
+            "EnableTimeTravel": {
+                "title": "Włączenie podróży w czasie",
+                "subtitle": "Poruszanie się w czasie"
+            },
+            "TimeTravelPicker": {
+                "label": "Czas podróży Data"
+            }
+        }
     }
 }

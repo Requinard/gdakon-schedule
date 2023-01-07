@@ -11,6 +11,7 @@ import {
 import { useCallback } from "react";
 import dayjs, { Dayjs } from "dayjs";
 import { DateTimePicker } from "@mui/x-date-pickers";
+import { useTranslation } from "react-i18next";
 
 import { useAppDispatch, useAppSelector } from "../../store";
 import {
@@ -20,6 +21,7 @@ import {
 import { useNow } from "../../hooks/useNow";
 
 const EnableTimeTravel = () => {
+    const { t } = useTranslation("Settings");
     const dispatch = useAppDispatch();
 
     const enabled = useAppSelector(
@@ -29,8 +31,8 @@ const EnableTimeTravel = () => {
     return (
         <MenuItem onClick={() => dispatch(toggleTimeTravel(!enabled))}>
             <ListItemText
-                primary={"Enable time travel"}
-                secondary={"Move time (for debugging)"}
+                primary={t("TimeTravelSettings.EnableTimeTravel.title")}
+                secondary={t("TimeTravelSettings.EnableTimeTravel.title")}
                 secondaryTypographyProps={{
                     noWrap: true,
                 }}
@@ -43,6 +45,7 @@ const EnableTimeTravel = () => {
 };
 
 const TimeTravelPicker = () => {
+    const { t } = useTranslation("Settings");
     const now = useNow();
     const dispatch = useAppDispatch();
 
@@ -68,7 +71,7 @@ const TimeTravelPicker = () => {
                         fullWidth
                         size={"small"}
                         {...props}
-                        label={"Time Travel Date"}
+                        label={t("TimeTravelSettings.TimeTravelPicker.label")}
                     />
                 )}
             />
@@ -76,9 +79,10 @@ const TimeTravelPicker = () => {
     );
 };
 export const TimeTravelSettings = () => {
+    const { t } = useTranslation("Settings");
     return (
         <>
-            <ListSubheader>Time Travel</ListSubheader>
+            <ListSubheader>{t("TimeTravelSettings.title")}</ListSubheader>
             <EnableTimeTravel />
             <TimeTravelPicker />
         </>

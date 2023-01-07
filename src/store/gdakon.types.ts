@@ -1,6 +1,5 @@
 import { chain } from "lodash";
-
-import { dayjs } from "../utilities/dayjs";
+import dayjs from "dayjs";
 
 /**
  * This is a date string in the format of "13 Mar 20223"
@@ -51,8 +50,8 @@ export type NormalizedEventScheduleItem = EventScheduleItem & {
 
 export const normalizeEventScheduleResponse = (
     response: EventScheduleResponse
-): NormalizedEventScheduleItem[] =>
-    chain(response.events)
+): NormalizedEventScheduleItem[] => {
+    return chain(response.events)
         .flatMap((day) =>
             day.rooms.flatMap((room) =>
                 room.events.map(
@@ -63,11 +62,13 @@ export const normalizeEventScheduleResponse = (
                         roomNamePl: room.namePl,
                         startTime: dayjs(
                             `${day.date} ${event.start}`,
-                            "D MMM YYYY HH:mm"
+                            "D MMM YYYY HH:mm",
+                            "en-gb"
                         ).valueOf(),
                         endTime: dayjs(
                             `${day.date} ${event.end}`,
-                            "D MMM YYYY HH:mm"
+                            "D MMM YYYY HH:mm",
+                            "en-gb"
                         ).valueOf(),
                     })
                 )
@@ -75,3 +76,4 @@ export const normalizeEventScheduleResponse = (
         )
         .orderBy((it) => it.startTime, "asc")
         .value();
+};

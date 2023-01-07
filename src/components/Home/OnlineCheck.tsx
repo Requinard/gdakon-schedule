@@ -6,7 +6,7 @@ type OnlineCheckProps = {
     showIfOnline?: boolean;
 };
 export const OnlineCheck = ({ showIfOnline }: OnlineCheckProps) => {
-    const { t } = useTranslation("OnlineCheck");
+    const { t } = useTranslation("Home");
     const [offline, setOffline] = useState(!navigator.onLine);
 
     useEffect(() => {
@@ -26,9 +26,17 @@ export const OnlineCheck = ({ showIfOnline }: OnlineCheckProps) => {
         return (
             <Alert severity={offline ? "warning" : "success"}>
                 <AlertTitle>
-                    {t(offline ? "offline.title" : "online.title")}
+                    {t(
+                        offline
+                            ? "OnlineCheck.offline.title"
+                            : "OnlineCheck.online.title"
+                    )}
                 </AlertTitle>
-                {t(offline ? "offline.description" : "online.description")}
+                {t(
+                    offline
+                        ? "OnlineCheck.offline.description"
+                        : "OnlineCheck.online.description"
+                )}
             </Alert>
         );
     }

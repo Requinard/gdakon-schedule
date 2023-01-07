@@ -1,58 +1,74 @@
 {
-    "Schedule": {
-        "Overview": {
-            "title": "Up Next",
-            "upcoming_zero": "",
-            "upcoming_one": "There is 1 event starting soon",
-            "upcoming_other": "There are {{count}} events starting soon",
-            "upcoming_title": "Upcoming Events",
-            "upcoming_none": "There are no events starting soon",
-            "current_title": "Current Events",
-            "current_none": "There are no events taking place right now",
-            "current_zero": "",
-            "current_one": "There is 1 event taking place right now",
-            "current_other": "There are {{count}} events taking place right now"
-        },
-        "Event": {
-            "taking_place": "Taking place right now",
-            "starting": "Starting {{time}}"
+    "Main": {},
+    "About": {
+        "AboutCard": {
+            "title": "About"
         }
     },
-    "MainNavigation": {
-        "home": "Home",
-        "schedule": "Event Schedule",
-        "Settings": "Settings"
-    },
     "EventSchedule": {
-        "EventScheduleList": {
-            "group_header_first": "Event Schedule"
-        },
         "title": "Event Schedule",
-        "expired": "Expired"
+        "EventChips": {
+            "BookmarkChip": {
+                "label": "Bookmarked"
+            }
+        },
+        "EventListVirtualized": {
+            "header": "$t(EventSchedule:title)"
+        },
+        "Overview": {
+            "title": "Up Next",
+            "current": {
+                "title": "Current Events",
+                "empty": "There are no events taking place right now",
+                "subtitle_zero": "",
+                "subtitle_one": "There is 1 event taking place right now",
+                "subtitle_other": "There are {{count}} events taking place right now"
+            },
+            "upcoming": {
+                "title": "Upcoming events",
+                "empty": "There are no events starting soon",
+                "subtitle_zero": "",
+                "subtitle_one": "There is 1 event starting soon",
+                "subtitle_other": "There are {{count}} events starting soon"
+            }
+        }
     },
     "Home": {
         "title": "Gdakon 2023",
-        "upcoming": "Upcoming Events",
-        "current": "Current Events"
+        "OnlineCheck": {
+            "offline": {
+                "title": "You are offline",
+                "description": "We have locally cached data but we cannot update this data until you are connected to the internet again"
+            },
+            "online": {
+                "title": "You are connected to the internet!",
+                "description": "We will keep everything up to date for you"
+            }
+        }
     },
-    "CurrentEvent": {
-        "title": "Current Events",
-        "no_items": "There are no events currently going on",
-        "until": "Until {{time}}"
+    "Navigation": {
+        "MainNavigation": {
+            "home": "Home",
+            "schedule": "$t(EventSchedule:title)",
+            "about": "$t(About:AboutCard.title)"
+        }
     },
-    "UpcomingEvent": {
-        "title": "Upcoming Events",
-        "no_items": "There are no events currently going on",
-        "starting_in": "Starting {{time}}"
-    },
-    "OnlineCheck": {
-        "offline": {
-            "title": "You are offline",
-            "description": "We have locally cached data but we cannot update this data until you are connected to the internet again."
+    "Settings": {
+        "LanguageSettings": {
+            "title": "Language & Locale Selection",
+            "english": "English",
+            "polish": "Polish",
+            "dutch": "Dutch"
         },
-        "online": {
-            "title": "You are connected to the internet!",
-            "description": "We will keep everything up to date for you"
+        "TimeTravelSettings": {
+            "title": "Time Travel",
+            "EnableTimeTravel": {
+                "title": "Enable Time Travel",
+                "subtitle": "Move around in time"
+            },
+            "TimeTravelPicker": {
+                "label": "Time Travel Date"
+            }
         }
     }
 }

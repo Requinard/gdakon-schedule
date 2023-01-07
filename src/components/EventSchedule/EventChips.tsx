@@ -1,8 +1,9 @@
 import { Avatar, Chip } from "@mui/material";
 import { useCallback, useMemo } from "react";
-import { noop, size } from "lodash";
+import { noop } from "lodash";
+import { useTranslation } from "react-i18next";
+import dayjs from "dayjs";
 
-import { dayjs } from "../../utilities/dayjs";
 import { NormalizedEventScheduleItem } from "../../store/gdakon.types";
 import { useAppSelector } from "../../store";
 
@@ -11,28 +12,8 @@ import { useEventFilter } from "./EventFilter.Provider";
 import CheckedIcon from "~icons/ic/baseline-check-circle-outline";
 import DayIcon from "~icons/mdi/calendar-today";
 import RoomIcon from "~icons/ic/baseline-room";
-import ResetIcon from "~icons/ic/baseline-refresh";
 import BookmarkIcon from "~icons/mdi/bookmark";
 import ClockIcon from "~icons/mdi/clock-outline";
-
-export const ResetChip = () => {
-    const { reset, filters } = useEventFilter();
-
-    if (size(filters) === 0) {
-        return null;
-    }
-    return (
-        <Chip
-            avatar={
-                <Avatar>
-                    <ResetIcon fontSize={"1.2rem"} />
-                </Avatar>
-            }
-            label={"Reset filters"}
-            onClick={reset}
-        />
-    );
-};
 
 export const DayFilterChip = ({ timestamp }: { timestamp: number }) => {
     const { isEnabled, toggleFilter } = useEventFilter();
@@ -100,6 +81,7 @@ export const HourChip = ({ timestamp }: { timestamp: number }) => {
 };
 
 export const BookmarkedFilterChip = ({ show }: { show: boolean }) => {
+    const { t } = useTranslation("EventSchedule");
     const bookmarks = useAppSelector((state) => state.bookmarks.events);
     const { isEnabled, toggleFilter } = useEventFilter();
 
@@ -115,7 +97,7 @@ export const BookmarkedFilterChip = ({ show }: { show: boolean }) => {
     return (
         <Chip
             onClick={() => toggleFilter("bookmarks", filter)}
-            label={"Bookmarked"}
+            label={t("EventChips.BookmarkChip.label")}
             color={isEnabled("bookmarks") ? "secondary" : undefined}
             avatar={
                 <Avatar>

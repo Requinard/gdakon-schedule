@@ -1,19 +1,20 @@
 import { useMemo } from "react";
-import { Dayjs } from "dayjs";
+import dayjs, { Dayjs } from "dayjs";
 
 import { useAppSelector } from "../store";
-import { dayjs } from "../utilities/dayjs";
+import { useLocale } from "../i18n";
 
 export const useNow = () => {
+    const { locale } = useLocale();
     const { enabled, amount } = useAppSelector(
         (state) => state.settings.timetravel
     );
 
     return useMemo((): Dayjs => {
         if (enabled) {
-            return dayjs().add(amount, "milliseconds");
+            return dayjs().locale(locale).add(amount, "milliseconds");
         }
 
         return dayjs();
-    }, [enabled, amount]);
+    }, [enabled, amount, locale]);
 };

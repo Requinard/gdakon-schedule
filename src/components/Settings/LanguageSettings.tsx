@@ -5,45 +5,51 @@ import {
     ListSubheader,
     MenuItem,
 } from "@mui/material";
-import { useCallback } from "react";
-import { match } from "ts-pattern";
 import { useTranslation } from "react-i18next";
 
+import { useLocale } from "../../i18n";
+
 export const LanguageSettings = () => {
-    const { t, i18n } = useTranslation("MainNavigation");
-    const setLanguage = useCallback(
-        (locale: string) => {
-            match(locale)
-                .with("pl", () => {
-                    i18n.changeLanguage(locale);
-                })
-                .otherwise(() => {
-                    i18n.changeLanguage("en");
-                });
-        },
-        [i18n]
-    );
+    const { t } = useTranslation("Settings");
+    const { locale, setLocale } = useLocale();
+
     return (
         <>
-            <ListSubheader>{t("language")}</ListSubheader>
+            <ListSubheader>{t("LanguageSettings.title")}</ListSubheader>
 
             <MenuItem
-                selected={i18n.language === "en"}
-                onClick={() => setLanguage("en")}
+                selected={locale === "en"}
+                onClick={() => setLocale("en")}
             >
                 <ListItemIcon sx={{ pr: 2 }}>
                     <Avatar>🇬🇧</Avatar>
                 </ListItemIcon>
-                <ListItemText primary={"English"}></ListItemText>
+                <ListItemText
+                    primary={t("LanguageSettings.english")}
+                ></ListItemText>
             </MenuItem>
             <MenuItem
-                selected={i18n.language === "pl"}
-                onClick={() => setLanguage("pl")}
+                selected={locale === "pl"}
+                onClick={() => setLocale("pl")}
             >
                 <ListItemIcon sx={{ pr: 2 }}>
                     <Avatar>🇵🇱</Avatar>
                 </ListItemIcon>
-                <ListItemText>Polski</ListItemText>
+                <ListItemText
+                    primary={t("LanguageSettings.polish")}
+                ></ListItemText>
+            </MenuItem>
+
+            <MenuItem
+                selected={locale === "nl"}
+                onClick={() => setLocale("nl")}
+            >
+                <ListItemIcon sx={{ pr: 2 }}>
+                    <Avatar>🇳🇱</Avatar>
+                </ListItemIcon>
+                <ListItemText
+                    primary={t("LanguageSettings.dutch")}
+                ></ListItemText>
             </MenuItem>
         </>
     );
