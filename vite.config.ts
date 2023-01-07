@@ -6,7 +6,7 @@ import Icons from "unplugin-icons/vite";
 import html from "vite-plugin-html-config";
 import { imagetools } from "vite-imagetools";
 
-//@ts-expect-error but its on?
+//@ts-expect-error but it's on?
 import PackageJSON from "./package.json";
 
 // https://vitejs.dev/config/
@@ -17,9 +17,6 @@ export default defineConfig({
     define: {
         APP_NAME: JSON.stringify(PackageJSON.name),
         APP_VERSION: JSON.stringify(PackageJSON.version),
-    },
-    build: {
-        minify: false,
     },
     plugins: [
         react(),
