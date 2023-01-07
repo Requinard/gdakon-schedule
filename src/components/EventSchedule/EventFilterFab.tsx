@@ -19,7 +19,7 @@ export const EventFilterFab = () => {
                 color={"secondary"}
                 onClick={reset}
             >
-                <RemoveFilterIcon />
+                <RemoveFilterIcon fontSize={"1.3rem"} />
             </Fab>
         </Zoom>
     );
