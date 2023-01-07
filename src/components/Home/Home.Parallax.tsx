@@ -27,9 +27,9 @@ export const HomeParallax = () => {
         () => ({
             calc: (x: number, y: number) => [x - width / 2, y - height / 2],
             background: (x: number, y: number) =>
-                `translate3d(${x / 20}px,${y / 120}px,0)`,
+                `translate3d(${x / 60}px,${y / 40}px,0)`,
             foreground: (x: number, y: number) =>
-                `translate3d(${x / 16}px,${y / 70}px,0)`,
+                `translate3d(${x / 30}px,${y / 20}px,0)`,
         }),
         [width, height]
     );

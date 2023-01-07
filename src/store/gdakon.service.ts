@@ -10,26 +10,42 @@ export const gdakonService = createApi({
     reducerPath: "gdakon.service",
     baseQuery: fetchBaseQuery({
         baseUrl: "https://gdakon.org",
+        mode: "no-cors",
     }),
     endpoints: (builder) => ({
         getEventSchedule: builder.query<NormalizedEventScheduleItem[], unknown>(
             {
                 // query: () => ({
-                //     url: "/events/presenter.ashx"
+                //     url: "/events/presenter.ashx",
                 // }),
                 // transformResponse: (data: EventScheduleResponse) => {
-                //     console.debug("transforming");
-                //     try {
-                //         console.debug(data);
-                //         return normalizeEventScheduleResponse(data);
-                //     } catch (e) {
-                //         console.error(e);
-                //         return [];
-                //     }
+                //     return normalizeEventScheduleResponse(data);
                 // },
-                queryFn: () => ({
-                    data: normalizeEventScheduleResponse(gdakonSchedule),
-                }),
+                // #TODO Manual until cors is implemented
+                queryFn: () =>
+                    fetch("https://gdakon.org/events/presenter.ashx", {
+                        mode: "no-cors",
+                    })
+                        .then((res) => {
+                            console.log(res);
+                            return res.ok
+                                ? res.json()
+                                : Promise.reject("invalid status");
+                        })
+                        .then((res) => ({
+                            data: normalizeEventScheduleResponse(res.json()),
+                        }))
+                        .catch((e) => {
+                            console.error(
+                                "Failed to get data. Falling back to provided JSON",
+                                e
+                            );
+                            return {
+                                data: normalizeEventScheduleResponse(
+                                    gdakonSchedule
+                                ),
+                            };
+                        }),
             }
         ),
     }),
