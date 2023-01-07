@@ -1,5 +1,5 @@
 .idea/
-
+*.swp
 # Created by https://www.toptal.com/developers/gitignore/api/intellij+all,node,yarn,react
 # Edit at https://www.toptal.com/developers/gitignore?templates=intellij+all,node,yarn,react
 

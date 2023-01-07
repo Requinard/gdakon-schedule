@@ -1,4 +1,4 @@
-import { Card, CardHeader, List, Alert } from "@mui/material";
+import { Card, CardHeader, List, Alert, useTheme } from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -12,13 +12,20 @@ import { EventList } from "./EventList";
 import ScheduleIcon from "~icons/ic/sharp-schedule";
 
 export const OverviewCard = () => {
+    const theme = useTheme();
     const { t } = useTranslation("Schedule", { keyPrefix: "Overview" });
     const { data = [] } = useGetEventScheduleQuery({});
     const current = useCurrentEvents(data);
     const upcoming = useUpcomingEvents(data);
 
     return (
-        <Card>
+        <Card
+            sx={{
+                [theme.breakpoints.down("sm")]: {
+                    m: 1,
+                },
+            }}
+        >
             <CardHeader
                 avatar={<ScheduleIcon style={{ fontSize: "1.8rem" }} />}
                 title={t("title")}
