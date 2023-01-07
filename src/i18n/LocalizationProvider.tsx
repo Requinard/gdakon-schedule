@@ -9,7 +9,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { useLocalStorage } from "usehooks-ts";
 import { useTranslation } from "react-i18next";
-import { find, first, noop, some } from "lodash";
+import { find, noop } from "lodash";
 import { match } from "ts-pattern";
 import dayjs from "dayjs";
 
