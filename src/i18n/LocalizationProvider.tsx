@@ -9,7 +9,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { useLocalStorage } from "usehooks-ts";
 import { useTranslation } from "react-i18next";
-import { noop } from "lodash";
+import { find, first, noop, some } from "lodash";
 import { match } from "ts-pattern";
 import dayjs from "dayjs";
 
@@ -28,9 +28,26 @@ const LocaleContext = createContext<LocaleContextType>({
 
 export const useLocale = () => useContext(LocaleContext);
 
+const getInitialLangauge = (): Locale => {
+    const firstLang = navigator.languages.length
+        ? navigator.languages[0]
+        : navigator.language;
+
+    return (
+        find(Object.keys(resources), (it): it is Locale =>
+            firstLang.startsWith(it)
+        ) ?? "en"
+    );
+};
+
+const initialLangauge = getInitialLangauge();
+
 export const LocaleProvider = ({ children }: PropsWithChildren) => {
     const { i18n } = useTranslation();
-    const [locale, setLocale] = useLocalStorage<Locale>("localeSettings", "en");
+    const [locale, setLocale] = useLocalStorage<Locale>(
+        "localeSettings",
+        initialLangauge
+    );
 
     useEffect(() => {
         i18n.changeLanguage(locale).catch(() =>
