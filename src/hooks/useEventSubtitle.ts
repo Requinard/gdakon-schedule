@@ -14,13 +14,15 @@ export const useEventSubtitle = (
 ) => {
     const now = useNow();
     const state = useEventState(event);
-    const { t } = useTranslation("Schedule", { keyPrefix: "Event" });
+    const { t } = useTranslation("EventSchedule");
     return useMemo(() => {
         const timestamp = match(state)
             .with("upcoming", () =>
-                t("starting", { time: now.to(event.startTime) })
+                t("useEventSubtitle.starting", {
+                    time: now.to(event.startTime),
+                })
             )
-            .with("current", () => t("taking_place"))
+            .with("current", () => t("useEventSubtitle.taking_place"))
             .otherwise(() => dayjs(event.startTime).format("lll"));
 
         if (room !== null) {

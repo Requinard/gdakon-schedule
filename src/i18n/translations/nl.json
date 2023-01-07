@@ -31,6 +31,10 @@
                 "subtitle_one": "1 panel start binnenkort",
                 "subtitle_other": "Er starten binnenkort {{count}} panels"
             }
+        },
+        "useEventSubtitle": {
+            "starting": "Begint {{time}}",
+            "taking_place": "Panel is nu gaande"
         }
     },
     "Home": {

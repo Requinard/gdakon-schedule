@@ -31,6 +31,10 @@
                 "subtitle_one": "There is 1 event starting soon",
                 "subtitle_other": "There are {{count}} events starting soon"
             }
+        },
+        "useEventSubtitle": {
+            "starting": "Starting {{time}}",
+            "taking_place": "Currently taking place"
         }
     },
     "Home": {
