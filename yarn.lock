@@ -4370,6 +4370,7 @@ __metadata:
     react-redux: ^8.0.5
     react-router-dom: ^6.4.5
     react-transition-group: ^4.4.5
+    react-virtuoso: ^4.0.3
     redux-logger: ^3.0.6
     redux-persist: ^6.0.0
     ts-pattern: ^4.0.6
@@ -6087,6 +6088,16 @@ __metadata:
     react: ">=16.6.0"
     react-dom: ">=16.6.0"
   checksum: 75602840106aa9c6545149d6d7ae1502fb7b7abadcce70a6954c4b64a438ff1cd16fc77a0a1e5197cdd72da398f39eb929ea06f9005c45b132ed34e056ebdeb1
+  languageName: node
+  linkType: hard
+
+"react-virtuoso@npm:^4.0.3":
+  version: 4.0.3
+  resolution: "react-virtuoso@npm:4.0.3"
+  peerDependencies:
+    react: ">=16 || >=17 || >= 18"
+    react-dom: ">=16 || >=17 || >= 18"
+  checksum: 828ec62afc4804d1e37373af57eedbbaf61e42e6fa5ab8dd8e6738c41ce607fa0efa403e976c13e340b369562929fc735eddc39166e102aa9732aa26d2547168
   languageName: node
   linkType: hard
 

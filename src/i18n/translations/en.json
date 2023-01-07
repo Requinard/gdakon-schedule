@@ -24,6 +24,9 @@
         "Settings": "Settings"
     },
     "EventSchedule": {
+        "EventScheduleList": {
+            "group_header_first": "Event Schedule"
+        },
         "title": "Event Schedule",
         "expired": "Expired"
     },

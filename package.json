@@ -28,6 +28,7 @@
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.4.5",
     "react-transition-group": "^4.4.5",
+    "react-virtuoso": "^4.0.3",
     "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0",
     "ts-pattern": "^4.0.6",

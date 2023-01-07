@@ -1,4 +1,4 @@
-import { Fab } from "@mui/material";
+import { Fab, Zoom } from "@mui/material";
 import { size } from "lodash";
 
 import { useEventFilter } from "./EventFilter.Provider";
@@ -9,17 +9,18 @@ export const EventFilterFab = () => {
     const { reset, filters } = useEventFilter();
 
     return (
-        <Fab
-            sx={{
-                position: "absolute",
-                bottom: 80,
-                right: 32,
-            }}
-            color={"secondary"}
-            disabled={size(filters) === 0}
-            onClick={reset}
-        >
-            <RemoveFilterIcon />
-        </Fab>
+        <Zoom in={size(filters) > 0} mountOnEnter unmountOnExit>
+            <Fab
+                sx={{
+                    position: "absolute",
+                    bottom: 80,
+                    right: 32,
+                }}
+                color={"secondary"}
+                onClick={reset}
+            >
+                <RemoveFilterIcon />
+            </Fab>
+        </Zoom>
     );
 };
