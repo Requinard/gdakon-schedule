@@ -33,8 +33,24 @@ export default defineConfig({
         }),
         VitePWA({
             registerType: "autoUpdate",
+            manifest: {
+                name: "Gdakon Pocket Schedule",
+                short_name: "Gdakon",
+                description: "Check the Gdakon schedule from your phone!",
+                lang: "en",
+                theme_color: "#3a3d80",
+                icons: [
+                    {
+                        src: "https://gdakon.org/favicon.ico",
+                        sizes: "16x16",
+                        type: "image/icon",
+                    },
+                ],
+            },
             workbox: {
-                globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
+                globPatterns: ["**/*.{js,css,html,ico,png,svg,json}"],
+                cleanupOutdatedCaches: true,
+                sourcemap: true,
             },
         }),
         imagetools(),

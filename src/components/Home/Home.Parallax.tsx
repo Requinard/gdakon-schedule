@@ -7,6 +7,8 @@ import { Logo } from "../images/Logo";
 import { BackgroundBanner } from "../images/BackgroundBanner";
 import { OverviewCard } from "../EventSchedule/OverviewCard";
 
+import { OnlineCheck } from "./OnlineCheck";
+
 const AnimatedPage = styled(animated.div)({
     position: "absolute",
     height: "100%",
@@ -41,7 +43,7 @@ export const HomeParallax = () => {
             position={"relative"}
             overflow={"hidden"}
             onMouseMove={({ clientX: x, clientY: y }) =>
-                set({ xy: calc(x, y) })
+                set.start({ xy: calc(x, y) })
             }
         >
             <AnimatedPage
@@ -52,6 +54,7 @@ export const HomeParallax = () => {
             >
                 <Box height={"100%"}>
                     <BackgroundBanner />
+                    <OnlineCheck />
                 </Box>
             </AnimatedPage>
             <AnimatedPage style={{ transform: xy.to(foreground) }}>

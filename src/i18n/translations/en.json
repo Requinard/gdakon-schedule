@@ -41,5 +41,9 @@
         "title": "Upcoming Events",
         "no_items": "There are no events currently going on",
         "starting_in": "Starting {{time}}"
+    },
+    "OnlineChecker": {
+        "title": "You are offline",
+        "description": "We have locally cached data but we cannot update this data until you are connected to the internet again."
     }
 }
