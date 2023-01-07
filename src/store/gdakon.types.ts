@@ -1,4 +1,4 @@
-import { chain } from "lodash-es";
+import { chain } from "lodash";
 
 import { dayjs } from "../utilities/dayjs";
 

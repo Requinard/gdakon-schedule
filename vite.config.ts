@@ -12,11 +12,14 @@ import PackageJSON from "./package.json";
 // https://vitejs.dev/config/
 export default defineConfig({
     optimizeDeps: {
-        exclude: ["lodash-es"],
+        exclude: ["lodash"],
     },
     define: {
         APP_NAME: JSON.stringify(PackageJSON.name),
         APP_VERSION: JSON.stringify(PackageJSON.version),
+    },
+    build: {
+        minify: false,
     },
     plugins: [
         react(),

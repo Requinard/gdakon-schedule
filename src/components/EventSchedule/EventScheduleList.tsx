@@ -1,4 +1,4 @@
-import { chain, map, partition } from "lodash-es";
+import { chain, map, partition } from "lodash";
 import dayjs from "dayjs";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";

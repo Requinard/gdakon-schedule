@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { chain } from "lodash-es";
+import { chain } from "lodash";
 
 import { NormalizedEventScheduleItem } from "../store/gdakon.types";
 
