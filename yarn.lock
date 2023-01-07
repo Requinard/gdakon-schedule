@@ -1724,7 +1724,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@iconify/json@npm:^2.1.157":
+"@iconify/json@npm:^2.2.3":
   version: 2.2.3
   resolution: "@iconify/json@npm:2.2.3"
   dependencies:
@@ -1741,9 +1741,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@iconify/utils@npm:^2.0.3":
-  version: 2.0.10
-  resolution: "@iconify/utils@npm:2.0.10"
+"@iconify/utils@npm:^2.0.9":
+  version: 2.0.11
+  resolution: "@iconify/utils@npm:2.0.11"
   dependencies:
     "@antfu/install-pkg": ^0.1.1
     "@antfu/utils": ^0.7.2
@@ -1751,7 +1751,7 @@ __metadata:
     debug: ^4.3.4
     kolorist: ^1.6.0
     local-pkg: ^0.4.2
-  checksum: 5e6c00aa4df594980100693b1a00d59718678c71d19ec4c8ed8e88a8cf7b1a567a6ca85540c981d19c11209b0a68512009e2bd2cd1033d61bddd5d4065192706
+  checksum: d6e22b7ba866225c988ccef117381c0181053fef0234990ee78eceb21315a92c3aef783925909d5e0614b4ba70189df16995d44c8949b0f3531ecf23fbe75f7b
   languageName: node
   linkType: hard
 
@@ -4342,7 +4342,7 @@ __metadata:
     "@emotion/react": ^11.10.5
     "@emotion/styled": ^11.10.5
     "@fontsource/roboto": ^4.5.8
-    "@iconify/json": ^2.1.157
+    "@iconify/json": ^2.2.3
     "@mui/lab": ^5.0.0-alpha.112
     "@mui/material": ^5.11.0
     "@mui/x-date-pickers": ^5.0.12
@@ -4374,7 +4374,7 @@ __metadata:
     redux-persist: ^6.0.0
     ts-pattern: ^4.0.6
     typescript: 4.9.3
-    unplugin-icons: ^0.14.15
+    unplugin-icons: ^0.15.1
     use-immer: ^0.8.1
     usehooks-ts: ^2.9.1
     vite: ^4.0.0
@@ -7055,20 +7055,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unplugin-icons@npm:^0.14.15":
-  version: 0.14.15
-  resolution: "unplugin-icons@npm:0.14.15"
+"unplugin-icons@npm:^0.15.1":
+  version: 0.15.1
+  resolution: "unplugin-icons@npm:0.15.1"
   dependencies:
     "@antfu/install-pkg": ^0.1.1
     "@antfu/utils": ^0.7.2
-    "@iconify/utils": ^2.0.3
+    "@iconify/utils": ^2.0.9
     debug: ^4.3.4
     kolorist: ^1.6.0
     local-pkg: ^0.4.2
     unplugin: ^1.0.1
   peerDependencies:
     "@svgr/core": ">=5.5.0"
-    "@vue/compiler-sfc": ^3.0.2
+    "@vue/compiler-sfc": ^3.0.2 || ^2.7.0
     vue-template-compiler: ^2.6.12
     vue-template-es2015-compiler: ^1.9.0
   peerDependenciesMeta:
@@ -7080,7 +7080,7 @@ __metadata:
       optional: true
     vue-template-es2015-compiler:
       optional: true
-  checksum: a460a3e213c2e6b4fc36e43f9b5cd5e5ece2ef64c7775a51223c6ad477a2a1e1a1f0f16c76eb0ee79615d53d1c9e43c44d5de5fe2bb0e3b69056baf3b55a60fc
+  checksum: 188e2e2ef43e0f9857f502e4cc22dff154ff2465c5ae7c17e8466cdfe33bef50bd40f5e5db91cd0ff3a24bbba6946b4352edda587049ffcee4a759d09f8482a2
   languageName: node
   linkType: hard
 

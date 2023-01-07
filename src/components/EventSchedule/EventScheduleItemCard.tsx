@@ -52,7 +52,11 @@ export const EventScheduleItemCard = ({
                         onClick={toggleBookmark}
                         color={isBookmarked ? "warning" : undefined}
                     >
-                        {isBookmarked ? <BookmarkIcon /> : <AddBookmarkIcon />}
+                        {isBookmarked ? (
+                            <BookmarkIcon style={{ fontSize: "2rem" }} />
+                        ) : (
+                            <AddBookmarkIcon style={{ fontSize: "2rem" }} />
+                        )}
                     </IconButton>
                 }
             />

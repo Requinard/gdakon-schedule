@@ -12,7 +12,7 @@ import PackageJSON from "./package.json";
 // https://vitejs.dev/config/
 export default defineConfig({
     optimizeDeps: {
-        exclude: ["lodash"],
+        exclude: process.env.NODE_ENV === "production" ? ["lodash"] : [],
     },
     define: {
         APP_NAME: JSON.stringify(PackageJSON.name),
@@ -23,6 +23,23 @@ export default defineConfig({
     },
     plugins: [
         react(),
+        Icons({
+            compiler: "jsx",
+            jsx: "react",
+            defaultClass: "iconified",
+        }),
+        checker({
+            typescript: true,
+            eslint: {
+                lintCommand: "eslint ./src",
+            },
+        }),
+        VitePWA({
+            registerType: "autoUpdate",
+            workbox: {
+                globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
+            },
+        }),
         imagetools(),
         html({
             title: "Gdakon Pocket Schedule",
@@ -41,23 +58,6 @@ export default defineConfig({
                     value: "A nice and dandy pocket schedule",
                 },
             ],
-        }),
-        Icons({
-            compiler: "jsx",
-            jsx: "react",
-            defaultStyle: "width=24px;height=24px;",
-        }),
-        checker({
-            typescript: true,
-            eslint: {
-                lintCommand: "eslint ./src",
-            },
-        }),
-        VitePWA({
-            registerType: "autoUpdate",
-            workbox: {
-                globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
-            },
         }),
     ],
 });

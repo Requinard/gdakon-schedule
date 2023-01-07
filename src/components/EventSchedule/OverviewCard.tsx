@@ -9,7 +9,7 @@ import { useGetEventScheduleQuery } from "../../store/gdakon.service";
 
 import { EventList } from "./EventList";
 
-import ScheduleIcon from "~icons/ic/sharp-schedule?width=2rem&height=2rem";
+import ScheduleIcon from "~icons/ic/sharp-schedule";
 
 export const OverviewCard = () => {
     const { t } = useTranslation("Schedule", { keyPrefix: "Overview" });
@@ -20,7 +20,7 @@ export const OverviewCard = () => {
     return (
         <Card>
             <CardHeader
-                avatar={<ScheduleIcon />}
+                avatar={<ScheduleIcon style={{ fontSize: "1.8rem" }} />}
                 title={t("title")}
                 titleTypographyProps={{ variant: "h5" }}
             />

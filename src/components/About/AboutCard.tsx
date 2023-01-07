@@ -19,7 +19,7 @@ export const AboutCard = () => {
             <List>
                 <ListItem>
                     <ListItemIcon>
-                        <GitIcon />
+                        <GitIcon fontSize={"1.8rem"} />
                     </ListItemIcon>
                     <ListItemText primary={APP_NAME} secondary={APP_VERSION} />
                 </ListItem>

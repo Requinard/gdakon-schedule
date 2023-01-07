@@ -25,7 +25,7 @@ export const ResetChip = () => {
         <Chip
             avatar={
                 <Avatar>
-                    <ResetIcon />
+                    <ResetIcon fontSize={"1.2rem"} />
                 </Avatar>
             }
             label={"Reset filters"}

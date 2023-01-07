@@ -1,4 +1,5 @@
 import {
+    Avatar,
     ListItemIcon,
     ListItemText,
     ListSubheader,
@@ -30,14 +31,18 @@ export const LanguageSettings = () => {
                 selected={i18n.language === "en"}
                 onClick={() => setLanguage("en")}
             >
-                <ListItemIcon>🇬🇧</ListItemIcon>
-                <ListItemText>English</ListItemText>
+                <ListItemIcon sx={{ pr: 2 }}>
+                    <Avatar>🇬🇧</Avatar>
+                </ListItemIcon>
+                <ListItemText primary={"English"}></ListItemText>
             </MenuItem>
             <MenuItem
                 selected={i18n.language === "pl"}
                 onClick={() => setLanguage("pl")}
             >
-                <ListItemIcon>🇵🇱</ListItemIcon>
+                <ListItemIcon sx={{ pr: 2 }}>
+                    <Avatar>🇵🇱</Avatar>
+                </ListItemIcon>
                 <ListItemText>Polski</ListItemText>
             </MenuItem>
         </>
