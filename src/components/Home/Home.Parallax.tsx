@@ -54,7 +54,6 @@ export const HomeParallax = () => {
             >
                 <Box height={"100%"}>
                     <BackgroundBanner />
-                    <OnlineCheck />
                 </Box>
             </AnimatedPage>
             <AnimatedPage style={{ transform: xy.to(foreground) }}>
@@ -67,6 +66,7 @@ export const HomeParallax = () => {
                 >
                     <Grid item md={4}>
                         <Logo />
+                        <OnlineCheck />
                     </Grid>
                     <Grid item md={4}>
                         <OverviewCard />

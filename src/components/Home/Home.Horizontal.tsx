@@ -4,6 +4,8 @@ import { Logo } from "../images/Logo";
 import { OverviewCard } from "../EventSchedule/OverviewCard";
 import { BackgroundBanner } from "../images/BackgroundBanner";
 
+import { OnlineCheck } from "./OnlineCheck";
+
 export const HomeHorizontal = () => {
     return (
         <>
@@ -14,6 +16,7 @@ export const HomeHorizontal = () => {
                 <Box pt={4}>
                     <Logo />
                 </Box>
+                <OnlineCheck />
 
                 <OverviewCard />
             </Stack>

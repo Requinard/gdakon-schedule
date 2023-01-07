@@ -23,9 +23,7 @@ export const gdakonService = createApi({
                 // },
                 // #TODO Manual until cors is implemented
                 queryFn: () =>
-                    fetch("https://gdakon.org/events/presenter.ashx", {
-                        mode: "no-cors",
-                    })
+                    fetch("https://gdakon.org/events/presenter.ashx")
                         .then((res) => {
                             console.log(res);
                             return res.ok

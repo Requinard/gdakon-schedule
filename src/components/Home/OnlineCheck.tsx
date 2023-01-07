@@ -1,24 +1,37 @@
-import { useEventListener } from "usehooks-ts";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Alert, AlertTitle } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
-export const OnlineCheck = () => {
+type OnlineCheckProps = {
+    showIfOnline?: boolean;
+};
+export const OnlineCheck = ({ showIfOnline }: OnlineCheckProps) => {
     const { t } = useTranslation("OnlineCheck");
-    const [offline, setOffline] = useState(false);
+    const [offline, setOffline] = useState(!navigator.onLine);
 
-    useEventListener("offline", () => setOffline(true));
+    useEffect(() => {
+        const online = () => setOffline(!navigator.onLine);
+        const offline = () => setOffline(!navigator.onLine);
 
-    useEventListener("online", () => setOffline(false));
+        window.addEventListener("online", online);
+        window.addEventListener("offline", offline);
 
-    if (!offline) {
-        return null;
+        return () => {
+            window.removeEventListener("online", online);
+            window.removeEventListener("offline", offline);
+        };
+    }, []);
+
+    if (showIfOnline || offline) {
+        return (
+            <Alert severity={offline ? "warning" : "success"}>
+                <AlertTitle>
+                    {t(offline ? "offline.title" : "online.title")}
+                </AlertTitle>
+                {t(offline ? "offline.description" : "online.description")}
+            </Alert>
+        );
     }
 
-    return (
-        <Alert severity={"warning"}>
-            <AlertTitle>{t("title")}</AlertTitle>
-            {t("description")}
-        </Alert>
-    );
+    return null;
 };

@@ -1,4 +1,4 @@
-import { Fab, IconButton } from "@mui/material";
+import { Fab } from "@mui/material";
 import { size } from "lodash";
 
 import { useEventFilter } from "./EventFilter.Provider";
@@ -17,10 +17,9 @@ export const EventFilterFab = () => {
             }}
             color={"secondary"}
             disabled={size(filters) === 0}
+            onClick={reset}
         >
-            <IconButton onClick={reset}>
-                <RemoveFilterIcon />
-            </IconButton>
+            <RemoveFilterIcon />
         </Fab>
     );
 };
