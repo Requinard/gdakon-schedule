@@ -20,12 +20,13 @@ import { bookmarkSlice } from "./bookmarks";
 
 const logger = createLogger({});
 
-const reducer = combineReducers({
+export const reducer = combineReducers({
     [settingsSlice.name]: settingsSlice.reducer,
     [gdakonService.reducerPath]: gdakonService.reducer,
     [bookmarkSlice.name]: bookmarkSlice.reducer,
 });
 
+export const middlewares = [gdakonService.middleware];
 const persistedReducer = persistReducer(
     {
         key: "gdakon-scheduled",
@@ -50,7 +51,7 @@ export const store = configureStore({
                     REGISTER,
                 ],
             },
-        }).concat(gdakonService.middleware, logger),
+        }).concat(...middlewares, logger),
 });
 
 export const persistor = persistStore(store);

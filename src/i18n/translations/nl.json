@@ -60,6 +60,8 @@
     "Settings": {
         "LanguageSettings": {
             "title": "Taal- en Lokalisatieinstellingen",
+            "full_translation": "Zowel de app als de data is vertaald",
+            "partial_translation": "Enkel de app is vertaald. Inhoud word getoond in het engels",
             "english": "Engels",
             "polish": "Pools",
             "dutch": "Nederlands"

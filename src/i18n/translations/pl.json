@@ -61,6 +61,8 @@
     "Settings": {
         "LanguageSettings": {
             "title": "Wybór języka i lokalizacji",
+            "full_translation": "Zarówno aplikacja, jak i dane zostały przetłumaczone",
+            "partial_translation": "Przetłumaczona jest tylko aplikacja. Treść jest wyświetlana w języku angielskim",
             "english": "Angielski",
             "polish": "Polski",
             "dutch": "Holenderski"

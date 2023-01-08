@@ -20,7 +20,7 @@ import {
 } from "../../store/settings.slice";
 import { useNow } from "../../hooks/useNow";
 
-const EnableTimeTravel = () => {
+export const EnableTimeTravel = () => {
     const { t } = useTranslation("Settings");
     const dispatch = useAppDispatch();
 
@@ -29,7 +29,10 @@ const EnableTimeTravel = () => {
     );
 
     return (
-        <MenuItem onClick={() => dispatch(toggleTimeTravel(!enabled))}>
+        <MenuItem
+            onClick={() => dispatch(toggleTimeTravel(!enabled))}
+            role={"button"}
+        >
             <ListItemText
                 primary={t("TimeTravelSettings.EnableTimeTravel.title")}
                 secondary={t("TimeTravelSettings.EnableTimeTravel.title")}
@@ -38,13 +41,13 @@ const EnableTimeTravel = () => {
                 }}
             />
             <ListItemSecondaryAction>
-                <Switch checked={enabled} color={"secondary"} />
+                <Switch checked={enabled} color={"secondary"} role={"switch"} />
             </ListItemSecondaryAction>
         </MenuItem>
     );
 };
 
-const TimeTravelPicker = () => {
+export const TimeTravelPicker = () => {
     const { t } = useTranslation("Settings");
     const now = useNow();
     const dispatch = useAppDispatch();

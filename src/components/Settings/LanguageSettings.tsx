@@ -26,6 +26,7 @@ export const LanguageSettings = () => {
                 </ListItemIcon>
                 <ListItemText
                     primary={t("LanguageSettings.english")}
+                    secondary={t("LanguageSettings.full_translation")}
                 ></ListItemText>
             </MenuItem>
             <MenuItem
@@ -37,6 +38,7 @@ export const LanguageSettings = () => {
                 </ListItemIcon>
                 <ListItemText
                     primary={t("LanguageSettings.polish")}
+                    secondary={t("LanguageSettings.full_translation")}
                 ></ListItemText>
             </MenuItem>
 
@@ -49,6 +51,7 @@ export const LanguageSettings = () => {
                 </ListItemIcon>
                 <ListItemText
                     primary={t("LanguageSettings.dutch")}
+                    secondary={t("LanguageSettings.partial_translation")}
                 ></ListItemText>
             </MenuItem>
         </>

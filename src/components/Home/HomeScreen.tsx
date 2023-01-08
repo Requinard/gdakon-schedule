@@ -76,7 +76,16 @@ export const HomeScreen = () => {
 
                         <OnlineCheck />
                     </Grid>
-                    <Grid item xs={12} md={4}>
+                    <Grid
+                        item
+                        xs={12}
+                        md={4}
+                        sx={{
+                            [theme.breakpoints.down("sm")]: {
+                                pb: 8,
+                            },
+                        }}
+                    >
                         <OverviewCard />
                     </Grid>
                 </Grid>

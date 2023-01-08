@@ -1,3 +1,5 @@
+import path from "path";
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import { VitePWA } from "vite-plugin-pwa";
@@ -11,6 +13,11 @@ import PackageJSON from "./package.json";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    resolve: {
+        alias: {
+            "@": path.resolve(__dirname, "src"),
+        },
+    },
     optimizeDeps: {
         exclude: process.env.NODE_ENV === "production" ? ["lodash"] : [],
     },
@@ -55,7 +62,7 @@ export default defineConfig({
                 sourcemap: true,
             },
         }),
-        imagetools(),
+
         html({
             title: "Gdakon Pocket Schedule",
             metas: [
