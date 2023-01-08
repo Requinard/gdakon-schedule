@@ -1,6 +1,5 @@
 import "@fontsource/roboto/latin.css";
 
-import "./i18n";
 import "./utilities/dayjs";
 import React from "react";
 import ReactDOM from "react-dom/client";
@@ -9,9 +8,9 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider as StoreProvider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 
+import { LocaleProvider } from "./i18n";
 import { App } from "./App";
 import { persistor, store } from "./store";
-import { LocaleProvider } from "./i18n/LocalizationProvider";
 
 const theme = createTheme({
     palette: {

@@ -60,6 +60,8 @@
     "Settings": {
         "LanguageSettings": {
             "title": "Language & Locale Selection",
+            "full_translation": "Both the app and the content will be localized",
+            "partial_translation": "Only the app will be localized. Content will be in english",
             "english": "English",
             "polish": "Polish",
             "dutch": "Dutch"
