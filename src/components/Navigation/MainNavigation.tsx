@@ -18,6 +18,7 @@ const MainNavigationContainer = styled(Paper)({
     left: 0,
     right: 0,
 });
+
 export const MainNavigation = () => {
     const location = useLocation();
     const { t } = useTranslation("Navigation");
