@@ -262,3 +262,16 @@ sketch
 .pnp.*
 
 # End of https://www.toptal.com/developers/gitignore/api/intellij+all,node,yarn,react
+# Created by https://www.toptal.com/developers/gitignore/api/CypressIO
+# Edit at https://www.toptal.com/developers/gitignore?templates=CypressIO
+
+### CypressIO ###
+# gitignore template for the CypressIO, browser test framework
+# website: https://www.cypress.io/
+
+cypress/results/*
+cypress/reports/*
+cypress/screenshots/*
+cypress/videos/*
+
+# End of https://www.toptal.com/developers/gitignore/api/CypressIO

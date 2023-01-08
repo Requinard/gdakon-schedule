@@ -20,7 +20,7 @@
         "noEmit": true,
         "jsx": "react-jsx",
         "types": [
-            "unplugin-icons/types/react"
+            "unplugin-icons/types/react",
         ],
         "paths": {
             "@/*": [

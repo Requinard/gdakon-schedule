@@ -26,6 +26,7 @@ export const DayFilterChip = ({ timestamp }: { timestamp: number }) => {
 
     return (
         <Chip
+            data-testid={"DayFilterChip"}
             onClick={() => toggleFilter(name, filter)}
             label={name}
             avatar={
@@ -53,6 +54,7 @@ export const RoomFilterChip = ({ room }: { room: string | null }) => {
 
     return (
         <Chip
+            data-testid={"RoomFilterChip"}
             onClick={() => toggleFilter(room, filter)}
             avatar={
                 <Avatar>
@@ -70,6 +72,7 @@ export const RoomFilterChip = ({ room }: { room: string | null }) => {
 export const HourChip = ({ timestamp }: { timestamp: number }) => {
     return (
         <Chip
+            data-testid={"HourFilterChip"}
             label={dayjs(timestamp).format("LT")}
             avatar={
                 <Avatar>
@@ -96,6 +99,7 @@ export const BookmarkedFilterChip = ({ show }: { show: boolean }) => {
 
     return (
         <Chip
+            data-testid={"BookmarkFilterChip"}
             onClick={() => toggleFilter("bookmarks", filter)}
             label={t("EventChips.BookmarkChip.label")}
             color={isEnabled("bookmarks") ? "secondary" : undefined}
