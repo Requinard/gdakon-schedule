@@ -15,23 +15,15 @@ export const gdakonService = createApi({
     endpoints: (builder) => ({
         getEventSchedule: builder.query<NormalizedEventScheduleItem[], unknown>(
             {
-                // query: () => ({
-                //     url: "/events/presenter.ashx",
-                // }),
-                // transformResponse: (data: EventScheduleResponse) => {
-                //     return normalizeEventScheduleResponse(data);
-                // },
-                // #TODO Manual until cors is implemented
                 queryFn: () =>
                     fetch("https://gdakon.org/events/presenter.ashx")
-                        .then((res) => {
-                            console.log(res);
-                            return res.ok
+                        .then((res) =>
+                            res.ok
                                 ? res.json()
-                                : Promise.reject("invalid status");
-                        })
+                                : Promise.reject("invalid status")
+                        )
                         .then((res) => ({
-                            data: normalizeEventScheduleResponse(res.json()),
+                            data: normalizeEventScheduleResponse(res),
                         }))
                         .catch((e) => {
                             console.error(
