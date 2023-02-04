@@ -5,6 +5,7 @@ import { checker } from "vite-plugin-checker";
 import Icons from "unplugin-icons/vite";
 import html from "vite-plugin-html-config";
 import { imagetools } from "vite-imagetools";
+import { visualizer } from "rollup-plugin-visualizer";
 
 //@ts-expect-error but it's on?
 import PackageJSON from "./package.json";
@@ -18,8 +19,22 @@ export default defineConfig({
         APP_NAME: JSON.stringify(PackageJSON.name),
         APP_VERSION: JSON.stringify(PackageJSON.version),
     },
+    build: {
+        rollupOptions: {
+            output: {
+                manualChunks: {
+                    mui: ["@mui/material", "@mui/lab", "@mui/x-date-pickers"],
+                    react: ["react", "react-dom", "react-router-dom"],
+                    lodash: ["lodash"],
+                },
+            },
+        },
+    },
     plugins: [
         react(),
+        visualizer({
+            filename: "./dist/size.html",
+        }),
         Icons({
             compiler: "jsx",
             jsx: "react",
