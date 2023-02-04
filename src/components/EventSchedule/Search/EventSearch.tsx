@@ -26,7 +26,12 @@ export const EventSearch = () => {
 
             const searchValue = debouncedValue.toLocaleLowerCase();
 
-            return some([item.name.toLocaleLowerCase().includes(searchValue)]);
+            return some([
+                item.name.toLocaleLowerCase().includes(searchValue),
+                item.namePl.includes(searchValue),
+                item.desc.includes(searchValue),
+                item.descPl.includes(searchValue),
+            ]);
         });
     }, [debouncedValue, setFilter]);
 

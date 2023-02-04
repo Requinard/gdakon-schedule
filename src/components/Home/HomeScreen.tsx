@@ -49,8 +49,10 @@ export const HomeScreen = () => {
         >
             <AnimatedPage
                 style={{
-                    transform: xy.to(background),
-                    scale: 1.05,
+                    [theme.breakpoints.up("md")]: {
+                        transform: xy.to(background),
+                        scale: 1.05,
+                    },
                 }}
             >
                 <Box height={"100%"}>
@@ -60,10 +62,16 @@ export const HomeScreen = () => {
             <AnimatedPage style={{ transform: xy.to(foreground) }}>
                 <Grid
                     container
-                    alignItems={"center"}
                     justifyContent={"space-evenly"}
-                    height={"100%"}
-                    overflow={"auto"}
+                    alignItems={"center"}
+                    sx={{
+                        [theme.breakpoints.down("sm")]: {
+                            flex: 0,
+                        },
+                        [theme.breakpoints.up("md")]: {
+                            flex: 1,
+                        },
+                    }}
                 >
                     <Grid item xs={12} md={4}>
                         <Box
