@@ -6,6 +6,12 @@
         }
     },
     "EventSchedule": {
+        "Search": {
+            "search_label": "Search the schedule",
+            "search_placeholder": "Opening Ceremony . . .",
+            "date_subheader": "Filter by date",
+            "room_subheader": "Filter by room"
+        },
         "title": "Event Schedule",
         "EventChips": {
             "BookmarkChip": {

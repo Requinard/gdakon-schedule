@@ -27,6 +27,11 @@ const theme = createTheme({
         },
     },
     components: {
+        MuiContainer: {
+            defaultProps: {
+                maxWidth: "xl",
+            },
+        },
         MuiCardHeader: {
             defaultProps: {
                 titleTypographyProps: {

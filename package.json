@@ -22,6 +22,7 @@
         "dayjs": "^1.11.7",
         "i18next": "^22.4.5",
         "lodash": "^4.17.21",
+        "material-ui-popup-state": "^5.0.4",
         "mui-image": "^1.0.7",
         "pako": "^2.1.0",
         "react": "^18.2.0",

@@ -1,7 +1,7 @@
 import { GroupedVirtuoso } from "react-virtuoso";
 import { useMemo } from "react";
 import { flatMap, groupBy, keys, map, values } from "lodash";
-import { Box, Breadcrumbs, Typography } from "@mui/material";
+import { Box, Breadcrumbs, Container, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import dayjs from "dayjs";
 
@@ -9,6 +9,7 @@ import { NormalizedEventScheduleItem } from "../../store/gdakon.types";
 
 import { useEventFilter } from "./EventFilter.Provider";
 import { EventScheduleItemCard } from "./EventScheduleItemCard";
+import { EventSearch } from "./Search/EventSearch";
 
 type VirtuosoProps<T> = {
     groupCounts: number[];
@@ -19,6 +20,7 @@ type VirtuosoProps<T> = {
 export const EventListVirtualized = () => {
     const { t } = useTranslation("EventSchedule");
     const { filtered } = useEventFilter();
+
     const { groupCounts, groups, items } =
         useMemo((): VirtuosoProps<NormalizedEventScheduleItem> => {
             const groups = groupBy(filtered, (it) =>
@@ -35,26 +37,38 @@ export const EventListVirtualized = () => {
         }, [filtered]);
 
     return (
-        <GroupedVirtuoso
-            groupCounts={groupCounts}
-            height={"100%"}
-            groupContent={(index) => (
-                <Breadcrumbs
-                    separator={<Typography variant={"h4"}>{">"}</Typography>}
-                    sx={{ bgcolor: "background.default", pt: 3, pb: 3 }}
-                >
-                    <Typography variant={"h4"}>
-                        {t("EventListVirtualized.header")}
-                    </Typography>
-                    <Typography variant={"h4"}>{groups[index]}</Typography>
-                </Breadcrumbs>
-            )}
-            itemContent={(index) => (
-                <Box pt={1}>
-                    <EventScheduleItemCard event={items[index]} />
+        <Box display={"flex"} flexDirection={"column"} flex={1}>
+            <Container>
+                <Box pt={3}>
+                    <EventSearch />
                 </Box>
-            )}
-            components={{}}
-        />
+            </Container>
+            <GroupedVirtuoso
+                groupCounts={groupCounts}
+                height={"100%"}
+                groupContent={(index) => (
+                    <Container>
+                        <Breadcrumbs
+                            separator={
+                                <Typography variant={"h4"}>{">"}</Typography>
+                            }
+                            sx={{ bgcolor: "background.default", pt: 2, pb: 2 }}
+                        >
+                            <Typography variant={"h4"}>
+                                {t("EventListVirtualized.header")}
+                            </Typography>
+                            <Typography variant={"h4"}>
+                                {groups[index]}
+                            </Typography>
+                        </Breadcrumbs>
+                    </Container>
+                )}
+                itemContent={(index) => (
+                    <Container sx={{ pb: 1 }}>
+                        <EventScheduleItemCard event={items[index]} />
+                    </Container>
+                )}
+            />
+        </Box>
     );
 };

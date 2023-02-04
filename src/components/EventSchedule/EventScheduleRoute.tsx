@@ -1,5 +1,3 @@
-import { Container } from "@mui/material";
-
 import { useGetEventScheduleQuery } from "../../store/gdakon.service";
 
 import { EventFilterProvider } from "./EventFilter.Provider";
@@ -9,9 +7,7 @@ export const EventScheduleRoute = () => {
     const { data = [] } = useGetEventScheduleQuery({});
     return (
         <EventFilterProvider events={data}>
-            <Container maxWidth={"xl"} sx={{ pb: 4 }}>
-                <EventListVirtualized />
-            </Container>
+            <EventListVirtualized />
         </EventFilterProvider>
     );
 };

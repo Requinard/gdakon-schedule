@@ -18,7 +18,7 @@ import ClockIcon from "~icons/mdi/clock-outline";
 export const DayFilterChip = ({ timestamp }: { timestamp: number }) => {
     const { isEnabled, toggleFilter } = useEventFilter();
 
-    const name = useMemo(() => dayjs(timestamp).format("L"), [timestamp]);
+    const name = useMemo(() => dayjs(timestamp).format("LL"), [timestamp]);
 
     const filter = useCallback((it: NormalizedEventScheduleItem) => {
         return dayjs(timestamp).isSame(it.startTime, "day");
