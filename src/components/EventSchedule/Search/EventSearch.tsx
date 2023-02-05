@@ -1,46 +1,41 @@
 import { Button, ButtonGroup, Icon, TextField } from "@mui/material";
-import { useEffect, useState } from "react";
-import { useDebounce } from "usehooks-ts";
 import { useTranslation } from "react-i18next";
-import { size, some } from "lodash";
+import { useMemo } from "react";
+import { sample } from "lodash";
 
 import { useEventFilter } from "../EventFilter.Provider";
 
 import { DayFilterMenu } from "./DayFilterMenu";
 import { RoomFilterMenu } from "./RoomFilterMenu";
+import { BookmarkFilterButton } from "./BookmarkFilterButton";
+import { ResetButton } from "./ResetButton";
 
 import ClearIcon from "~icons/ic/baseline-clear";
 import SearchIcon from "~icons/ic/baseline-search";
 
 export const EventSearch = () => {
-    const { t } = useTranslation("EventSchedule", { keyPrefix: "Search" });
-    const [value, setValue] = useState("");
-    const debouncedValue = useDebounce(value, 300);
-    const { setFilter, reset, filters } = useEventFilter();
+    const { t, i18n } = useTranslation("EventSchedule", {
+        keyPrefix: "Search",
+    });
+    const { setSearch, filters, original } = useEventFilter();
 
-    useEffect(() => {
-        setFilter("search", (item) => {
-            if (debouncedValue.length < 3) {
-                return true;
-            }
+    const placeholder = useMemo(() => {
+        const item = sample(original);
 
-            const searchValue = debouncedValue.toLocaleLowerCase();
+        const name =
+            i18n.language.startsWith("pl") && item?.namePl !== null
+                ? item?.namePl
+                : item?.name;
 
-            return some([
-                item.name.toLocaleLowerCase().includes(searchValue),
-                item.namePl.includes(searchValue),
-                item.desc.includes(searchValue),
-                item.descPl.includes(searchValue),
-            ]);
-        });
-    }, [debouncedValue, setFilter]);
+        return `${name} . . .`;
+    }, [original, i18n]);
 
     return (
         <TextField
-            value={value}
+            value={filters.search}
             label={t("search_label")}
-            placeholder={t("search_placeholder") ?? undefined}
-            onChange={(e) => setValue(e.target.value)}
+            placeholder={placeholder}
+            onChange={(e) => setSearch(e.target.value)}
             InputProps={{
                 startAdornment: (
                     <Icon sx={{ pr: 4 }}>
@@ -55,13 +50,14 @@ export const EventSearch = () => {
                     >
                         <Button
                             onClick={() => {
-                                setValue("");
-                                reset();
+                                setSearch("");
                             }}
-                            disabled={size(filters) === 0}
+                            disabled={filters.search.length === 0}
                         >
                             <ClearIcon fontSize={"1.4rem"} />
                         </Button>
+                        <ResetButton />
+                        <BookmarkFilterButton />
                         <RoomFilterMenu />
                         <DayFilterMenu />
                     </ButtonGroup>

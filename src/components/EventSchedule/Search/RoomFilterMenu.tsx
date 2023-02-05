@@ -12,8 +12,9 @@ import {
     bindToggle,
     usePopupState,
 } from "material-ui-popup-state/hooks";
-import { map, size } from "lodash";
+import { chain, values } from "lodash";
 import { useTranslation } from "react-i18next";
+import { useMemo } from "react";
 
 import { useEventFilter } from "../EventFilter.Provider";
 
@@ -21,13 +22,29 @@ import CheckIcon from "~icons/ic/round-check";
 import RoomIcon from "~icons/ic/baseline-room";
 
 export const RoomFilterMenu = () => {
-    const { t } = useTranslation("EventSchedule", { keyPrefix: "Search" });
+    const { t, i18n } = useTranslation("EventSchedule", {
+        keyPrefix: "Search",
+    });
 
-    const { roomFilters, isEnabled, toggleFilter } = useEventFilter();
+    const { toggleRoom, original, filters } = useEventFilter();
 
     const popover = usePopupState({ variant: "popover" });
 
-    if (size(roomFilters) === 0) {
+    const rooms = useMemo(
+        () =>
+            chain(original)
+                .map((it) =>
+                    i18n.language.startsWith("pl") && it.roomNamePl
+                        ? it.roomNamePl
+                        : it.roomName
+                )
+                .compact()
+                .uniq()
+                .value(),
+        [original]
+    );
+
+    if (rooms.length === 0) {
         return null;
     }
     return (
@@ -46,17 +63,18 @@ export const RoomFilterMenu = () => {
             >
                 <MenuList>
                     <ListSubheader>{t("room_subheader")}</ListSubheader>
-                    {map(roomFilters, (fn, name) => {
-                        const enabled = isEnabled(name);
+                    {rooms.map((room) => {
                         return (
                             <MenuItem
-                                key={name}
-                                onClick={() => toggleFilter(name, fn)}
+                                key={room}
+                                onClick={() => toggleRoom(room)}
                             >
                                 <ListItemIcon>
-                                    {enabled && <CheckIcon />}
+                                    {values(filters.rooms).includes(room) ? (
+                                        <CheckIcon />
+                                    ) : null}
                                 </ListItemIcon>
-                                <ListItemText primary={name} />
+                                <ListItemText primary={room} />
                             </MenuItem>
                         );
                     })}

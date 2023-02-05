@@ -1,4 +1,5 @@
 import {
+    Badge,
     Button,
     ListItemIcon,
     ListItemText,
@@ -12,8 +13,10 @@ import {
     bindToggle,
     usePopupState,
 } from "material-ui-popup-state/hooks";
-import { map, size } from "lodash";
+import { chain, some } from "lodash";
 import { useTranslation } from "react-i18next";
+import { useMemo } from "react";
+import dayjs from "dayjs";
 
 import { useEventFilter } from "../EventFilter.Provider";
 
@@ -23,16 +26,23 @@ import CheckIcon from "~icons/ic/round-check";
 export const DayFilterMenu = () => {
     const { t } = useTranslation("EventSchedule", { keyPrefix: "Search" });
 
-    const { dayFilters, isEnabled, toggleFilter } = useEventFilter();
+    const { toggleDate, original, filters } = useEventFilter();
 
     const popover = usePopupState({ variant: "popover" });
 
-    if (size(dayFilters) === 0) {
-        return null;
-    }
+    const dates = useMemo(
+        () =>
+            chain(original)
+                .map((it) => dayjs(it.startTime))
+                .uniqBy((it) => it.format("LL"))
+                .value(),
+        [original]
+    );
     return (
         <Button {...bindToggle(popover)}>
-            <DayIcon fontSize={"1.4rem"} />
+            <Badge badgeContent={filters.dates.length} color={"warning"}>
+                <DayIcon fontSize={"1.4rem"} />
+            </Badge>
             <Popover
                 {...bindPopover(popover)}
                 anchorOrigin={{
@@ -47,17 +57,18 @@ export const DayFilterMenu = () => {
                 <MenuList>
                     <ListSubheader>{t("date_subheader")}</ListSubheader>
 
-                    {map(dayFilters, (fn, name) => {
-                        const enabled = isEnabled(name);
+                    {dates.map((date) => {
                         return (
                             <MenuItem
-                                key={name}
-                                onClick={() => toggleFilter(name, fn)}
+                                key={date.format("LL")}
+                                onClick={() => toggleDate(date)}
                             >
                                 <ListItemIcon>
-                                    {enabled && <CheckIcon />}
+                                    {some(filters.dates, (it) =>
+                                        it.isSame(date, "day")
+                                    ) && <CheckIcon />}
                                 </ListItemIcon>
-                                <ListItemText primary={name} />
+                                <ListItemText primary={date.format("LL")} />
                             </MenuItem>
                         );
                     })}

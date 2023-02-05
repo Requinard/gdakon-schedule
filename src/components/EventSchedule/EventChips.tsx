@@ -1,11 +1,8 @@
 import { Avatar, Chip } from "@mui/material";
-import { useCallback, useMemo } from "react";
+import { useMemo } from "react";
 import { noop } from "lodash";
 import { useTranslation } from "react-i18next";
 import dayjs from "dayjs";
-
-import { NormalizedEventScheduleItem } from "../../store/gdakon.types";
-import { useAppSelector } from "../../store";
 
 import { useEventFilter } from "./EventFilter.Provider";
 
@@ -16,36 +13,27 @@ import BookmarkIcon from "~icons/mdi/bookmark";
 import ClockIcon from "~icons/mdi/clock-outline";
 
 export const DayFilterChip = ({ timestamp }: { timestamp: number }) => {
-    const { isEnabled, toggleFilter } = useEventFilter();
+    const { toggleDate, dayEnabled } = useEventFilter();
 
-    const name = useMemo(() => dayjs(timestamp).format("LL"), [timestamp]);
-
-    const filter = useCallback((it: NormalizedEventScheduleItem) => {
-        return dayjs(timestamp).isSame(it.startTime, "day");
-    }, []);
+    const day = useMemo(() => dayjs(timestamp), [timestamp]);
 
     return (
         <Chip
-            onClick={() => toggleFilter(name, filter)}
-            label={name}
+            onClick={() => toggleDate(day)}
+            label={day.format("LL")}
             avatar={
                 <Avatar>
                     <DayIcon />
                 </Avatar>
             }
-            color={isEnabled(name) ? "secondary" : undefined}
-            deleteIcon={isEnabled(name) ? <CheckedIcon /> : undefined}
+            color={dayEnabled(day) ? "secondary" : undefined}
+            deleteIcon={dayEnabled(day) ? <CheckedIcon /> : undefined}
         />
     );
 };
 
 export const RoomFilterChip = ({ room }: { room: string | null }) => {
-    const { isEnabled, toggleFilter } = useEventFilter();
-
-    const filter = useCallback(
-        (it: NormalizedEventScheduleItem) => it.roomName === room,
-        [room]
-    );
+    const { roomEnabled, toggleRoom } = useEventFilter();
 
     if (room === null) {
         return null;
@@ -53,16 +41,16 @@ export const RoomFilterChip = ({ room }: { room: string | null }) => {
 
     return (
         <Chip
-            onClick={() => toggleFilter(room, filter)}
+            onClick={() => toggleRoom(room)}
             avatar={
                 <Avatar>
                     <RoomIcon />
                 </Avatar>
             }
             label={room}
-            color={isEnabled(room) ? "secondary" : undefined}
+            color={roomEnabled(room) ? "secondary" : undefined}
             onDelete={noop}
-            deleteIcon={isEnabled(room) ? <CheckedIcon /> : undefined}
+            deleteIcon={roomEnabled(room) ? <CheckedIcon /> : undefined}
         />
     );
 };
@@ -82,13 +70,7 @@ export const HourChip = ({ timestamp }: { timestamp: number }) => {
 
 export const BookmarkedFilterChip = ({ show }: { show: boolean }) => {
     const { t } = useTranslation("EventSchedule");
-    const bookmarks = useAppSelector((state) => state.bookmarks.events);
-    const { isEnabled, toggleFilter } = useEventFilter();
-
-    const filter = useCallback(
-        (event: NormalizedEventScheduleItem) => bookmarks.includes(event.id),
-        [bookmarks]
-    );
+    const { filters, toggleBookmarked } = useEventFilter();
 
     if (!show) {
         return null;
@@ -96,9 +78,9 @@ export const BookmarkedFilterChip = ({ show }: { show: boolean }) => {
 
     return (
         <Chip
-            onClick={() => toggleFilter("bookmarks", filter)}
+            onClick={() => toggleBookmarked()}
             label={t("EventChips.BookmarkChip.label")}
-            color={isEnabled("bookmarks") ? "secondary" : undefined}
+            color={filters.bookmarked ? "secondary" : undefined}
             avatar={
                 <Avatar>
                     <BookmarkIcon />

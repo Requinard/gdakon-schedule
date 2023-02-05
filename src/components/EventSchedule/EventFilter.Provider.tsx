@@ -1,47 +1,54 @@
 import { useImmer } from "use-immer";
-import {
-    createContext,
-    PropsWithChildren,
-    useCallback,
-    useContext,
-    useMemo,
-} from "react";
-import { chain, every, noop } from "lodash";
-import dayjs from "dayjs";
-import { useTranslation } from "react-i18next";
+import { createContext, PropsWithChildren, useContext, useMemo } from "react";
+import { every, isEqual, noop, some } from "lodash";
+import { Dayjs } from "dayjs";
+import { useDebounce } from "usehooks-ts";
 
 import { NormalizedEventScheduleItem } from "../../store/gdakon.types";
-
-import { EventFilterFab } from "./EventFilterFab";
+import { useAppSelector } from "../../store";
 
 type EventFilterProviderProps = {
     events: NormalizedEventScheduleItem[];
 };
 
-type EventFilterFn = (item: NormalizedEventScheduleItem) => boolean;
+type EventFilters = {
+    search: string | "";
+    dates: Dayjs[];
+    rooms: string[];
+    bookmarked: boolean;
+};
+
+export const defaultEventFilters = {
+    search: "",
+    dates: [],
+    rooms: [],
+    bookmarked: false,
+};
 
 type EventFilterContextProps = {
-    toggleFilter: (key: string, fn: EventFilterFn) => void;
-    setFilter: (key: string, fn: EventFilterFn) => void;
-    isEnabled: (key: string) => boolean;
     reset: () => void;
     original: NormalizedEventScheduleItem[];
     filtered: NormalizedEventScheduleItem[];
-    filters: Record<string, EventFilterFn>;
-    dayFilters: Record<string, EventFilterFn>;
-    roomFilters: Record<string, EventFilterFn>;
+    filters: EventFilters;
+    setSearch: (search: string) => void;
+    toggleDate: (date: Dayjs) => void;
+    dayEnabled: (date: Dayjs) => boolean;
+    toggleRoom: (room: string) => void;
+    roomEnabled: (room: string) => boolean;
+    toggleBookmarked: () => void;
 };
 
 const EventFilterContext = createContext<EventFilterContextProps>({
-    toggleFilter: noop,
-    setFilter: noop,
-    isEnabled: () => false,
     original: [],
     filtered: [],
     reset: noop,
-    filters: {},
-    dayFilters: {},
-    roomFilters: {},
+    filters: defaultEventFilters,
+    setSearch: noop,
+    toggleDate: noop,
+    dayEnabled: () => false,
+    toggleRoom: noop,
+    roomEnabled: () => false,
+    toggleBookmarked: noop,
 });
 
 export const useEventFilter = () => useContext(EventFilterContext);
@@ -50,103 +57,86 @@ export const EventFilterProvider = ({
     children,
     events,
 }: PropsWithChildren<EventFilterProviderProps>) => {
-    const { i18n } = useTranslation();
-    const [filterStorage, setFilterStorage] = useImmer<
-        Record<string, EventFilterFn>
-    >({});
-
-    const dayFilters = useMemo(() => {
-        return chain(events)
-            .groupBy((it) => dayjs(it.startTime).format("LL"))
-            .mapValues(
-                (value, key) => (item: NormalizedEventScheduleItem) =>
-                    dayjs(item.startTime).isSame(key, "date")
-            )
-            .value();
-    }, [events]);
-
-    const roomFilters = useMemo(() => {
-        return chain(events)
-            .groupBy((event) =>
-                i18n.language.startsWith("pl") && event.roomNamePl !== null
-                    ? event.roomNamePl
-                    : event.roomName
-            )
-            .omitBy((value, key) => key === "null")
-            .mapValues(
-                (values, key) => (item: NormalizedEventScheduleItem) =>
-                    item.roomName === key || item.roomNamePl === key
-            )
-            .value();
-    }, [i18n, events]);
-
-    const toggleFilter = useCallback(
-        (key: string, fn: EventFilterFn) => {
-            setFilterStorage((draft) => {
-                if (key in draft) {
-                    delete draft[key];
-                } else {
-                    draft[key] = fn;
-                }
-            });
-        },
-        [setFilterStorage]
-    );
-
-    const setFilter = useCallback(
-        (key: string, fn: EventFilterFn) =>
-            setFilterStorage((draft) => {
-                draft[key] = fn;
-            }),
-        [setFilterStorage]
-    );
-
-    const isEnabled = useCallback(
-        (key: string) => key in filterStorage,
-        [filterStorage]
-    );
+    const bookmarks = useAppSelector((state) => state.bookmarks.events);
+    const [filters, setFilters] = useImmer<EventFilters>(defaultEventFilters);
+    const debouncedFilters = useDebounce(filters, 200);
 
     const filtered = useMemo(() => {
-        const filters = Object.values(filterStorage);
-
-        if (filters.length === 0) {
+        if (isEqual(debouncedFilters, defaultEventFilters)) {
             return events;
         }
 
-        return events.filter((it) => every(filters, (filter) => filter(it)));
-    }, [filterStorage, events]);
+        const searchLowered = debouncedFilters.search.toLocaleLowerCase();
 
-    const reset = useCallback(() => setFilterStorage({}), [setFilterStorage]);
+        return events.filter((event) =>
+            every([
+                debouncedFilters.search.length > 2
+                    ? event.name.toLocaleLowerCase().includes(searchLowered)
+                    : true,
+                debouncedFilters.dates.length > 0
+                    ? some(debouncedFilters.dates, (it) =>
+                          it.isSame(event.startTime, "day")
+                      )
+                    : true,
+                debouncedFilters.rooms.length > 0
+                    ? some(
+                          debouncedFilters.rooms,
+                          (it) =>
+                              it === event.roomName || it === event.roomNamePl
+                      )
+                    : true,
+                debouncedFilters.bookmarked
+                    ? bookmarks.includes(event.id)
+                    : true,
+            ])
+        );
+    }, [debouncedFilters, events]);
 
-    const value = useMemo(
-        (): EventFilterContextProps => ({
-            toggleFilter,
-            setFilter,
-            isEnabled,
+    const value = useMemo((): EventFilterContextProps => {
+        const dayEnabled = (date: Dayjs, filters: EventFilters) =>
+            some(filters.dates, (it) => it.isSame(date, "day"));
+        const roomEnabled = (room: string, filters: EventFilters) =>
+            filters.rooms.includes(room);
+
+        return {
             original: events,
             filtered,
-            reset,
-            filters: filterStorage,
-            dayFilters,
-            roomFilters,
-        }),
-        [
-            toggleFilter,
-            setFilter,
-            isEnabled,
-            events,
-            filtered,
-            reset,
-            filterStorage,
-            dayFilters,
-            roomFilters,
-        ]
-    );
+            reset: () => setFilters(defaultEventFilters),
+            filters,
+            setSearch: (search) =>
+                setFilters((draft) => {
+                    draft.search = search;
+                }),
+            toggleDate: (date) =>
+                setFilters((draft) => {
+                    if (dayEnabled(date, draft)) {
+                        draft.dates = draft.dates.filter(
+                            (it) => !it.isSame(date, "day")
+                        );
+                    } else {
+                        draft.dates.push(date);
+                    }
+                }),
+            dayEnabled: (date) => dayEnabled(date, filters),
+            toggleRoom: (room) =>
+                setFilters((draft) => {
+                    if (roomEnabled(room, draft)) {
+                        draft.rooms = draft.rooms.filter((it) => it !== room);
+                    } else {
+                        draft.rooms.push(room);
+                    }
+                }),
+            roomEnabled: (room) => roomEnabled(room, filters),
+            toggleBookmarked: () =>
+                setFilters((draft) => {
+                    draft.bookmarked = !draft.bookmarked;
+                }),
+        } as EventFilterContextProps;
+    }, [events, filtered, filters]);
 
     return (
         <EventFilterContext.Provider value={value}>
             {children}
-            <EventFilterFab />
         </EventFilterContext.Provider>
     );
 };
