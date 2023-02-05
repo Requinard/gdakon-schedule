@@ -1,7 +1,9 @@
 import { useRegisterSW } from "virtual:pwa-register/react";
 import { Alert, AlertTitle, Button } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 export const ServiceWorker = () => {
+    const { t } = useTranslation("ServiceWorker");
     const { needRefresh, updateServiceWorker } = useRegisterSW();
     const [needRefreshState] = needRefresh;
 
@@ -21,8 +23,8 @@ export const ServiceWorker = () => {
                 </Button>
             }
         >
-            <AlertTitle> A new version is available</AlertTitle>
-            Upgrade to the newest version to stay up to date with Gdakon
+            <AlertTitle>{t("update_available_title")}</AlertTitle>
+            {t("update_available_subtitle")}
         </Alert>
     );
 };
