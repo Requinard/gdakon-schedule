@@ -46,7 +46,7 @@ export const EventListVirtualized = () => {
                 height={"100%"}
                 groupContent={(index) => (
                     <Container>
-                        <Box pt={2} pb={2} pl={1}>
+                        <Box pt={2} pb={2} pl={2} bgcolor={"background.paper"}>
                             <Typography variant={"h4"}>
                                 {groups[index]}
                             </Typography>
