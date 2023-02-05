@@ -90,7 +90,7 @@ export const EventFilterProvider = ({
                     : true,
             ])
         );
-    }, [debouncedFilters, events]);
+    }, [debouncedFilters, events, bookmarks]);
 
     const value = useMemo((): EventFilterContextProps => {
         const dayEnabled = (date: Dayjs, filters: EventFilters) =>
