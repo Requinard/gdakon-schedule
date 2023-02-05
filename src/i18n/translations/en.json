@@ -80,5 +80,13 @@
                 "label": "Time Travel Date"
             }
         }
+    },
+    "EventChips": {
+        "signup_required": "Sign-up required",
+        "signup_required_tooltip": "You can only join this event if you've signed up via the website",
+        "organizer_tooltip": "This is one of the organizers of this event"
+    },
+    "LoadingIndicator": {
+        "loading": "Please hold on while we are loading the data . . ."
     }
 }

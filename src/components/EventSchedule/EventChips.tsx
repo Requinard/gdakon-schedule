@@ -4,6 +4,8 @@ import { noop } from "lodash";
 import { useTranslation } from "react-i18next";
 import dayjs from "dayjs";
 
+import { NormalizedEventScheduleItem } from "../../store/gdakon.types";
+
 import { useEventFilter } from "./EventFilter.Provider";
 
 import CheckedIcon from "~icons/ic/baseline-check-circle-outline";
@@ -11,6 +13,8 @@ import DayIcon from "~icons/mdi/calendar-today";
 import RoomIcon from "~icons/ic/baseline-room";
 import BookmarkIcon from "~icons/mdi/bookmark";
 import ClockIcon from "~icons/mdi/clock-outline";
+import PawIcon from "~icons/mdi/paw";
+import SignUprequiredIcon from "~icons/mdi/lock";
 
 export const DayFilterChip = ({ timestamp }: { timestamp: number }) => {
     const { toggleDate, dayEnabled } = useEventFilter();
@@ -58,6 +62,7 @@ export const RoomFilterChip = ({ room }: { room: string | null }) => {
 export const HourChip = ({ timestamp }: { timestamp: number }) => {
     return (
         <Chip
+            color={"primary"}
             label={dayjs(timestamp).format("LT")}
             avatar={
                 <Avatar>
@@ -83,9 +88,54 @@ export const BookmarkedFilterChip = ({ show }: { show: boolean }) => {
             color={filters.bookmarked ? "secondary" : undefined}
             avatar={
                 <Avatar>
-                    <BookmarkIcon />
+                    <BookmarkIcon fontSize={"1.1rem"} />
                 </Avatar>
             }
+        />
+    );
+};
+export const OrganizerChips = ({ organizers }: { organizers: string[] }) => {
+    const { t } = useTranslation("EventChips");
+    return (
+        <>
+            {organizers.map((organizer) => (
+                <Chip
+                    key={organizer}
+                    label={organizer}
+                    title={t("organizer_tooltip")}
+                    color={"primary"}
+                    avatar={
+                        <Avatar>
+                            <PawIcon fontSize={"1.1rem"} />
+                        </Avatar>
+                    }
+                />
+            ))}
+        </>
+    );
+};
+
+export const SignUpChip = ({
+    event,
+}: {
+    event: NormalizedEventScheduleItem;
+}) => {
+    const { t } = useTranslation("EventChips");
+
+    if (!event.requiresSignUps) {
+        return null;
+    }
+
+    return (
+        <Chip
+            title={t("signup_required_tooltip")}
+            color={"warning"}
+            avatar={
+                <Avatar sx={{ bgcolor: "warning.dark" }}>
+                    <SignUprequiredIcon />
+                </Avatar>
+            }
+            label={t("signup_required")}
         />
     );
 };

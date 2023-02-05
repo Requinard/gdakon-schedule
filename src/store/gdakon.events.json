@@ -1,56 +1,341 @@
 {
     "events": [
         {
-            "dayOfWeek": 4,
-            "date": "9 Mar 2023",
+            "dayOfWeek": 3,
+            "date": "1 Mar 2023",
             "rooms": [
                 {
-                    "id": "59c747da-7550-486e-9de6-cf1cccc591d0",
+                    "id": "9d4ae251-5377-4efb-9d4b-10ccfcd0ca77",
                     "name": null,
                     "namePl": null,
                     "events": [
                         {
-                            "id": "4f381799-673b-4044-b373-8114eaac0a31",
-                            "name": "Opening Ceremony",
-                            "desc": "Hey fluffy pirates! As always, we're starting off with some short yet important information for all attendees, followed by complimentary drinks with a short Meet & Greet.",
+                            "id": "2da34f0c-568c-4dda-866a-6bfa495f0836",
+                            "name": "Opening ceremony",
+                            "desc": "We're starting with some short yet important information for all attendees, followed by a bonfire Meet & Greet!",
                             "namePl": "Oficjalne rozpoczęcie",
                             "descPl": "",
                             "start": "17:00",
-                            "end": "18:00"
+                            "end": "18:00",
+                            "organizers": [
+                                "Lemurr"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
                         },
                         {
-                            "id": "7b4e5cbf-d52a-4083-8f60-8bff5d21dd7a",
-                            "name": "Meet & Greet",
-                            "desc": "Stick around right after the Opening\r\nCeremony and grab one of the complimentary\r\ndrinks from our bar! Perfect to break the ice\r\nand get to know other attendees. Want to\r\nshow off how loud you can howl? Perfect -\r\nwe'll also have karaoke!",
-                            "namePl": "Meet & Greet",
-                            "descPl": "",
+                            "id": "f79625af-89ce-4e08-8630-861c2ad227f1",
+                            "name": "Bonfire Meet & Greet",
+                            "desc": "Right after the opening ceremony we invite you to come outside and join us for a bonfire with food & drinks! Tell spooky stories, meet new people, and sit down with fellow furs around the warm fire. Perfect to break the ice and get to know other attendees!",
+                            "namePl": "Bonfire Meet & Greet",
+                            "descPl": "Right after the opening ceremony we invite you to come outside and join us for a bonfire with food & drinks! Tell spooky stories, meet new people, and sit down with fellow furs around the warm fire. Perfect to break the ice and get to know other attendees!",
                             "start": "18:00",
-                            "end": "19:00"
+                            "end": "19:30",
+                            "organizers": [],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
                         },
                         {
-                            "id": "a319a2d9-e092-4948-897b-c2473d47c8c6",
+                            "id": "5578fad2-750d-42da-9559-f0f321c8275d",
                             "name": "Karaoke",
-                            "desc": "We have both UltraStar Karaoke (where only music is heard, and you can SEE yourself sing) and KaraFun - where you can actually hear yourself sing. Karaoke will be hosted on evenings by furs passionate about it - We will keep the party flowing! Everyone is welcome, in or out of suit!",
+                            "desc": "Show off your howl at this all-you-can-sing event! We have both UltraStar - where you score by singing along with the vocals, and KaraFun - where your voice takes center stage instead! Karaoke will be hosted every evening by passionate furs who'll keep the party going all night long! Everyone is welcome, in or out of suit!",
                             "namePl": "Karaoke",
-                            "descPl": "",
-                            "start": "19:00",
-                            "end": "23:59"
+                            "descPl": "Show off your howl at this all-you-can-sing event! We have both UltraStar - where you score by singing along with the vocals, and KaraFun - where your voice takes center stage instead! Karaoke will be hosted every evening by passionate furs who'll keep the party going all night long! Everyone is welcome, in or out of suit!",
+                            "start": "19:30",
+                            "end": "23:59",
+                            "organizers": [
+                                "Noxam Shenterei",
+                                "Guree",
+                                "Birdy",
+                                "Nemadur"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
                         }
                     ]
                 },
                 {
-                    "id": "b7324dbb-97cd-438f-92a3-fef1b8700497",
+                    "id": "c49d4b5d-8320-4414-a549-60f1a1ab0b8c",
                     "name": null,
                     "namePl": null,
                     "events": [
                         {
-                            "id": "e5633a89-5366-4d7e-ab9a-e6a160b4eb05",
-                            "name": "Pirate Hotel Adventure",
-                            "desc": "What pirate wouldn't want riches from all the seven seas? There are 7 posters hidden across the hotel. They'll give you clues pointing towards a treasure. If you are witty and brave enough to take on the challenge, find them all and take a selfie with each poster. Come to ConOps once you've found all seven. The fastest explorers will be rewarded!",
-                            "namePl": "Pirate Adventure",
+                            "id": "6c854a29-4884-4c71-86aa-9572111cb4a7",
+                            "name": "D&D One-Shot: \"Haunting of Abandoned Manor\"",
+                            "desc": "Do you hear the call of dice rolling? Fancy a bit of role-playing? Do the high 20's and low 1's make you laugh and scream? We got you covered with role-playing game one-shots! These are totally casual D&D 5th edition single-shot game for up to 7 players. No previous experience needed. Come embark with us on a fantasy adventure!\r\n­\r\nD&D One Shots Schedule:\r\n­\r\n▶ \"Haunting of Abandoned Manor\"\r\nWednesday 14:00 - 16:30\r\n­\r\n▶ \"The Cursed painting.\"\r\nSunday 14:00 - 17:00\r\n­\r\nAll D&D sessions take place in the small RPG Room on the right hand side from Main Stage entrance.",
+                            "namePl": "D&D One-Shot: \"Haunting of Abandoned Manor\"",
+                            "descPl": "Do you hear the call of dice rolling? Fancy a bit of role-playing? Do the high 20's and low 1's make you laugh and scream? We got you covered with role-playing game one-shots! These are totally casual D&D 5th edition single-shot game for up to 7 players. No previous experience needed. Come embark with us on a fantasy adventure!\r\n­\r\nD&D One Shots Schedule:\r\n­\r\n▶ \"Haunting of Abandoned Manor\"\r\nWednesday 14:00 - 16:30\r\n­\r\n▶ \"The Cursed painting.\"\r\nSunday 14:00 - 17:00\r\n­\r\nAll D&D sessions take place in the small RPG Room on the right hand side from Main Stage entrance.",
+                            "start": "14:00",
+                            "end": "16:30",
+                            "organizers": [
+                                "Flamian"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
+                        },
+                        {
+                            "id": "f40fcf55-18e4-41b3-ba43-920345256298",
+                            "name": "Haunted Hotel",
+                            "desc": "Right after the opening ceremony we invite you to come outside and join us for a bonfire with food & drinks! Tell spooky stories, meet new people, and sit down with fellow furs around the warm fire. Perfect to break the ice and get to know other attendees!",
+                            "namePl": "Haunted Hotel",
+                            "descPl": "Right after the opening ceremony we invite you to come outside and join us for a bonfire with food & drinks! Tell spooky stories, meet new people, and sit down with fellow furs around the warm fire. Perfect to break the ice and get to know other attendees!",
+                            "start": "19:30",
+                            "end": "21:30",
+                            "organizers": [
+                                "Aldu"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "dayOfWeek": 4,
+            "date": "2 Mar 2023",
+            "rooms": [
+                {
+                    "id": "9d4ae251-5377-4efb-9d4b-10ccfcd0ca77",
+                    "name": null,
+                    "namePl": null,
+                    "events": [
+                        {
+                            "id": "072005e6-b809-49e7-8f4c-ced16a76b6e7",
+                            "name": "NERF III Arena",
+                            "desc": "One arena, a bunch of furries, and hundreds of foam darts. Bring your own NERF gun! Don't have one? We'll lend you one! Will you survive this NERF Free For All shootout?",
+                            "namePl": "NERF III Arena",
+                            "descPl": "One arena, a bunch of furries, and hundreds of foam darts. Bring your own NERF gun! Don't have one? We'll lend you one! Will you survive this NERF Free For All shootout?",
+                            "start": "12:00",
+                            "end": "13:30",
+                            "organizers": [],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
+                        },
+                        {
+                            "id": "993442c7-ccf6-46ff-993a-89088d19047a",
+                            "name": "The Art of Music in Video Games",
+                            "desc": "Learn how great video game soundtracks are made behind the scenes, and why this process is important.",
+                            "namePl": "The Art of Music in Video Games",
+                            "descPl": "Learn how great video game soundtracks are made behind the scenes, and why this process is important.",
+                            "start": "14:00",
+                            "end": "15:00",
+                            "organizers": [
+                                "Dafty"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
+                        },
+                        {
+                            "id": "b8dde1c7-a45f-4429-9f21-8f778a829a76",
+                            "name": "Snack Exchange",
+                            "desc": "Snacks galore! Come see (and taste!) what other countries offer. This is THE event for those who like to share and talk about their local treats. Discover tastes that came to Gdakon from all over Europe!",
+                            "namePl": "Snack Exchange",
+                            "descPl": "Snacks galore! Come see (and taste!) what other countries offer. This is THE event for those who like to share and talk about their local treats. Discover tastes that came to Gdakon from all over Europe!",
+                            "start": "15:30",
+                            "end": "17:30",
+                            "organizers": [
+                                "Birdy"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
+                        },
+                        {
+                            "id": "b3fb6259-9161-44c8-993f-3ed46b88901e",
+                            "name": "Sign-up for Fursuit Olympics",
+                            "desc": "",
+                            "namePl": "Sign-up for Fursuit Olympics",
                             "descPl": "",
+                            "start": "19:00",
+                            "end": "19:15",
+                            "organizers": [
+                                "Lemurr"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
+                        },
+                        {
+                            "id": "4877644e-15d9-415a-b840-d0ce5fca4b1b",
+                            "name": "Fursuit Olympics",
+                            "desc": "Many will enter the Fursuit Olympics, but only one will leave... victorious! Got reaper's reflexes and a detective's keen eye? Join us and snatch that prize! Remember to come a bit earlier to register if you want to take part.",
+                            "namePl": "Fursuit Olympics",
+                            "descPl": "Many will enter the Fursuit Olympics, but only one will leave... victorious! Got reaper's reflexes and a detective's keen eye? Join us and snatch that prize! Remember to come a bit earlier to register if you want to take part.",
+                            "start": "19:15",
+                            "end": "21:30",
+                            "organizers": [
+                                "Lemurr"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
+                        },
+                        {
+                            "id": "72b3ba7a-febe-4956-aee8-af20dd035c28",
+                            "name": "DANCEFLOOR",
+                            "desc": "",
+                            "namePl": "DANCEFLOOR",
+                            "descPl": "",
+                            "start": "22:00",
+                            "end": "03:00",
+                            "organizers": [],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
+                        }
+                    ]
+                },
+                {
+                    "id": "294e75a0-8262-42ce-80c5-69bd036916b6",
+                    "name": null,
+                    "namePl": null,
+                    "events": [
+                        {
+                            "id": "01788214-92fb-4dae-b095-4acf2a2a950a",
+                            "name": "Your First Furry Con",
+                            "desc": "New here? Excited? A bit overwhelmed? We'll help you take your first steps into the furry convention magic",
+                            "namePl": "Your First Furry Con",
+                            "descPl": "New here? Excited? A bit overwhelmed? We'll help you take your first steps into the furry convention magic",
+                            "start": "12:00",
+                            "end": "13:00",
+                            "organizers": [
+                                "Kerubia "
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
+                        },
+                        {
+                            "id": "a2301deb-5fc1-411f-aedd-1ea46f5ab330",
+                            "name": "How we help reptiles and why you should too!",
+                            "desc": "Ever thought of having a pet snake, turtle, or lizard? It's not as easy as you think! Help4herps is a foundation located in Gdansk, that helps exotic animals and takes care of abandoned and neglected animals in need. We'll show you how to take proper care of your reptile friends.",
+                            "namePl": "How we help reptiles and why you should too!",
+                            "descPl": "Ever thought of having a pet snake, turtle, or lizard? It's not as easy as you think! Help4herps is a foundation located in Gdansk, that helps exotic animals and takes care of abandoned and neglected animals in need. We'll show you how to take proper care of your reptile friends.",
+                            "start": "13:30",
+                            "end": "15:30",
+                            "organizers": [
+                                "Sammy"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
+                        },
+                        {
+                            "id": "97579bd4-2705-4eff-8c49-83ab42c3a15e",
+                            "name": "How it's made: Fursuitwalk",
+                            "desc": "Have you ever wanted to organize or help out with a fursuitwalk? This panel will give you the basic information you need to know how to get started!",
+                            "namePl": "How it's made: Fursuitwalk",
+                            "descPl": "Have you ever wanted to organize or help out with a fursuitwalk? This panel will give you the basic information you need to know how to get started!",
+                            "start": "16:00",
+                            "end": "17:30",
+                            "organizers": [
+                                "Agent"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
+                        },
+                        {
+                            "id": "7d39ceaa-756a-474c-b694-aba1f581ebf9",
+                            "name": "The Jackbox Party Panel",
+                            "desc": "Come and join us for a few rounds of Jackbox! Compete against your fellow Gdakon attendees and try to become the #1 Jackbox player! Jackbox games are played with your phone. Each game has a theme such as puns, drawing, or trivia.",
+                            "namePl": "The Jackbox Party Panel",
+                            "descPl": "Come and join us for a few rounds of Jackbox! Compete against your fellow Gdakon attendees and try to become the #1 Jackbox player! Jackbox games are played with your phone. Each game has a theme such as puns, drawing, or trivia.",
                             "start": "18:30",
-                            "end": "21:30"
+                            "end": "20:30",
+                            "organizers": [
+                                "requinard"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
+                        },
+                        {
+                            "id": "0e780b23-5934-4533-97b8-e53a67e6af30",
+                            "name": "Balloon Party",
+                            "desc": "Looking for some colorful, bouncy fun? Join us for the craze at our Balloon Party! Inflatables and plush toys are welcome - they will make photos even better!",
+                            "namePl": "Balloon Party",
+                            "descPl": "Looking for some colorful, bouncy fun? Join us for the craze at our Balloon Party! Inflatables and plush toys are welcome - they will make photos even better!",
+                            "start": "20:00",
+                            "end": "23:00",
+                            "organizers": [
+                                "Tygrys"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
+                        }
+                    ]
+                },
+                {
+                    "id": "28e7bfb8-4847-4629-bfe9-f492d5ed21c3",
+                    "name": null,
+                    "namePl": null,
+                    "events": [
+                        {
+                            "id": "59603f2e-c30b-443c-8308-b181fb460451",
+                            "name": "Why your favourite app is subscription based now",
+                            "desc": "Back in my day you paid once and you owned it! And now...? Why almost all software, and even hardware, is moving to a subscription-based model? What's Software as a Service (SaaS) and how come now it seems to be the only logical way?",
+                            "namePl": "Why your favourite app is subscription based now",
+                            "descPl": "Back in my day you paid once and you owned it! And now...? Why almost all software, and even hardware, is moving to a subscription-based model? What's Software as a Service (SaaS) and how come now it seems to be the only logical way?",
+                            "start": "12:00",
+                            "end": "13:30",
+                            "organizers": [
+                                "Lemurr"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
+                        },
+                        {
+                            "id": "d26866f7-26e9-43aa-a48c-c649b01efec9",
+                            "name": "Linocut (Linoryt) Workshop",
+                            "desc": "Learn the basics and possibilities of a linocut technique. During this workshop, you'll be able to make your own stamp... or create one from our templates, if you don't feel like doing the engraving yourself!",
+                            "namePl": "Linocut (Linoryt) Workshop",
+                            "descPl": "Learn the basics and possibilities of a linocut technique. During this workshop, you'll be able to make your own stamp... or create one from our templates, if you don't feel like doing the engraving yourself!",
+                            "start": "14:00",
+                            "end": "16:00",
+                            "organizers": [
+                                "Sashada.G"
+                            ],
+                            "requiresSignUps": true,
+                            "signUpCount": 0
+                        },
+                        {
+                            "id": "23e520af-df21-4497-96ac-b6fe4fb0b00c",
+                            "name": "VRChat introduction and meetup",
+                            "desc": "Learn what the real \"metaverse\" is all about and what it offers to the furry fandom: a new dimension of creativity, online interaction, virtual cons and parties. You can use this opportunity to meet other virtual furs as well!",
+                            "namePl": "VRChat introduction and meetup",
+                            "descPl": "Learn what the real \"metaverse\" is all about and what it offers to the furry fandom: a new dimension of creativity, online interaction, virtual cons and parties. You can use this opportunity to meet other virtual furs as well!",
+                            "start": "16:30",
+                            "end": "17:30",
+                            "organizers": [
+                                "Patroll"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
+                        },
+                        {
+                            "id": "dbb78db1-1cef-47e7-ada6-38eb4ebce47c",
+                            "name": "Why Dracula is the coolest vampire ever",
+                            "desc": "Come and learn all sorts of interesting facts about Bram Stoker's original 1897 book. Interesting facts both for those who have read the book, and those who haven't (yet!). We'll be talking about symbolism, feminism, Slavicness, \"What We Do in the Shadows\" and more!",
+                            "namePl": "Why Dracula is the coolest vampire ever",
+                            "descPl": "Come and learn all sorts of interesting facts about Bram Stoker's original 1897 book. Interesting facts both for those who have read the book, and those who haven't (yet!). We'll be talking about symbolism, feminism, Slavicness, \"What We Do in the Shadows\" and more!",
+                            "start": "18:00",
+                            "end": "19:00",
+                            "organizers": [
+                                "Akijuro"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
+                        },
+                        {
+                            "id": "261f58f4-1550-464e-a728-08c06912c057",
+                            "name": "Karaoke",
+                            "desc": "Show off your howl at this all-you-can-sing event! We have both UltraStar - where you score by singing along with the vocals, and KaraFun - where your voice takes center stage instead! Karaoke will be hosted every evening by passionate furs who'll keep the party going all night long! Everyone is welcome, in or out of suit!",
+                            "namePl": "Karaoke",
+                            "descPl": "Show off your howl at this all-you-can-sing event! We have both UltraStar - where you score by singing along with the vocals, and KaraFun - where your voice takes center stage instead! Karaoke will be hosted every evening by passionate furs who'll keep the party going all night long! Everyone is welcome, in or out of suit!",
+                            "start": "20:00",
+                            "end": "03:00",
+                            "organizers": [
+                                "Noxam Shenterei",
+                                "Guree",
+                                "Birdy",
+                                "Nemadur"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
                         }
                     ]
                 }
@@ -58,209 +343,224 @@
         },
         {
             "dayOfWeek": 5,
-            "date": "10 Mar 2023",
+            "date": "3 Mar 2023",
             "rooms": [
                 {
-                    "id": "59c747da-7550-486e-9de6-cf1cccc591d0",
+                    "id": "9d4ae251-5377-4efb-9d4b-10ccfcd0ca77",
                     "name": null,
                     "namePl": null,
                     "events": [
                         {
-                            "id": "114bab2c-f3df-4982-8500-aa6f902c05e2",
-                            "name": "NERF Swashbucklers Shootout",
-                            "desc": "This sea ain't big enough for two pillaging possies! Team VS Team of pirates armed to their teeth. Expect hundreds of foam darts flying! Will you survive this NERF sea shootout?",
-                            "namePl": "NERF Swashbucklers Shootout",
-                            "descPl": "",
-                            "start": "12:00",
-                            "end": "13:30"
+                            "id": "a0834de9-b980-40ed-8c5e-6060473388c6",
+                            "name": "Inflatables and Balloons (Photoshoot)",
+                            "desc": "Want to have a photo sitting on a big inflatable orca or hugging a huge inflatable dragon? Want to bring your own inflatable for a photo? No problem! Everybody is welcome - just be sure to not have any sharp objects on you, like sharp claws, spikes, and such.",
+                            "namePl": "Inflatables and Balloons (Photoshoot)",
+                            "descPl": "Want to have a photo sitting on a big inflatable orca or hugging a huge inflatable dragon? Want to bring your own inflatable for a photo? No problem! Everybody is welcome - just be sure to not have any sharp objects on you, like sharp claws, spikes, and such.",
+                            "start": "11:00",
+                            "end": "13:30",
+                            "organizers": [
+                                "Sader"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
                         },
                         {
-                            "id": "3465da07-c674-41fa-8216-4c14c995d727",
-                            "name": "Furry Bingo",
-                            "desc": "Do you like cute furry art? Wanna win cool prizes? You'll need to focus and find matching parts of furry art on big screen and your bingo sheet. First 3 places get a prize!",
-                            "namePl": "Furry Bingo",
-                            "descPl": "",
-                            "start": "13:45",
-                            "end": "15:45"
+                            "id": "3f1b9722-8559-4c95-a4f8-9a5214b6b4e8",
+                            "name": "Fursuit-making workshop with Mstisha",
+                            "desc": "What materials are needed, where to buy tools and supplies in Poland and Europe, and most importantly: how to build your very own fursuit. We'll start with discussing tips and techniques before moving to a practical workshop where you will be able to craft something with your own hands!",
+                            "namePl": "Fursuit-making workshop with Mstisha",
+                            "descPl": "What materials are needed, where to buy tools and supplies in Poland and Europe, and most importantly: how to build your very own fursuit. We'll start with discussing tips and techniques before moving to a practical workshop where you will be able to craft something with your own hands!",
+                            "start": "14:00",
+                            "end": "17:00",
+                            "organizers": [
+                                "Mstisha"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
                         },
                         {
-                            "id": "025a8ec3-bc3a-450d-b4f9-bac7c36c1fb6",
-                            "name": "Snack exchange",
-                            "desc": "The snack exchange comes to Gdakon once again, so you can taste what other countries offer! \r\n\r\nWant to share your local treats, sweets and beverage? Please sign in using the signup form, so we know how many tables are needed: https://bit.ly/gdksnckexch22",
-                            "namePl": "Snack exchange",
-                            "descPl": "",
-                            "start": "16:00",
-                            "end": "18:00"
+                            "id": "b7c0fe2a-7c6f-46a1-8438-c231e0b9efbd",
+                            "name": "Charity Auction",
+                            "desc": "An auction to raise funds for Help4herps - a reptile shelter in Gdansk. Do you want to help? Bid on stuff, win stuff! Every coin matters!",
+                            "namePl": "Charity Auction",
+                            "descPl": "An auction to raise funds for Help4herps - a reptile shelter in Gdansk. Do you want to help? Bid on stuff, win stuff! Every coin matters!",
+                            "start": "17:30",
+                            "end": "19:00",
+                            "organizers": [
+                                "Sammy"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
                         },
                         {
-                            "id": "14283bd2-06e7-48db-8db3-941d3a9e9483",
-                            "name": "The Generates Concert",
-                            "desc": "Great songs (covers) performed live by the famous polish furry band - The Generates.",
-                            "namePl": "The Generates Concert",
-                            "descPl": "",
-                            "start": "18:30",
-                            "end": "20:00"
+                            "id": "f8af0f73-6005-4c86-8e62-b26f56a592fe",
+                            "name": "Connoisseur Canteen (Regional Wine, Beer & Cheese sharing)",
+                            "desc": "Bring your favorite beer, wine, or cheese, and tell others what's so good about it! Sample fine wines from other parts of the globe and try beers brought to you from abroad. Meet new people and get to know each other at this delicious event!",
+                            "namePl": "Connoisseur Canteen (Regional Wine, Beer & Cheese sharing)",
+                            "descPl": "Bring your favorite beer, wine, or cheese, and tell others what's so good about it! Sample fine wines from other parts of the globe and try beers brought to you from abroad. Meet new people and get to know each other at this delicious event!",
+                            "start": "19:30",
+                            "end": "21:30",
+                            "organizers": [
+                                "Birdy",
+                                "Tygrys"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
                         },
                         {
-                            "id": "160b1ee1-fec0-4e94-b509-4a67dea9af99",
-                            "name": "Furdance",
-                            "desc": "DJ Lineup for the evening:\r\n21:00 - 22:30 Cody (Club Hits/EDM)\r\n22:30 - 24:00 Krauti EDM (Eternal Dragon Music)\r\n24:00 - 1:00 Sader (Rave/Psytrance)\r\nAltro - Up for any backup if people would still like to party after 1:00",
-                            "namePl": "Furdance",
+                            "id": "a61c1d64-faf0-4918-a709-89b065ce93e1",
+                            "name": "DANCEFLOOR",
+                            "desc": "",
+                            "namePl": "DANCEFLOOR",
                             "descPl": "",
-                            "start": "21:00",
-                            "end": "23:59"
+                            "start": "22:00",
+                            "end": "03:00",
+                            "organizers": [],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
                         }
                     ]
                 },
                 {
-                    "id": "b3b4d3b4-0994-460d-bd64-c12d2b223fb5",
+                    "id": "294e75a0-8262-42ce-80c5-69bd036916b6",
                     "name": null,
                     "namePl": null,
                     "events": [
                         {
-                            "id": "0a60cb0c-e351-4c68-898e-7e45e418cc04",
-                            "name": "Bartending Workshop",
-                            "desc": "Secrets of mixing various kinds of alcohols to make the perfect drink. Come learn about the job of a bartender, what their tools are, as well as practice making real drinks yourself, under the eye of an experienced bartender! This year's theme is rum & rum-base cocktails, yarrr!",
-                            "namePl": "Bartending Workshop",
-                            "descPl": "",
-                            "start": "16:00",
-                            "end": "18:00"
-                        }
-                    ]
-                },
-                {
-                    "id": "ef7a302d-3a74-41fe-bdd8-d6ac67bed4c2",
-                    "name": null,
-                    "namePl": null,
-                    "events": [
-                        {
-                            "id": "6f7b0396-9423-488e-803c-4bac5e054fca",
-                            "name": "Science-Fiction and the Sea - Let's talk about literature",
-                            "desc": "A presentation on maritime science fiction - a subgenre of science fiction that is set in a maritime or naval environment. We got monsters! Pirates! And a speaker training for a PhD in this field.",
-                            "namePl": "Science-Fiction and the Sea - Let's talk about literature",
-                            "descPl": "",
+                            "id": "04771c75-c3ac-4f6a-be56-5549ca02b59b",
+                            "name": "AI Artworks - reproductions with a twist",
+                            "desc": "Learn and discuss the use of artificial intelligence in art, specifically how it is used to create reproduction and its implications in the industry, what are the downsides and what may be the upsides of using these tools.",
+                            "namePl": "AI Artworks - reproductions with a twist",
+                            "descPl": "Learn and discuss the use of artificial intelligence in art, specifically how it is used to create reproduction and its implications in the industry, what are the downsides and what may be the upsides of using these tools.",
                             "start": "12:00",
-                            "end": "13:00"
+                            "end": "14:00",
+                            "organizers": [
+                                "Lemurr"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
                         },
                         {
-                            "id": "286c2984-94ca-4d9b-8665-dc2c26b058b9",
-                            "name": "Con Quiz",
-                            "desc": "Arrr you ready for ConQuiz? Together with \"Follow The Quiz\" we've  prepared a Kahoot Quiz with some thematic quiestions. It's a team competition, with teams of 2-8 players. To play you need a smartphone with Kahoot app installed. Good guesses earn points, good and fast guesses earn even more points. Join the competition and show your knowledge about everything pirate and sea related!",
-                            "namePl": "Con Quiz",
-                            "descPl": "",
-                            "start": "13:30",
-                            "end": "14:30"
-                        },
-                        {
-                            "id": "48da3f7a-b914-4cf9-9b73-7404cb31d7b4",
-                            "name": "Your Cash Here",
-                            "desc": "Discussion about selling YCHs and commissions. How to do it properly, do's and don'ts when you are an artist - common mistakes, tips and tricks - anything to help you sell better or be sure you are doing all those correctly!",
-                            "namePl": "Your Cash Here",
-                            "descPl": "",
-                            "start": "15:00",
-                            "end": "16:30"
-                        },
-                        {
-                            "id": "a33afe69-5b53-4438-bce3-5d16bca78453",
-                            "name": "How to draw furries?",
-                            "desc": "If you're taking your first steps into the world of drawing furry art, be sure to drop by! We'll show you basics of perspective, creating anthro characters, facial expressions and more.",
-                            "namePl": "How to draw furries?",
-                            "descPl": "",
-                            "start": "17:00",
-                            "end": "18:00"
-                        },
-                        {
-                            "id": "ef7e9c49-c55f-41bc-9b6c-985e7d1b64e2",
-                            "name": "Your first Furry Con",
-                            "desc": "New here? Excited? A bit overwhelmed? We’ll help you take your first steps into the furry convention magic.",
-                            "namePl": "Your first Furry Con",
-                            "descPl": "",
-                            "start": "18:45",
-                            "end": "19:45"
-                        },
-                        {
-                            "id": "bee2f19f-b856-4215-bd36-4008d4022361",
-                            "name": "Balloon Party",
-                            "desc": "Looking for some colorful, bouncy fun? Join us for the craze at our balloon party! Inflatables and plush toys are welcome - they will make photos even better! When the party's over we can pop all the balloons! (excluding inflatables of course!)",
-                            "namePl": "Balloon Party",
-                            "descPl": "",
-                            "start": "20:00",
-                            "end": "23:30"
-                        }
-                    ]
-                },
-                {
-                    "id": "2454629b-2c9d-4fa5-8371-a16416a2a947",
-                    "name": null,
-                    "namePl": null,
-                    "events": [
-                        {
-                            "id": "7f438592-22e8-41a1-be22-8debf4519ecd",
-                            "name": "Astronomy and Astrophotography – The secrets of space",
-                            "desc": "Have you ever looked at a photo of a nebula, galaxy, comet or other celestial body and wanted to make one on your own? Or maybe you've just gazed at the night sky and wondered... what’s up there? I’ll explain how to observe the sky, what basic equipment to buy, and how to make astro-photos!",
-                            "namePl": "Astronomy and Astrophotography – The secrets of space",
-                            "descPl": "",
-                            "start": "12:00",
-                            "end": "13:00"
-                        },
-                        {
-                            "id": "94ce9be5-387b-4632-82bc-22c161e0f26c",
-                            "name": "Calligraphy workshop",
-                            "desc": "Teaching the basics of Western calligraphy to everyone who's up for the job. Two hours spent with a calligraphy teacher who's going to teach you the basics of holding the writing tool and the basics of uncial, texture, and humanist scripts.",
-                            "namePl": "Calligraphy workshop",
-                            "descPl": "",
+                            "id": "ad62c501-069c-40e1-9b65-d8506d0fb30a",
+                            "name": "DJing - The History, The Art And The Skillz",
+                            "desc": "Operator Burstup will tell you all about the equipment and software needed for DJing, techniques such as beat matching, scratching, and harmonic mixing. He'll also demonstrate how to create mashups and remixes on the fly.",
+                            "namePl": "DJing - The History, The Art And The Skillz",
+                            "descPl": "Operator Burstup will tell you all about the equipment and software needed for DJing, techniques such as beat matching, scratching, and harmonic mixing. He'll also demonstrate how to create mashups and remixes on the fly.",
                             "start": "14:30",
-                            "end": "16:30"
+                            "end": "16:00",
+                            "organizers": [
+                                "Burstup"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
                         },
                         {
-                            "id": "db2c6e3d-26df-47c6-be4d-b61edcedc8c6",
-                            "name": "Let's make a boardgame",
-                            "desc": "Card, dices and other funtastic elements of a board game mixed together create the perfect board game for this con! In this workshop you and your friends will get the materials to make a game about Pirate-themed Gdakon. You invent the rules and goals. Come over, take your friends. Who knows - maybe your game will be a new party hit?",
-                            "namePl": "Let's make a boardgame",
-                            "descPl": "",
-                            "start": "16:45",
-                            "end": "19:45"
+                            "id": "e26cfab6-c9d0-4a0b-bf7d-753f6f7f6dd5",
+                            "name": "Podstawy Tarota",
+                            "desc": "Krótki przewodnik po tajemnicach Wielkich i Malych Arkan. Opowiemy o rozlozeniach tarota oraz interpretacji rodzajów kart w zaleznosci od ich pozycji i odwrócenia.",
+                            "namePl": "Podstawy Tarota",
+                            "descPl": "Krótki przewodnik po tajemnicach Wielkich i Malych Arkan. Opowiemy o rozlozeniach tarota oraz interpretacji rodzajów kart w zaleznosci od ich pozycji i odwrócenia.",
+                            "start": "16:30",
+                            "end": "17:30",
+                            "organizers": [
+                                "Aldu"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
                         },
                         {
-                            "id": "179769d5-d1b6-46c1-b704-e8a623dfcc04",
+                            "id": "63526800-e5be-4c33-9097-4b4a36a420e6",
+                            "name": "Film eksperymentalny, czyli awangarda w kinie",
+                            "desc": "Jestes filmowym fanatykiem? A moze odwiedzasz kino co pare miesiecy? To bez znaczenia! Zagleb sie z nami w czelusci filmowego szalenstwa i odkryj to, czego nie zobaczysz w zadnym kinie",
+                            "namePl": "Film eksperymentalny, czyli awangarda w kinie",
+                            "descPl": "Jestes filmowym fanatykiem? A moze odwiedzasz kino co pare miesiecy? To bez znaczenia! Zagleb sie z nami w czelusci filmowego szalenstwa i odkryj to, czego nie zobaczysz w zadnym kinie",
+                            "start": "19:00",
+                            "end": "20:30",
+                            "organizers": [
+                                "Nicki"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
+                        },
+                        {
+                            "id": "3e6fc713-5bfd-4ed9-9fee-cee930c0698b",
+                            "name": "Trivia Night",
+                            "desc": "It's trivia time! Hope you hoarded approximate knowledge of many things because you'll compete in teams of 3-5 furs against THE hoarder. Best the dragon with the right answers to earn the title of Trivia Knight and their hoard!",
+                            "namePl": "Trivia Night",
+                            "descPl": "It's trivia time! Hope you hoarded approximate knowledge of many things because you'll compete in teams of 3-5 furs against THE hoarder. Best the dragon with the right answers to earn the title of Trivia Knight and their hoard!",
+                            "start": "21:00",
+                            "end": "22:30",
+                            "organizers": [
+                                "Nachtdrache"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
+                        }
+                    ]
+                },
+                {
+                    "id": "28e7bfb8-4847-4629-bfe9-f492d5ed21c3",
+                    "name": null,
+                    "namePl": null,
+                    "events": [
+                        {
+                            "id": "f48e290b-72a2-4760-8c10-e55f7db649cb",
+                            "name": "Armored Furries: Horror Edition",
+                            "desc": "Learn all about various armors from around the world, and how to draw as well as craft them. Learn how armor is made, its history, what it looks like and why it looks that way.",
+                            "namePl": "Armored Furries: Horror Edition",
+                            "descPl": "Learn all about various armors from around the world, and how to draw as well as craft them. Learn how armor is made, its history, what it looks like and why it looks that way.",
+                            "start": "12:00",
+                            "end": "13:30",
+                            "organizers": [
+                                "Flamian"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
+                        },
+                        {
+                            "id": "8335e8eb-c11a-4d36-8ab8-b42314b096e9",
+                            "name": "Kredyt i stopy procentowe - jak to (współ)działa",
+                            "desc": "Poruszymy temat tego jak skonstruowany jest kredyt i obliczana jest rata kredytu, skad bierze sie oprocentowanie kredytu oraz jaka jest w tym rola banku centralnego (i po co taki w ogóle istnieje), a takze wiele powiazanych tematów.",
+                            "namePl": "Kredyt i stopy procentowe - jak to (współ)działa",
+                            "descPl": "Poruszymy temat tego jak skonstruowany jest kredyt i obliczana jest rata kredytu, skad bierze sie oprocentowanie kredytu oraz jaka jest w tym rola banku centralnego (i po co taki w ogóle istnieje), a takze wiele powiazanych tematów.",
+                            "start": "14:00",
+                            "end": "15:30",
+                            "organizers": [
+                                "Nedwax"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
+                        },
+                        {
+                            "id": "9f0c622b-02b9-44ce-a6d5-50034dd291ef",
+                            "name": "Rysowanie Furry: chibi i kreskówki",
+                            "desc": "Narysuj swoja postac w mniej powaznej formie! Przekonasz sie jakie sa techniki wykonywania takich rysunków i potrenujesz razem z nami.",
+                            "namePl": "Rysowanie Furry: chibi i kreskówki",
+                            "descPl": "Narysuj swoja postac w mniej powaznej formie! Przekonasz sie jakie sa techniki wykonywania takich rysunków i potrenujesz razem z nami.",
+                            "start": "16:00",
+                            "end": "17:30",
+                            "organizers": [
+                                "Dirke"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
+                        },
+                        {
+                            "id": "727bb0dc-39ef-4364-b8d9-14b1a5e7e81b",
                             "name": "Karaoke",
-                            "desc": "We have both UltraStar Karaoke (where only music is heard, and you can SEE yourself sing) and KaraFun - where you can actually hear yourself sing. Karaoke will be hosted on evenings by furs passionate about it - We will keep the party flowing! Everyone is welcome, in or out of suit!",
+                            "desc": "Show off your howl at this all-you-can-sing event! We have both UltraStar - where you score by singing along with the vocals, and KaraFun - where your voice takes center stage instead! Karaoke will be hosted every evening by passionate furs who'll keep the party going all night long! Everyone is welcome, in or out of suit!",
                             "namePl": "Karaoke",
-                            "descPl": "",
+                            "descPl": "Show off your howl at this all-you-can-sing event! We have both UltraStar - where you score by singing along with the vocals, and KaraFun - where your voice takes center stage instead! Karaoke will be hosted every evening by passionate furs who'll keep the party going all night long! Everyone is welcome, in or out of suit!",
                             "start": "20:00",
-                            "end": "23:59"
-                        }
-                    ]
-                },
-                {
-                    "id": "b7324dbb-97cd-438f-92a3-fef1b8700497",
-                    "name": null,
-                    "namePl": null,
-                    "events": [
-                        {
-                            "id": "06d5e96a-0a77-4b92-a1ae-ee7fbed167fa",
-                            "name": "Fluff Saber League Tournment",
-                            "desc": "Beat Saber competition. Individual tournament, double elimination, Best of One, Finals Best of Three. Winner takes it all! :D  The Tournament will be conducted on Quest 2 headsets.",
-                            "namePl": "Fluff Saber League Tournment",
-                            "descPl": "",
-                            "start": "13:30",
-                            "end": "17:30"
-                        }
-                    ]
-                },
-                {
-                    "id": "3cee3a01-15da-4441-bb7b-dfb892b8fec7",
-                    "name": null,
-                    "namePl": null,
-                    "events": [
-                        {
-                            "id": "42c20a7f-59d7-4461-b419-0b04a5f351a7",
-                            "name": "Pirate Cruise",
-                            "desc": "Gdakonek invited all willing to catch a glimpse of a Pirate life on his ship! Don't be late for the galleon Dragon cruise on Thursday morning.\r\nWe'll get a lift to the harbor, so make sure to be ready to leave in front of the hotel at 10:30, in fursuit or not! \r\n\r\nAvaliable slots are limited - fill out this form if you want to set sail aboard the galleon Dragon:\r\nhttps://forms.gle/rqSaSkGnAA9nKenz6",
-                            "namePl": "Pirate Cruise",
-                            "descPl": "",
-                            "start": "10:30",
-                            "end": "15:30"
+                            "end": "03:00",
+                            "organizers": [
+                                "Noxam Shenterei",
+                                "Guree",
+                                "Birdy",
+                                "Nemadur"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
                         }
                     ]
                 }
@@ -268,143 +568,161 @@
         },
         {
             "dayOfWeek": 6,
-            "date": "11 Mar 2023",
+            "date": "4 Mar 2023",
             "rooms": [
                 {
-                    "id": "59c747da-7550-486e-9de6-cf1cccc591d0",
+                    "id": "9d4ae251-5377-4efb-9d4b-10ccfcd0ca77",
                     "name": null,
                     "namePl": null,
                     "events": [
                         {
-                            "id": "1982c56a-ca02-4660-bed6-012f7ec4907f",
-                            "name": "Self-Care - fight the hangoverrrr",
-                            "desc": "Panel about taking care of yourself. We'll chill and talk about how mornings suck, while sipping drinks that help you come back from the dead",
-                            "namePl": "Self-Care - fight the hangoverrrr",
-                            "descPl": "",
-                            "start": "12:00",
-                            "end": "13:00"
+                            "id": "0e51b65d-1f39-4125-9502-fa6c348bd619",
+                            "name": "Closing ceremony",
+                            "desc": "Everything has to end at some point, and Gdakon is no exception. Let's sum up this year's experiences and get a sneak peek of next year's theme.",
+                            "namePl": "Closing ceremony",
+                            "descPl": "Everything has to end at some point, and Gdakon is no exception. Let's sum up this year's experiences and get a sneak peek of next year's theme.",
+                            "start": "19:00",
+                            "end": "20:30",
+                            "organizers": [
+                                "Lemurr"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
                         },
                         {
-                            "id": "3291c5ee-dcc8-4f03-8de0-91feecd7b3ff",
-                            "name": "reg for Fursuit Olympics",
-                            "desc": "Registration for Fursuit Olympics.\r\nPlease come and register yourself to take part in Fursuit Olympics",
-                            "namePl": "zapisy na Fursuit Olympics",
-                            "descPl": "",
-                            "start": "13:00",
-                            "end": "13:15"
-                        },
-                        {
-                            "id": "a805571c-842d-4741-a9b9-2f023597d6cd",
-                            "name": "Fursuit Olympics",
-                            "desc": "Challenge other fluffy pirates to show them who's the boss of this Galleon! Prove yourself in strength, cunning and dexterity. Show us that you deserve to be called the greatest pirate of the seven seas!",
-                            "namePl": "Fursuit Olympics",
-                            "descPl": "",
-                            "start": "13:15",
-                            "end": "15:15"
-                        },
-                        {
-                            "id": "c4fe8984-1d8f-4613-b695-9fb0b799384c",
-                            "name": "Bountiful Buccaneer Bazaar &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; (🍺🍷🧀)",
-                            "desc": "(Beer, Wine & Cheese Exchange 🍺🍷🧀)\r\nBrave Buccaneers, come 'round to the big table for a feast of flavors! Bring your favorite beer, wine or cheese and tell others what's so good 'bout it! Taste delicious cheeses, most notably the big wheel of Gouda rolled in by Birdy! Sample fine wines from other parts of the globe! Try beers brought to you from abroad! Meet new people and get to know each other in this delicious event!",
-                            "namePl": "Bountiful Buccaneer Bazaar &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; (🍺🍷🧀)",
-                            "descPl": "",
-                            "start": "15:30",
-                            "end": "17:30"
-                        },
-                        {
-                            "id": "a51175d3-4138-4f63-9fd8-0550ceef6d85",
-                            "name": "BOJLEROWNIA",
-                            "desc": "club / people / atmosphere / music / chat / lounge\r\nEver heard of the Boiler Room? It's a brand of live DJ club music sessions around the globe, with one characteristic feature: the DJ performing live from the center of the club. The dancefloor is seamlessly connected with a cozy lounge, where you can kick back and relax your tired paws while still soaking up the music! There is also a balcony if you need to get some fresh air, and unlike most clubs, here you're welcome to come in with your own drinks!",
-                            "namePl": "BOJLEROWNIA",
-                            "descPl": "",
-                            "start": "18:00",
-                            "end": "22:00"
-                        }
-                    ]
-                },
-                {
-                    "id": "ef7a302d-3a74-41fe-bdd8-d6ac67bed4c2",
-                    "name": null,
-                    "namePl": null,
-                    "events": [
-                        {
-                            "id": "c02c9bb9-3963-4fcd-8f49-598ec9df62df",
-                            "name": "Practical [Beat] Sabering",
-                            "desc": "Have you ever heard of a game that's \"easy to learn, hard to master?\" \r\nBeat Saber is one of them. It's easy to slash cubes, but improving on your own is a very long term and difficult way. It doesn't need to be! If you are interested in improving your cube cutting skills, feel free to attend this practical workshop and learn many game mechanics that you've never heard of. What is the most efficient way to play? What tricks do pro people use? These and many more questions will be answered by an experienced player and half-time coacher in a simple and approachable way.",
-                            "namePl": "Practical [Beat] Sabering",
-                            "descPl": "",
-                            "start": "13:30",
-                            "end": "15:30"
-                        },
-                        {
-                            "id": "a3a6f7c9-526c-4c0b-9d1d-37563f3ea86b",
-                            "name": "Smol airplanes and how to fly them",
-                            "desc": "How to get a pilot's licence, basics of how to fly an airplane and why I hate gliders",
-                            "namePl": "Smol airplanes and how to fly them",
-                            "descPl": "",
-                            "start": "16:00",
-                            "end": "17:30"
-                        },
-                        {
-                            "id": "345c66d2-66c0-477a-a965-fd8de4f2781e",
-                            "name": "Furry Bingo After Dark",
-                            "desc": "Do you like sexy furry art? Wanna win cool prizes? Like the SFW Furry Bingo event, but with added difficulty. Don't get distracted by those hotties! Focus and find matching parts of furry art on big screen and your bingo sheet. First 3 places get a prize!",
-                            "namePl": "Furry Bingo After Dark",
-                            "descPl": "",
-                            "start": "18:30",
-                            "end": "20:30"
-                        },
-                        {
-                            "id": "dea0733e-45f5-4daa-b571-c0ef5a7c06c0",
-                            "name": "Karaoke",
-                            "desc": "We have both UltraStar Karaoke (where only music is heard, and you can SEE yourself sing) and KaraFun - where you can actually hear yourself sing. Karaoke will be hosted on evenings by furs passionate about it - We will keep the party flowing! Everyone is welcome, in or out of suit!",
-                            "namePl": "Karaoke",
-                            "descPl": "",
+                            "id": "8e184eb3-624d-4a66-9c1b-10a6f6995683",
+                            "name": "The Generates Concert",
+                            "desc": "Don't hesitate to bring a drink and relax to the music or dance your paws off to great songs (covers) performed live by our famous furry band - The Generates.",
+                            "namePl": "The Generates Concert",
+                            "descPl": "Don't hesitate to bring a drink and relax to the music or dance your paws off to great songs (covers) performed live by our famous furry band - The Generates.",
                             "start": "21:00",
-                            "end": "23:59"
+                            "end": "22:30",
+                            "organizers": [
+                                "Bartor",
+                                "Keo",
+                                "grave",
+                                "Witek",
+                                "Rem",
+                                "Lorcan",
+                                "Pasterz"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
+                        },
+                        {
+                            "id": "7a82ee7d-c2af-4e3d-a6d1-16461e5bc12b",
+                            "name": "DANCEFLOOR",
+                            "desc": "",
+                            "namePl": "DANCEFLOOR",
+                            "descPl": "",
+                            "start": "23:30",
+                            "end": "03:00",
+                            "organizers": [],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
                         }
                     ]
                 },
                 {
-                    "id": "2454629b-2c9d-4fa5-8371-a16416a2a947",
+                    "id": "294e75a0-8262-42ce-80c5-69bd036916b6",
                     "name": null,
                     "namePl": null,
                     "events": [
                         {
-                            "id": "62dc10be-b672-450e-8e32-02f83a94160c",
-                            "name": "Fursuit Electronics",
-                            "desc": "Have you ever wondered, what electronics are used in fursuits? What components to choose? On this panel I'll briefly show what electronics you can use yourself in a fursuit, what power source you can use, and I'll do a brief introduction to LED Collar Workshop",
-                            "namePl": "Fursuit Electronics",
+                            "id": "2dbbac31-63da-423a-b90c-3286e70f20b3",
+                            "name": "The Jackbox Party Panel",
+                            "desc": "Come and join us for a few rounds of Jackbox! Compete against your fellow Gdakon attendees and try to become the #1 Jackbox player! Jackbox games are played with your phone. Each game has a theme such as puns, drawing, or trivia.",
+                            "namePl": "The Jackbox Party Panel",
+                            "descPl": "Come and join us for a few rounds of Jackbox! Compete against your fellow Gdakon attendees and try to become the #1 Jackbox player! Jackbox games are played with your phone. Each game has a theme such as puns, drawing, or trivia.",
+                            "start": "13:30",
+                            "end": "15:30",
+                            "organizers": [
+                                "requinard"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
+                        },
+                        {
+                            "id": "fe96b1c6-3dac-4373-894e-32de91da8afe",
+                            "name": "Paranormal Activi-Tea",
+                            "desc": "Learn a multeatude of tea lore: origins, the brewing, and its diversitea. But there's more: you will be tasteang them too, served with punctualitea! We will also brew a huge pot of Masala Chai for everyone to try!",
+                            "namePl": "Paranormal Activi-Tea",
+                            "descPl": "Learn a multeatude of tea lore: origins, the brewing, and its diversitea. But there's more: you will be tasteang them too, served with punctualitea! We will also brew a huge pot of Masala Chai for everyone to try!",
+                            "start": "16:30",
+                            "end": "18:30",
+                            "organizers": [
+                                "Laddian",
+                                "Lezari"
+                            ],
+                            "requiresSignUps": true,
+                            "signUpCount": 1
+                        },
+                        {
+                            "id": "be572d8e-dbb4-4cd1-ad33-bd8a72dbaa53",
+                            "name": "Karaoke",
+                            "desc": "Show off your howl at this all-you-can-sing event! We have both UltraStar - where you score by singing along with the vocals, and KaraFun - where your voice takes center stage instead! Karaoke will be hosted every evening by passionate furs who'll keep the party going all night long! Everyone is welcome, in or out of suit!",
+                            "namePl": "Karaoke",
+                            "descPl": "Show off your howl at this all-you-can-sing event! We have both UltraStar - where you score by singing along with the vocals, and KaraFun - where your voice takes center stage instead! Karaoke will be hosted every evening by passionate furs who'll keep the party going all night long! Everyone is welcome, in or out of suit!",
+                            "start": "22:30",
+                            "end": "03:00",
+                            "organizers": [
+                                "Noxam Shenterei",
+                                "Guree",
+                                "Birdy",
+                                "Nemadur"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
+                        }
+                    ]
+                },
+                {
+                    "id": "0e25818e-2765-4792-89d4-a51310ba8d2a",
+                    "name": null,
+                    "namePl": null,
+                    "events": [
+                        {
+                            "id": "3b252391-6e94-4ba3-a9e3-a08a2b61ebc0",
+                            "name": "Group photo",
+                            "desc": "",
+                            "namePl": "Group photo",
                             "descPl": "",
                             "start": "12:00",
-                            "end": "13:30"
+                            "end": "12:15",
+                            "organizers": [
+                                "Bartor",
+                                "Soren Wolf"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
                         },
                         {
-                            "id": "cb861a22-3ce1-48b0-a8a0-1dd4ffddc0d4",
-                            "name": "Make your own LED collar",
-                            "desc": "A Workshop in which attendees will have an opportunity to create or program his own LED Collar, controlled by a pilot. We've already had an online pre-registration for this workshop, but everyone is welcome to come over, watch, help & learn!",
-                            "namePl": "Make your own LED collar",
+                            "id": "27d94ec8-1917-4348-9327-a9230cd93f6f",
+                            "name": "BUS departure",
+                            "desc": "",
+                            "namePl": "BUS departure",
                             "descPl": "",
-                            "start": "13:45",
-                            "end": "15:45"
+                            "start": "12:30",
+                            "end": "12:45",
+                            "organizers": [],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
                         },
                         {
-                            "id": "654b47a7-40a6-45f3-ab09-24f9cee39cc3",
-                            "name": "15 years of fursuiting in Poland",
-                            "desc": "This year we are celebrating 15 years since the first fursuitwalk in Poland. On this occasion, I want to invite you to a panel devoted to this event and stories related to it.\r\nI'll share with you my personal journey from the first steps as a furry throught first furmeets and furwalks up to the first Gdakon.\r\nYou will also find out what difficulties did I encounter in building the fursuit and what materials and techniques I used.\r\nDuring this event I’ll present previously unpublished videos and photos from my personal archive.\"",
-                            "namePl": "15 years of fursuiting in Poland",
+                            "id": "7c25eb66-b19a-4768-831b-22369f08da33",
+                            "name": "Fursuitwalk",
+                            "desc": "",
+                            "namePl": "Fursuitwalk",
                             "descPl": "",
-                            "start": "16:00",
-                            "end": "17:30"
-                        },
-                        {
-                            "id": "a5e6413d-1194-450c-b518-4bf6b4192231",
-                            "name": "Furry Bingo After Dark",
-                            "desc": "Do you like sexy furry art? Wanna win cool prizes? Like the SFW Furry Bingo event, but with added difficulty. Don't get distracted by those hotties! Focus and find matching parts of furry art on big screen and your bingo sheet. First 3 places get a prize!",
-                            "namePl": "Furry Bingo After Dark",
-                            "descPl": "",
-                            "start": "18:30",
-                            "end": "20:30"
+                            "start": "12:45",
+                            "end": "16:00",
+                            "organizers": [
+                                "Agent",
+                                "Rozz",
+                                "Derresh"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
                         }
                     ]
                 }
@@ -412,120 +730,61 @@
         },
         {
             "dayOfWeek": 0,
-            "date": "12 Mar 2023",
+            "date": "5 Mar 2023",
             "rooms": [
                 {
-                    "id": "59c747da-7550-486e-9de6-cf1cccc591d0",
+                    "id": "9d4ae251-5377-4efb-9d4b-10ccfcd0ca77",
                     "name": null,
                     "namePl": null,
                     "events": [
                         {
-                            "id": "045086d1-3036-4891-af79-a35c0297d295",
-                            "name": "Tea-ves of the sea",
-                            "desc": "Do you know where the term 'high tea' comes from? Or generally where tea comes from? During this panel you'll get to know the ins and outs of teas, how to set them and how they taste. Take a short break during the hectic con, sit back and relax with a few cups of tea",
-                            "namePl": "Tea-ves of the sea",
-                            "descPl": "",
-                            "start": "17:00",
-                            "end": "18:30"
-                        },
-                        {
-                            "id": "31f5e2cc-6f9a-4499-b18c-2176833b1987",
-                            "name": "Closing ceremony",
-                            "desc": "Everything will have to end, and Gdakon is no exception.",
-                            "namePl": "Oficjalne zakończenie",
-                            "descPl": "Wszystkie kiedyś się kończy, Gdakon również.",
-                            "start": "19:00",
-                            "end": "20:30"
-                        },
-                        {
-                            "id": "6a696c69-77ce-4c9a-8a6d-7ff50f3e906f",
-                            "name": "Furdance",
-                            "desc": "DJ Lineup for the evening:\r\n21:00 - 23:00 Whiskey (Bigroom Prohouse)\r\n23:00 - 1:00 Altro (\"Sunset Festival\")\r\n1:00 - 3:00 Boguslav (Dubstep)",
-                            "namePl": "Furdance",
-                            "descPl": "",
-                            "start": "21:00",
-                            "end": "23:59"
-                        }
-                    ]
-                },
-                {
-                    "id": "ef7a302d-3a74-41fe-bdd8-d6ac67bed4c2",
-                    "name": null,
-                    "namePl": null,
-                    "events": [
-                        {
-                            "id": "f4c2e113-7a47-4af7-a08e-68b7acab8a11",
-                            "name": "Czego nie mówili Ci w szkole o podatkach [PL]",
-                            "desc": "Nie wiesz czemu dostajesz przelewy na mniej niż masz wpisane w umowie, bo na lekcjach przedsiębiorczości zamiast podatków były encykliki JP2? Spokojnie, tego czego nie powie szkoła wyjaśnią Ci furasy. Co to jest VAT, co to jest PIT i CIT, co to są umowy śmieciowe i czemu ludzie przechodzą na B2B... i w sumie co to jest B2B...? Co to jest klin podatkowy i gdzie w tym wszystkim jest ZUS. Te i kilka innych rzeczy, które powinien rozumieć świadomy obywatel będzie wyjaśnione na tej prelekcji. ",
-                            "namePl": "Czego nie mówili Ci w szkole o podatkach [PL]",
-                            "descPl": "",
-                            "start": "14:00",
-                            "end": "15:30"
-                        },
-                        {
-                            "id": "2b419876-3293-40a1-b63e-7711fab177c3",
-                            "name": "Karaoke",
-                            "desc": "We have both UltraStar Karaoke (where only music is heard, and you can SEE yourself sing) and KaraFun - where you can actually hear yourself sing. Karaoke will be hosted on evenings by furs passionate about it - We will keep the party flowing! Everyone is welcome, in or out of suit!",
-                            "namePl": "Karaoke",
-                            "descPl": "",
-                            "start": "21:00",
-                            "end": "23:59"
-                        }
-                    ]
-                },
-                {
-                    "id": "3cee3a01-15da-4441-bb7b-dfb892b8fec7",
-                    "name": null,
-                    "namePl": null,
-                    "events": [
-                        {
-                            "id": "6021cfa6-49df-4381-9c8b-73302206b542",
-                            "name": "Group photo",
-                            "desc": "Gather 'round for this year's Gdakon group photo! As always, everyone will get a physical copy after the Closing Ceremony",
-                            "namePl": "Zdjęcie grupowe",
-                            "descPl": "Zbierzmy się do tegorocznej Gdakonowej fotki grupowej! Jak zawsze, każdy z was dostanie fizyczną kopię zdjęcia po Oficjalnym zakończeniu",
-                            "start": "12:00",
-                            "end": "12:30"
-                        },
-                        {
-                            "id": "f9f33820-3a61-43c3-8ee9-63c4a0b92da0",
-                            "name": "Fursuitwalk",
-                            "desc": "Fursuitwalk - the Gdakon fursuiter parade! This year we'll be marching down Monte Cassino street in Sopot, with a Photoshoot on the pier ",
-                            "namePl": "Fursuitwalk",
-                            "descPl": "Fursuitwalk, czyli coroczna Gdakonowa parada fursuiterów! W tym roku odbędzie się w centrum Sopotu, wzdłuż ulicy Monte Cassino, ze zdjęciem grupowym na Sopockim molo",
-                            "start": "12:30",
-                            "end": "16:00"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "dayOfWeek": 1,
-            "date": "13 Mar 2023",
-            "rooms": [
-                {
-                    "id": "59c747da-7550-486e-9de6-cf1cccc591d0",
-                    "name": null,
-                    "namePl": null,
-                    "events": [
-                        {
-                            "id": "e19b212f-6900-4bc8-a13e-9617d37a69f8",
+                            "id": "fc35dfe5-23b6-4000-99d2-b60d85847426",
                             "name": "Feedback Panel",
-                            "desc": "A chance to meet up with Gdakon's organizers directly and share your feedback. What you liked this year? What could we improve? What are your biggest complaints? Or maybe you just want to congratulate us on another successful con? ;3",
-                            "namePl": "Podsumowanie konwentu z orgnizatorami",
-                            "descPl": "To idealna szansa by spotkać się z organizatorami Gdakonu i podzielić się opiniami na temat konwentu. Co ci się podobało w tegorocznej edycji? Co moglibyśmy poprawić? Co ci przeszkadzało? A może chcesz nam pogratulować kolejnego udanego konwentu? ;3",
+                            "desc": "",
+                            "namePl": "Feedback Panel",
+                            "descPl": "",
                             "start": "12:00",
-                            "end": "13:15"
+                            "end": "13:30",
+                            "organizers": [
+                                "Lemurr"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
                         },
                         {
-                            "id": "db727a0e-f7b0-4e12-9b71-b6eb776b24da",
+                            "id": "e7f296ed-c944-443b-8060-731aa5fc4e97",
                             "name": "Dead Dog Party",
-                            "desc": "You're still here? Well, what are you waiting for - join\r\nus and end the convention with one final epic party!",
+                            "desc": "You're still here? Well, what are you waiting for - join us and end the convention with one final epic party!",
                             "namePl": "Dead Dog Party",
-                            "descPl": "",
-                            "start": "18:00",
-                            "end": "23:59"
+                            "descPl": "You're still here? Well, what are you waiting for - join us and end the convention with one final epic party!",
+                            "start": "19:00",
+                            "end": "03:00",
+                            "organizers": [
+                                "Tygrys"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
+                        }
+                    ]
+                },
+                {
+                    "id": "c49d4b5d-8320-4414-a549-60f1a1ab0b8c",
+                    "name": null,
+                    "namePl": null,
+                    "events": [
+                        {
+                            "id": "062a96e4-50ed-43e7-bc9b-8fe8ed44441b",
+                            "name": "D&D One-Shot: \"The Cursed painting\"",
+                            "desc": "Do you hear the call of dice rolling? Fancy a bit of role-playing? Do the high 20's and low 1's make you laugh and scream? We got you covered with role-playing game one-shots! These are totally casual D&D 5th edition single-shot game for up to 7 players. No previous experience needed. Come embark with us on a fantasy adventure!\r\n­­\r\nD&D One Shots Schedule:\r\n­­\r\n▶ \"Haunting of Abandoned Manor\"\r\nWednesday 14:00 - 16:30\r\n­­\r\n▶ \"The Cursed painting\"\r\nSunday 14:00 - 17:00\r\n­­\r\nAll D&D sessions take place in the small RPG Room on the right hand side from Main Stage entrance.",
+                            "namePl": "D&D One-Shot: \"The Cursed painting\"",
+                            "descPl": "Do you hear the call of dice rolling? Fancy a bit of role-playing? Do the high 20's and low 1's make you laugh and scream? We got you covered with role-playing game one-shots! These are totally casual D&D 5th edition single-shot game for up to 7 players. No previous experience needed. Come embark with us on a fantasy adventure!\r\n­­\r\nD&D One Shots Schedule:\r\n­­\r\n▶ \"Haunting of Abandoned Manor\"\r\nWednesday 14:00 - 16:30\r\n­­\r\n▶ \"The Cursed painting\"\r\nSunday 14:00 - 17:00\r\n­­\r\nAll D&D sessions take place in the small RPG Room on the right hand side from Main Stage entrance.",
+                            "start": "14:00",
+                            "end": "17:00",
+                            "organizers": [
+                                "Flamian"
+                            ],
+                            "requiresSignUps": false,
+                            "signUpCount": 0
                         }
                     ]
                 }

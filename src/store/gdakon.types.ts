@@ -22,6 +22,9 @@ export type EventScheduleItem = {
     descPl: string | "";
     start: AppTimeString;
     end: AppTimeString;
+    organizers: string[];
+    requiresSignUps: boolean;
+    signUpCount: number;
 };
 export type EventScheduleRoom = {
     id: UUID;

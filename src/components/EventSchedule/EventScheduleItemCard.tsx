@@ -17,7 +17,9 @@ import {
     BookmarkedFilterChip,
     DayFilterChip,
     HourChip,
+    OrganizerChips,
     RoomFilterChip,
+    SignUpChip,
 } from "./EventChips";
 
 import AddBookmarkIcon from "~icons/mdi/bookmark-outline";
@@ -70,10 +72,12 @@ export const EventScheduleItemCard = ({
                     flexWrap: "wrap",
                 }}
             >
-                <BookmarkedFilterChip show={isBookmarked} />
                 <DayFilterChip timestamp={event.startTime} />
                 <HourChip timestamp={event.startTime} />
                 <RoomFilterChip room={room} />
+                <SignUpChip event={event} />
+                <OrganizerChips organizers={event.organizers} />
+                <BookmarkedFilterChip show={isBookmarked} />
             </CardContent>
             <CardContent>
                 <Typography>{description}</Typography>

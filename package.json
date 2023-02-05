@@ -72,5 +72,8 @@
             "@requinard"
         ]
     },
+    "eslintIgnore": [
+        "**/gdakon.events.json"
+    ],
     "packageManager": "yarn@3.3.1"
 }
