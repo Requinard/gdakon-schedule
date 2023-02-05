@@ -39,7 +39,7 @@
             }
         },
         "useEventSubtitle": {
-            "starting": "Starting {{time}}",
+            "starting": "Starting at {{start}} ({{time}})",
             "taking_place": "Currently taking place"
         }
     },

@@ -34,7 +34,7 @@
         },
 
         "useEventSubtitle": {
-            "starting": "Zaczynamy  {{time}}",
+            "starting": "Od godziny {{start}} ({{time}})",
             "taking_place": "Obecnie odbywają się"
         }
     },

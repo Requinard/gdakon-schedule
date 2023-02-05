@@ -19,6 +19,7 @@ export const useEventSubtitle = (
         const timestamp = match(state)
             .with("upcoming", () =>
                 t("useEventSubtitle.starting", {
+                    start: event.start,
                     time: now.to(event.startTime),
                 })
             )

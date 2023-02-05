@@ -33,7 +33,7 @@
             }
         },
         "useEventSubtitle": {
-            "starting": "Begint {{time}}",
+            "starting": "Begint om {{start}} ({{time}})",
             "taking_place": "Panel is nu gaande"
         }
     },

@@ -1,8 +1,7 @@
 import { GroupedVirtuoso } from "react-virtuoso";
 import { useMemo } from "react";
 import { flatMap, groupBy, keys, map, values } from "lodash";
-import { Box, Breadcrumbs, Container, Typography } from "@mui/material";
-import { useTranslation } from "react-i18next";
+import { Box, Container, Typography } from "@mui/material";
 import dayjs from "dayjs";
 
 import { NormalizedEventScheduleItem } from "../../store/gdakon.types";
@@ -18,7 +17,6 @@ type VirtuosoProps<T> = {
 };
 
 export const EventListVirtualized = () => {
-    const { t } = useTranslation("EventSchedule");
     const { filtered } = useEventFilter();
 
     const { groupCounts, groups, items } =
@@ -48,19 +46,11 @@ export const EventListVirtualized = () => {
                 height={"100%"}
                 groupContent={(index) => (
                     <Container>
-                        <Breadcrumbs
-                            separator={
-                                <Typography variant={"h4"}>{">"}</Typography>
-                            }
-                            sx={{ bgcolor: "background.default", pt: 2, pb: 2 }}
-                        >
-                            <Typography variant={"h4"}>
-                                {t("EventListVirtualized.header")}
-                            </Typography>
+                        <Box pt={2} pb={2} pl={1}>
                             <Typography variant={"h4"}>
                                 {groups[index]}
                             </Typography>
-                        </Breadcrumbs>
+                        </Box>
                     </Container>
                 )}
                 itemContent={(index) => (
