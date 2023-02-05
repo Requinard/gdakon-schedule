@@ -6,6 +6,7 @@ import { useCurrentEvents } from "../../hooks/useCurrentEvents";
 import { useUpcomingEvents } from "../../hooks/useUpcomingEvents";
 import { ListSection } from "../Common/ListSection";
 import { useGetEventScheduleQuery } from "../../store/gdakon.service";
+import { ServiceWorker } from "../Common/ServiceWorker";
 
 import { EventList } from "./EventList";
 
@@ -31,7 +32,7 @@ export const OverviewCard = () => {
                 title={t("title")}
                 titleTypographyProps={{ variant: "h5" }}
             />
-
+            <ServiceWorker />
             <List>
                 <ListSection
                     title={t("Overview.current.title")}
