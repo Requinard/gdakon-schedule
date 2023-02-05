@@ -53,6 +53,27 @@ const EventFilterContext = createContext<EventFilterContextProps>({
 
 export const useEventFilter = () => useContext(EventFilterContext);
 
+const eventSearch = (
+    query: string,
+    event: NormalizedEventScheduleItem
+): boolean => {
+    const lowered = query.toLocaleLowerCase();
+
+    if (lowered.length < 3) {
+        return true;
+    }
+
+    return some([
+        event.name.toLocaleLowerCase().includes(lowered),
+        event.namePl?.toLocaleLowerCase().includes(lowered),
+        event.desc?.toLocaleLowerCase().includes(lowered),
+        event.descPl?.toLocaleLowerCase().includes(lowered),
+        ...event.organizers.map((it) =>
+            it.toLocaleLowerCase().includes(lowered)
+        ),
+    ]);
+};
+
 export const EventFilterProvider = ({
     children,
     events,
@@ -66,13 +87,9 @@ export const EventFilterProvider = ({
             return events;
         }
 
-        const searchLowered = debouncedFilters.search.toLocaleLowerCase();
-
         return events.filter((event) =>
             every([
-                debouncedFilters.search.length > 2
-                    ? event.name.toLocaleLowerCase().includes(searchLowered)
-                    : true,
+                eventSearch(debouncedFilters.search, event),
                 debouncedFilters.dates.length > 0
                     ? some(debouncedFilters.dates, (it) =>
                           it.isSame(event.startTime, "day")
