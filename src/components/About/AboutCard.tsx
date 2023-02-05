@@ -11,6 +11,7 @@ import { useTranslation } from "react-i18next";
 import { LanguageSettings } from "../Settings/LanguageSettings";
 import { TimeTravelSettings } from "../Settings/TimeTravelSettings";
 import { OnlineCheck } from "../Home/OnlineCheck";
+import { ServiceWorker } from "../Common/ServiceWorker";
 
 import GitIcon from "~icons/mdi/git";
 
@@ -19,6 +20,7 @@ export const AboutCard = () => {
     return (
         <Card>
             <CardHeader title={t("AboutCard.title")} />
+            <ServiceWorker />
             <OnlineCheck showIfOnline />
             <List>
                 <ListItem>

@@ -1,33 +1,28 @@
-import { useEffect, useState } from "react";
-// @ts-expect-error gotta fix this type
-import { registerSW } from "virtual:pwa-register";
-import { Alert, Button } from "@mui/material";
-import { noop } from "lodash";
+import { useRegisterSW } from "virtual:pwa-register/react";
+import { Alert, AlertTitle, Button } from "@mui/material";
 
 export const ServiceWorker = () => {
-    const [update, setUpdate] = useState<
-        ((reload: boolean) => Promise<void>) | null
-    >(null);
-    const [needRefresh, setNeedRefresh] = useState(false);
+    const { needRefresh, updateServiceWorker } = useRegisterSW();
+    const [needRefreshState] = needRefresh;
 
-    useEffect(() => {
-        setUpdate(
-            registerSW({
-                onNeedRefresh: () => setNeedRefresh(true),
-            })
-        );
-    }, [setUpdate, setNeedRefresh]);
-
-    if (!needRefresh || update === null) {
+    if (!needRefreshState) {
         return null;
     }
 
     return (
         <Alert
             severity={"warning"}
-            action={<Button onClick={() => update(true)}>Update</Button>}
+            action={
+                <Button
+                    onClick={() => updateServiceWorker(true)}
+                    color={"inherit"}
+                >
+                    Update
+                </Button>
+            }
         >
-            A new version is available
+            <AlertTitle> A new version is available</AlertTitle>
+            Upgrade to the newest version to stay up to date with Gdakon
         </Alert>
     );
 };

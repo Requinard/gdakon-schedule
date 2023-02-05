@@ -47,7 +47,7 @@ export default defineConfig({
             },
         }),
         VitePWA({
-            registerType: "prompt",
+            registerType: "autoUpdate",
             manifest: {
                 name: "Gdakon Pocket Schedule",
                 short_name: "Gdakon",
