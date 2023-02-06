@@ -73,8 +73,8 @@ export const EventScheduleItemCard = ({
                 }}
             >
                 <DayFilterChip timestamp={event.startTime} />
-                <HourChip timestamp={event.startTime} />
                 <RoomFilterChip room={room} />
+                <HourChip timestamp={event.startTime} />
                 <SignUpChip event={event} />
                 <OrganizerChips organizers={event.organizers} />
                 <BookmarkedFilterChip show={isBookmarked} />

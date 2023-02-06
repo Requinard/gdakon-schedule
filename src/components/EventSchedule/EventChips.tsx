@@ -1,6 +1,5 @@
 import { Avatar, Chip } from "@mui/material";
 import { useMemo } from "react";
-import { noop } from "lodash";
 import { useTranslation } from "react-i18next";
 import dayjs from "dayjs";
 
@@ -53,7 +52,6 @@ export const RoomFilterChip = ({ room }: { room: string | null }) => {
             }
             label={room}
             color={roomEnabled(room) ? "secondary" : undefined}
-            onDelete={noop}
             deleteIcon={roomEnabled(room) ? <CheckedIcon /> : undefined}
         />
     );

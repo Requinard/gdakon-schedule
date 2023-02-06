@@ -44,7 +44,7 @@ export const EventSearch = () => {
                 ),
                 endAdornment: (
                     <ButtonGroup
-                        size={"large"}
+                        size={"small"}
                         variant={"text"}
                         color={"inherit"}
                     >

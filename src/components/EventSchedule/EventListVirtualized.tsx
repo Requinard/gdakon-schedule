@@ -41,23 +41,26 @@ export const EventListVirtualized = () => {
                     <EventSearch />
                 </Box>
             </Container>
-            <GroupedVirtuoso
+            <GroupedVirtuoso<NormalizedEventScheduleItem>
                 groupCounts={groupCounts}
                 height={"100%"}
                 groupContent={(index) => (
-                    <Container>
+                    <Container key={groups[index]}>
                         <Box pt={2} pb={2} pl={2} bgcolor={"background.paper"}>
-                            <Typography variant={"h4"}>
+                            <Typography variant={"h5"}>
                                 {groups[index]}
                             </Typography>
                         </Box>
                     </Container>
                 )}
-                itemContent={(index) => (
-                    <Container sx={{ pb: 1 }}>
-                        <EventScheduleItemCard event={items[index]} />
-                    </Container>
-                )}
+                itemContent={(index) => {
+                    const item = items[index];
+                    return (
+                        <Container sx={{ pb: 1 }} key={item.id}>
+                            <EventScheduleItemCard event={item} />
+                        </Container>
+                    );
+                }}
             />
         </Box>
     );
