@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { chain } from "lodash";
+import dayjs from "dayjs";
 
 import { NormalizedEventScheduleItem } from "../store/gdakon.types";
 
@@ -11,7 +12,11 @@ export const useUpcomingEvents = (events: NormalizedEventScheduleItem[]) => {
     return useMemo(
         () =>
             chain(events)
-                .filter((event) => now.isSame(event.startTime, "day"))
+                .filter(
+                    (event) =>
+                        now.isBefore(event.startTime) &&
+                        now.isAfter(dayjs(event.startTime).subtract(3, "hours"))
+                )
                 .filter((event) => now.isBefore(event.startTime))
                 .value(),
         [events, now]
