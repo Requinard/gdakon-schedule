@@ -80,6 +80,10 @@ const TimeTravelPicker = () => {
 };
 export const TimeTravelSettings = () => {
     const { t } = useTranslation("Settings");
+
+    if (import.meta.env.PROD) {
+        return null;
+    }
     return (
         <>
             <ListSubheader>{t("TimeTravelSettings.title")}</ListSubheader>
