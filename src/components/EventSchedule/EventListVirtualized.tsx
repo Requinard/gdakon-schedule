@@ -1,10 +1,11 @@
 import { GroupedVirtuoso } from "react-virtuoso";
 import { useMemo } from "react";
-import { flatMap, groupBy, keys, map, values } from "lodash";
+import { flatMap, groupBy, keys, map, partition, values } from "lodash";
 import { Box, Container, Typography } from "@mui/material";
 import dayjs from "dayjs";
 
 import { NormalizedEventScheduleItem } from "../../store/gdakon.types";
+import { useNow } from "../../hooks/useNow";
 
 import { useEventFilter } from "./EventFilter.Provider";
 import { EventScheduleItemCard } from "./EventScheduleItemCard";
@@ -17,13 +18,19 @@ type VirtuosoProps<T> = {
 };
 
 export const EventListVirtualized = () => {
+    const now = useNow();
     const { filtered } = useEventFilter();
 
     const { groupCounts, groups, items } =
         useMemo((): VirtuosoProps<NormalizedEventScheduleItem> => {
-            const groups = groupBy(filtered, (it) =>
+            const [expired, upcoming] = partition(filtered, (it) =>
+                now.isAfter(it.endTime)
+            );
+            const groups = groupBy(upcoming, (it) =>
                 dayjs(it.startTime).format("LL")
             );
+
+            groups["Expired"] = expired;
 
             const groupCounts = map(groups, (values) => values.length);
 
