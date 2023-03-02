@@ -24,6 +24,7 @@ export const useEventSubtitle = (
                 })
             )
             .with("current", () => t("useEventSubtitle.taking_place"))
+            .with("expired", () => t("useEventSubtitle.expired"))
             .otherwise(() => dayjs(event.startTime).format("lll"));
 
         if (room !== null) {

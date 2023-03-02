@@ -11,10 +11,8 @@ export const useCurrentEvents = (events: NormalizedEventScheduleItem[]) => {
     return useMemo(
         () =>
             chain(events)
-                .filter(
-                    (event) =>
-                        now.isBefore(event.endTime) &&
-                        now.isAfter(event.startTime)
+                .filter((event) =>
+                    now.isBetween(event.startTime, event.endTime)
                 )
                 .value(),
         [events, now]

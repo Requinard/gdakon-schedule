@@ -40,7 +40,8 @@
         },
         "useEventSubtitle": {
             "starting": "Starting at {{start}} ({{time}})",
-            "taking_place": "Currently taking place"
+            "taking_place": "Currently taking place",
+            "expired": "This event has taken place"
         }
     },
     "Home": {

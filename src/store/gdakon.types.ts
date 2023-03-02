@@ -57,24 +57,29 @@ export const normalizeEventScheduleResponse = (
     return chain(response.events)
         .flatMap((day) =>
             day.rooms.flatMap((room) =>
-                room.events.map(
-                    (event): NormalizedEventScheduleItem => ({
+                room.events.map((event): NormalizedEventScheduleItem => {
+                    const startTime = dayjs(
+                        `${day.date} ${event.start}`,
+                        "D MMM YYYY HH:mm",
+                        "en-gb"
+                    );
+                    const endTime = dayjs(
+                        `${day.date} ${event.end}`,
+                        "D MMM YYYY HH:mm",
+                        "en-gb"
+                    );
+
+                    return {
                         ...event,
                         roomId: room.id,
                         roomName: room.name,
                         roomNamePl: room.namePl,
-                        startTime: dayjs(
-                            `${day.date} ${event.start}`,
-                            "D MMM YYYY HH:mm",
-                            "en-gb"
-                        ).valueOf(),
-                        endTime: dayjs(
-                            `${day.date} ${event.end}`,
-                            "D MMM YYYY HH:mm",
-                            "en-gb"
-                        ).valueOf(),
-                    })
-                )
+                        startTime: startTime.valueOf(),
+                        endTime: endTime.isAfter(startTime)
+                            ? endTime.valueOf()
+                            : endTime.add(1, "day").valueOf(),
+                    };
+                })
             )
         )
         .orderBy((it) => it.startTime, "asc")
