@@ -3,7 +3,7 @@
     "version": "0.2.0",
     "type": "module",
     "scripts": {
-        "dev": "vite --host",
+        "dev": "vite",
         "build": "vite build",
         "preview": "vite preview",
         "lint": "eslint ./src",
