@@ -6,6 +6,7 @@ import Icons from "unplugin-icons/vite";
 import html from "vite-plugin-html-config";
 import { imagetools } from "vite-imagetools";
 import { visualizer } from "rollup-plugin-visualizer";
+import AutoImport from "unplugin-auto-import/vite";
 
 //@ts-expect-error but it's on?
 import PackageJSON from "./package.json";
@@ -32,6 +33,10 @@ export default defineConfig({
     },
     plugins: [
         react(),
+        AutoImport({
+            imports: ["react", { imports: ["z"], from: "zod" }],
+            dts: "./src/auto-import.d.ts",
+        }),
         visualizer({
             filename: "./dist/size.html",
         }),
