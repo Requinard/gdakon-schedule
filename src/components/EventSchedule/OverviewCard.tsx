@@ -1,23 +1,22 @@
-import { Card, CardHeader, List, Alert, useTheme } from "@mui/material";
+import {Alert, Card, CardHeader, List, useTheme} from "@mui/material";
 import React from "react";
-import { useTranslation } from "react-i18next";
+import {useTranslation} from "react-i18next";
 
-import { useCurrentEvents } from "../../hooks/useCurrentEvents";
-import { useUpcomingEvents } from "../../hooks/useUpcomingEvents";
-import { ListSection } from "../Common/ListSection";
-import { useGetEventScheduleQuery } from "../../store/gdakon.service";
-import { ServiceWorker } from "../Common/ServiceWorker";
+import {useCurrentEvents} from "../../hooks/useCurrentEvents";
+import {useUpcomingEvents} from "../../hooks/useUpcomingEvents";
+import {ListSection} from "../Common/ListSection";
+import {ScheduleHooks} from "../../modules/EventSchedule";
 
-import { EventList } from "./EventList";
+import {EventList} from "./EventList";
 
 import ScheduleIcon from "~icons/ic/sharp-schedule";
 
 export const OverviewCard = () => {
     const theme = useTheme();
-    const { t } = useTranslation("EventSchedule");
-    const { data = [] } = useGetEventScheduleQuery({});
-    const current = useCurrentEvents(data);
-    const upcoming = useUpcomingEvents(data);
+    const {t} = useTranslation("EventSchedule");
+    const {data = []} = ScheduleHooks.useSchedule();
+    const current = useCurrentEvents([]);
+    const upcoming = useUpcomingEvents([]);
 
     return (
         <Card
@@ -28,11 +27,11 @@ export const OverviewCard = () => {
             }}
         >
             <CardHeader
-                avatar={<ScheduleIcon style={{ fontSize: "1.8rem" }} />}
+                avatar={<ScheduleIcon style={{fontSize: "1.8rem"}}/>}
                 title={t("title")}
-                titleTypographyProps={{ variant: "h5" }}
+                titleTypographyProps={{variant: "h5"}}
             />
-            <ServiceWorker />
+
             <List>
                 <ListSection
                     title={t("Overview.current.title")}

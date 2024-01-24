@@ -1,13 +1,13 @@
-import { useGetEventScheduleQuery } from "../../store/gdakon.service";
+import { ScheduleHooks } from "../../modules/EventSchedule";
 import { LoadingIndicator } from "../Common/LoadingIndicator";
 
 import { EventFilterProvider } from "./EventFilter.Provider";
 import { EventListVirtualized } from "./EventListVirtualized";
 
 export const EventScheduleRoute = () => {
-    const { data = [], isLoading } = useGetEventScheduleQuery({});
+    const { data = [], isLoading } = ScheduleHooks.useSchedule({});
     return (
-        <EventFilterProvider events={data}>
+        <EventFilterProvider events={[]}>
             {isLoading ? <LoadingIndicator /> : <EventListVirtualized />}
         </EventFilterProvider>
     );

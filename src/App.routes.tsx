@@ -1,15 +1,22 @@
-import { Route, Routes } from "react-router-dom";
+import {createBrowserRouter, Navigate, RouterProvider} from "react-router-dom";
+import {HomeRoutes} from "./modules/Home";
+import {EventScheduleRoutes} from "./modules/EventSchedule";
+import {Dashboard} from "./modules/Dashboard/components/Dashboard/Dashboard";
 
-import { HomeRoute } from "./components";
-import { EventScheduleRoute } from "./components/EventSchedule/EventScheduleRoute";
-import { DevRoute } from "./components/DevRoute";
-import { AboutRoute } from "./components/About/About";
+const router = createBrowserRouter([
+    {
+        path: "*",
+        element: <Dashboard/>,
+        children: [
+            {
+                index: true,
+                element: <Navigate to={"/home"} replace/>
+            },
+            HomeRoutes,
+            EventScheduleRoutes
+        ]
+    },
 
-export const AppRouter = () => (
-    <Routes>
-        <Route path={"/"} element={<HomeRoute />} />
-        <Route path={"/schedule"} element={<EventScheduleRoute />} />
-        <Route path={"/dev"} element={<DevRoute />} />
-        <Route path={"/about"} element={<AboutRoute />} />
-    </Routes>
-);
+])
+
+export const AppRouter = () => <RouterProvider router={router}/>

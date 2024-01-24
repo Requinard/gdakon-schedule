@@ -6,9 +6,11 @@ import Icons from "unplugin-icons/vite";
 import html from "vite-plugin-html-config";
 import { imagetools } from "vite-imagetools";
 import AutoImport from "unplugin-auto-import/vite";
-
+import * as path from "path";
+import tsconfigPaths from "vite-tsconfig-paths";
 //@ts-expect-error but it's on?
 import PackageJSON from "./package.json";
+
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -20,11 +22,14 @@ export default defineConfig({
         APP_VERSION: JSON.stringify(PackageJSON.version),
     },
     plugins: [
-        react(),
         AutoImport({
-            imports: ["react", { imports: ["z"], from: "zod" }],
+            imports: ["react", { imports: ["z"], from: "zod" }, "ahooks", {
+                imports: ['Box', 'Stack', 'Container', 'Typography', 'Card', 'CardHeader', 'CardContent', 'Collapse', "List", "ListItem", "ListItemText", 'ListItemButton', "Button", "IconButton", "ButtonGroup", "Divider"], from: '@mui/material'
+            }],
             dts: "./src/auto-import.d.ts",
         }),
+        react(),
+        tsconfigPaths(),
         Icons({
             compiler: "jsx",
             jsx: "react",
@@ -32,52 +37,13 @@ export default defineConfig({
         }),
         checker({
             typescript: true,
-            eslint: {
-                lintCommand: "eslint ./src",
-            },
-        }),
-        VitePWA({
-            registerType: "autoUpdate",
-            manifest: {
-                name: "Gdakon Pocket Schedule",
-                short_name: "Gdakon",
-                description: "Check the Gdakon schedule from your phone!",
-                lang: "en",
-                theme_color: "#3a3d80",
-                icons: [
-                    {
-                        src: "https://gdakon.org/favicon.ico",
-                        sizes: "16x16",
-                        type: "image/icon",
-                    },
-                ],
-            },
-            workbox: {
-                globPatterns: [
-                    "**/*.{js,css,html,ico,png,svg,json,webp,woff,woff2,ico}",
-                ],
-                cleanupOutdatedCaches: true,
-                sourcemap: true,
-            },
         }),
         imagetools(),
-        html({
-            title: "Gdakon Pocket Schedule",
-            metas: [
-                {
-                    name: "theme-color",
-                    value: "#3a3d80",
-                },
-                {
-                    name: "color-scheme",
-                    value: "dark",
-                },
-                { name: "author", value: "Gdakon, Requinard" },
-                {
-                    name: "description",
-                    value: "A nice and dandy pocket schedule",
-                },
-            ],
-        }),
     ],
+    resolve: {
+        alias: [
+            {find: "@/utilities", replacement: path.resolve(__dirname, "src/utilities")},
+            {find: "@/modules", replacement: path.resolve(__dirname, "src/modules")}
+        ]
+    }
 });

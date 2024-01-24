@@ -4,14 +4,12 @@ import "./i18n";
 import "./utilities/dayjs";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
-import { BrowserRouter } from "react-router-dom";
-import { Provider as StoreProvider } from "react-redux";
-import { PersistGate } from "redux-persist/integration/react";
-
-import { App } from "./App";
-import { persistor, store } from "./store";
-import { LocaleProvider } from "./i18n/LocalizationProvider";
+import {createTheme, CssBaseline, ThemeProvider} from "@mui/material";
+import {Provider as StoreProvider} from "react-redux";
+import {store} from "./store";
+import {LocaleProvider} from "./i18n/LocalizationProvider";
+import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
+import {AppRouter} from "./App.routes";
 
 const theme = createTheme({
     palette: {
@@ -45,19 +43,29 @@ const theme = createTheme({
     },
 });
 
+const queryClient = new QueryClient({
+    defaultOptions: {
+        queries: {
+            staleTime: 1000 * 60 * 5 // 5 minutes
+
+        }
+    }
+})
+
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <React.StrictMode>
-        <StoreProvider store={store}>
-            <ThemeProvider theme={theme}>
-                <LocaleProvider>
-                    <CssBaseline />
-                    <BrowserRouter>
-                        <PersistGate persistor={persistor}>
-                            <App />
-                        </PersistGate>
-                    </BrowserRouter>
-                </LocaleProvider>
-            </ThemeProvider>
-        </StoreProvider>
+        <QueryClientProvider client={queryClient}>
+
+            <StoreProvider store={store}>
+                <ThemeProvider theme={theme}>
+                    <LocaleProvider>
+                        <CssBaseline/>
+                        <AppRouter/>
+
+                    </LocaleProvider>
+                </ThemeProvider>
+            </StoreProvider>
+
+        </QueryClientProvider>
     </React.StrictMode>
 );

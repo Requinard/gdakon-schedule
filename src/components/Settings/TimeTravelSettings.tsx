@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
     ListItem,
     ListItemSecondaryAction,
@@ -66,15 +65,7 @@ const TimeTravelPicker = () => {
             <DateTimePicker
                 value={now}
                 onChange={changeTimeTravelAmount}
-                renderInput={(props) => (
-                    <TextField
-                        fullWidth
-                        size={"small"}
-                        {...props}
-                        label={t("TimeTravelSettings.TimeTravelPicker.label")}
-                    />
-                )}
-            />
+               />
         </ListItem>
     );
 };
