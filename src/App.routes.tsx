@@ -13,7 +13,7 @@ const router = createBrowserRouter([
                 element: <Navigate to={"/home"} replace/>
             },
             HomeRoutes,
-            EventScheduleRoutes
+            ...EventScheduleRoutes
         ]
     },
 

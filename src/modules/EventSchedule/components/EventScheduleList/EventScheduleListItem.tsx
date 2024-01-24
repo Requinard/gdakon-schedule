@@ -3,20 +3,29 @@ import {bindDialog, bindToggle, bindTrigger, usePopupState} from "material-ui-po
 import {Chip, Dialog, ListItemButton, ListItemSecondaryAction, ListItemText} from "@mui/material";
 import {EventItemCard} from "../EventItemCard/EventItemCard";
 import CloseIcon from '~icons/mdi/close'
+import {useEventBookmarks} from "../../state/useEventBookmarks";
 
 export type EventScheduleListItemProps = {
     event: EventScheduleModel
 }
 export const EventScheduleListItem = ({event}: EventScheduleListItemProps) => {
+    const {bookmarks, toggleBookmark, } = useEventBookmarks()
     const dialog = usePopupState({variant: "dialog"});
 
     return <>
-        <ListItemButton {...bindTrigger(dialog)}>
+        <ListItem>
             <ListItemText primary={event.name} secondary={`On ${event.start} from ${event.start} to ${event.end}`}/>
             <ListItemSecondaryAction>
-                {event.organizers.map(it => <Chip label={it} key={it} />)}
+                <ButtonGroup variant={'text'}>
+                    <Button onClick={() => toggleBookmark(event.id)} color={bookmarks.has(event.id) ? "success" : "error"} >
+                        bookmark
+                    </Button>
+                    <Button {...bindTrigger(dialog)}>
+                        open
+                    </Button>
+                </ButtonGroup>
             </ListItemSecondaryAction>
-        </ListItemButton>
+        </ListItem>
         <Dialog {...bindDialog(dialog)} fullWidth={true} maxWidth={'lg'}>
             <EventItemCard event={event} action={<IconButton {...bindToggle(dialog)}><CloseIcon/></IconButton>}/>
         </Dialog>

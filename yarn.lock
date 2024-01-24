@@ -10633,6 +10633,7 @@ __metadata:
     vite-tsconfig-paths: ^4.3.1
     vitest: ^1.2.1
     zod: ^3.22.4
+    zustand: ^4.5.0
   languageName: unknown
   linkType: soft
 
@@ -17077,7 +17078,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"use-sync-external-store@npm:^1.0.0":
+"use-sync-external-store@npm:1.2.0, use-sync-external-store@npm:^1.0.0":
   version: 1.2.0
   resolution: "use-sync-external-store@npm:1.2.0"
   peerDependencies:
@@ -18087,5 +18088,25 @@ __metadata:
   version: 3.22.4
   resolution: "zod@npm:3.22.4"
   checksum: 80bfd7f8039b24fddeb0718a2ec7c02aa9856e4838d6aa4864335a047b6b37a3273b191ef335bf0b2002e5c514ef261ffcda5a589fb084a48c336ffc4cdbab7f
+  languageName: node
+  linkType: hard
+
+"zustand@npm:^4.5.0":
+  version: 4.5.0
+  resolution: "zustand@npm:4.5.0"
+  dependencies:
+    use-sync-external-store: 1.2.0
+  peerDependencies:
+    "@types/react": ">=16.8"
+    immer: ">=9.0.6"
+    react: ">=16.8"
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+    immer:
+      optional: true
+    react:
+      optional: true
+  checksum: 91685492ab33bb656b98e07d8fff2be1794d8e68ac5dc546ec457f4ae3d709f0c19de9e93045b9ee5d6b704f64503d9e085ffe1f600f6ade0459e572d1cf5c0d
   languageName: node
   linkType: hard
