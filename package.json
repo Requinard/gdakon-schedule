@@ -47,6 +47,7 @@
     "@types/react-transition-group": "^4.4.10",
     "@types/redux-logger": "^3.0.12",
     "@types/redux-persist": "^4.3.1",
+    "@use-gesture/react": "^10.3.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "@zodios/core": "^10.9.6",
     "@zodios/react": "^10.4.5",

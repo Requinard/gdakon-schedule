@@ -1,4 +1,4 @@
-import {Box, List, ListItem, ListItemButton, ListItemText} from "@mui/material";
+import {Alert, Box, List, ListItem, ListItemButton, ListItemText} from "@mui/material";
 
 import {EventScheduleModel} from "../../models";
 import {TransitionGroup} from "react-transition-group";
@@ -18,6 +18,13 @@ export const EventScheduleList = ({events}: EventScheduleListProps) => {
         itemHeight: 48,
         overscan: 5,
     });
+
+    if(events.length === 0) {
+        return <Alert severity={'info'}>
+            There are no events to display here
+        </Alert>
+    }
+
     return (
         <Box ref={containerRef}>
             <List ref={wrapperRef}>
@@ -28,8 +35,8 @@ export const EventScheduleList = ({events}: EventScheduleListProps) => {
                         </Collapse>
                     ))}
                 </TransitionGroup>
-
             </List>
+
         </Box>
     );
 };
