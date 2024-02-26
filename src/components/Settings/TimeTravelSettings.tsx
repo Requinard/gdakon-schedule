@@ -69,8 +69,8 @@ const TimeTravelPicker = () => {
                 slotProps={{
                     textField: {
                         size: "small",
-                        fullWidth: true
-                    }
+                        fullWidth: true,
+                    },
                 }}
             />
         </ListItem>
