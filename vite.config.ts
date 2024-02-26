@@ -4,7 +4,6 @@ import { VitePWA } from "vite-plugin-pwa";
 import { checker } from "vite-plugin-checker";
 import Icons from "unplugin-icons/vite";
 import { imagetools } from "vite-imagetools";
-import { visualizer } from "rollup-plugin-visualizer";
 
 //@ts-expect-error but it's on?
 import PackageJSON from "./package.json";
