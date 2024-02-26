@@ -3,7 +3,6 @@ import react from "@vitejs/plugin-react-swc";
 import { VitePWA } from "vite-plugin-pwa";
 import { checker } from "vite-plugin-checker";
 import Icons from "unplugin-icons/vite";
-import html from "vite-plugin-html-config";
 import { imagetools } from "vite-imagetools";
 import { visualizer } from "rollup-plugin-visualizer";
 
@@ -32,9 +31,6 @@ export default defineConfig({
     },
     plugins: [
         react(),
-        visualizer({
-            filename: "./dist/size.html",
-        }),
         Icons({
             compiler: "jsx",
             jsx: "react",
@@ -71,23 +67,5 @@ export default defineConfig({
             },
         }),
         imagetools(),
-        html({
-            title: "Gdakon Pocket Schedule",
-            metas: [
-                {
-                    name: "theme-color",
-                    value: "#3a3d80",
-                },
-                {
-                    name: "color-scheme",
-                    value: "dark",
-                },
-                { name: "author", value: "Gdakon, Requinard" },
-                {
-                    name: "description",
-                    value: "A nice and dandy pocket schedule",
-                },
-            ],
-        }),
     ],
 });
