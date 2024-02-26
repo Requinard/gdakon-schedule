@@ -2,7 +2,6 @@ import { useImmer } from "use-immer";
 import { createContext, PropsWithChildren, useContext, useMemo } from "react";
 import { every, isEqual, noop, some } from "lodash";
 import { Dayjs } from "dayjs";
-import { useDebounce } from "usehooks-ts";
 
 import { NormalizedEventScheduleItem } from "../../store/gdakon.types";
 import { useAppSelector } from "../../store";
@@ -80,7 +79,7 @@ export const EventFilterProvider = ({
 }: PropsWithChildren<EventFilterProviderProps>) => {
     const bookmarks = useAppSelector((state) => state.bookmarks.events);
     const [filters, setFilters] = useImmer<EventFilters>(defaultEventFilters);
-    const debouncedFilters = useDebounce(filters, 200);
+    const debouncedFilters = useDebounce(filters, { wait: 200 });
 
     const filtered = useMemo(() => {
         if (isEqual(debouncedFilters, defaultEventFilters)) {
