@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import { VitePWA } from "vite-plugin-pwa";
@@ -76,4 +77,8 @@ export default defineConfig({
         imagetools(),
         tsconfigPaths()
     ],
+    test: {
+        passWithNoTests: true,
+        environment: "happydom",
+    }
 });

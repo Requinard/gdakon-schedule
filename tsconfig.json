@@ -28,7 +28,8 @@
         "paths": {
             "~modules/Schedule": ["./src/modules/Schedule/index.ts"],
             "~hooks": ["./src/hooks/index.ts"],
-            "~utilities": ["./src/utilities/index.ts"]
+            "~utilities": ["./src/utilities/index.ts"],
+            "~providers": ["./src/providers/index.ts"]
         }
     },
     "include": [
