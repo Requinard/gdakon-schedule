@@ -6,7 +6,6 @@ import {
     ListSubheader,
     MenuItem,
     Switch,
-    TextField,
 } from "@mui/material";
 import { useCallback } from "react";
 import dayjs, { Dayjs } from "dayjs";
@@ -66,14 +65,13 @@ const TimeTravelPicker = () => {
             <DateTimePicker
                 value={now}
                 onChange={changeTimeTravelAmount}
-                renderInput={(props) => (
-                    <TextField
-                        fullWidth
-                        size={"small"}
-                        {...props}
-                        label={t("TimeTravelSettings.TimeTravelPicker.label")}
-                    />
-                )}
+                label={t("TimeTravelSettings.TimeTravelPicker.label")}
+                slotProps={{
+                    textField: {
+                        size: "small",
+                        fullWidth: true
+                    }
+                }}
             />
         </ListItem>
     );
