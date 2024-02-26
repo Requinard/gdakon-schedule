@@ -13,5 +13,3 @@ dayjs.extend(CustomFormat);
 dayjs.extend(LocalizedFormat);
 dayjs.extend(LocaleData);
 dayjs.extend(IsBetween);
-
-export const updateDayjsLocale = (locale: string) => dayjs.locale(locale);

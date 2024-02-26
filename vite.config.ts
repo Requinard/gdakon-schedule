@@ -21,7 +21,7 @@ export default defineConfig({
         rollupOptions: {
             output: {
                 manualChunks: {
-                    mui: ["@mui/material", "@mui/lab", "@mui/x-date-pickers"],
+                    mui: ["@mui/material", "@mui/x-date-pickers"],
                     react: ["react", "react-dom", "react-router-dom"],
                     lodash: ["lodash"],
                 },
