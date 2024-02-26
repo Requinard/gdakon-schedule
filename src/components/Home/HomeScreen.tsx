@@ -3,7 +3,6 @@ import { Box, Grid, styled, useTheme } from "@mui/material";
 import { useWindowSize } from "usehooks-ts";
 import { useMemo } from "react";
 
-import { Logo } from "../images/Logo";
 import { BackgroundBanner } from "../images/BackgroundBanner";
 import { OverviewCard } from "../EventSchedule/OverviewCard";
 
@@ -79,7 +78,7 @@ export const HomeScreen = () => {
                                 [theme.breakpoints.down("sm")]: { pt: 8, p: 4 },
                             }}
                         >
-                            <Logo />
+                            {/*<Logo />*/}
                         </Box>
 
                         <OnlineCheck />
