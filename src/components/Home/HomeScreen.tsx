@@ -5,9 +5,9 @@ import { useMemo } from "react";
 
 import { BackgroundBanner } from "../images/BackgroundBanner";
 import { OverviewCard } from "../EventSchedule/OverviewCard";
+import { Logo } from "../images/Logo";
 
 import { OnlineCheck } from "./OnlineCheck";
-import { Logo } from "../images/Logo";
 
 const AnimatedPage = styled(animated.div)({
     position: "absolute",
