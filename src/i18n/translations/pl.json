@@ -32,7 +32,6 @@
                 "subtitle_other": "Wkrótce rozpoczną się {{count}} wydarzenia"
             }
         },
-
         "useEventSubtitle": {
             "starting": "Od godziny {{start}} ({{time}})",
             "taking_place": "Obecnie odbywają się"
