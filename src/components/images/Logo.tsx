@@ -1,6 +1,6 @@
 import { Image } from "mui-image";
 
-import logoUrl from "../../assets/gdakon-20230-logo.webp";
+import logoUrl from "../../assets/gdakon-2024-logo.png";
 
 export const Logo = () => {
     return (
