@@ -13,7 +13,7 @@ type AppTimeString = string;
 
 type UUID = string;
 
-export type EventScheduleItem = {
+type EventScheduleItem = {
     id: UUID;
     name: string;
     desc: string;
@@ -26,20 +26,20 @@ export type EventScheduleItem = {
     requiresSignUps: boolean;
     signUpCount: number;
 };
-export type EventScheduleRoom = {
+type EventScheduleRoom = {
     id: UUID;
     name: string | null;
     namePl: string | null;
     events: EventScheduleItem[];
 };
 
-export type EventScheduleDay = {
+type EventScheduleDay = {
     dayOfWeek: number;
     date: AppDateString;
     rooms: EventScheduleRoom[];
 };
 
-export type EventScheduleResponse = {
+type EventScheduleResponse = {
     events: EventScheduleDay[];
 };
 

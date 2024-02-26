@@ -55,8 +55,8 @@ export const store = configureStore({
 
 export const persistor = persistStore(store);
 
-export type RootState = ReturnType<typeof reducer>;
-export type AppDispatch = typeof store.dispatch;
+type RootState = ReturnType<typeof reducer>;
+type AppDispatch = typeof store.dispatch;
 
 export const useAppDispatch: () => AppDispatch = useDispatch;
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;

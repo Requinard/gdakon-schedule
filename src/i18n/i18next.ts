@@ -14,8 +14,7 @@ export const resources = {
     pl,
 } as const;
 
-// eslint-disable-next-line import/no-default-export
-export default i18n.use(initReactI18next).init({
+i18n.use(initReactI18next).init({
     defaultNS,
     resources,
     lng: "en",
