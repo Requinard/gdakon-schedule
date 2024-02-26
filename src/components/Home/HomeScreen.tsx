@@ -7,6 +7,7 @@ import { BackgroundBanner } from "../images/BackgroundBanner";
 import { OverviewCard } from "../EventSchedule/OverviewCard";
 
 import { OnlineCheck } from "./OnlineCheck";
+import { Logo } from "../images/Logo";
 
 const AnimatedPage = styled(animated.div)({
     position: "absolute",
@@ -78,7 +79,7 @@ export const HomeScreen = () => {
                                 [theme.breakpoints.down("sm")]: { pt: 8, p: 4 },
                             }}
                         >
-                            {/*<Logo />*/}
+                            <Logo />
                         </Box>
 
                         <OnlineCheck />
