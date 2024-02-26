@@ -8,6 +8,7 @@ import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 import { BrowserRouter } from "react-router-dom";
 import { Provider as StoreProvider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import { App } from "./App";
 import { persistor, store } from "./store";
@@ -45,19 +46,27 @@ const theme = createTheme({
     },
 });
 
+const queryClient = new QueryClient({
+    defaultOptions: {
+        queries: { staleTime: 5 * 60 * 1000 /* 5 minutes */ },
+    },
+});
+
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <React.StrictMode>
-        <StoreProvider store={store}>
-            <ThemeProvider theme={theme}>
-                <LocaleProvider>
-                    <CssBaseline />
-                    <BrowserRouter>
-                        <PersistGate persistor={persistor}>
-                            <App />
-                        </PersistGate>
-                    </BrowserRouter>
-                </LocaleProvider>
-            </ThemeProvider>
-        </StoreProvider>
+        <QueryClientProvider client={queryClient}>
+            <StoreProvider store={store}>
+                <ThemeProvider theme={theme}>
+                    <LocaleProvider>
+                        <CssBaseline />
+                        <BrowserRouter>
+                            <PersistGate persistor={persistor}>
+                                <App />
+                            </PersistGate>
+                        </BrowserRouter>
+                    </LocaleProvider>
+                </ThemeProvider>
+            </StoreProvider>
+        </QueryClientProvider>
     </React.StrictMode>
 );

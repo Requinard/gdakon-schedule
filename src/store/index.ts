@@ -14,7 +14,6 @@ import {
     REHYDRATE,
 } from "redux-persist";
 
-import { gdakonService } from "./gdakon.service";
 import { settingsSlice } from "./settings.slice";
 import { bookmarkSlice } from "./bookmarks";
 
@@ -22,7 +21,6 @@ const logger = createLogger({});
 
 const reducer = combineReducers({
     [settingsSlice.name]: settingsSlice.reducer,
-    [gdakonService.reducerPath]: gdakonService.reducer,
     [bookmarkSlice.name]: bookmarkSlice.reducer,
 });
 
@@ -50,7 +48,7 @@ export const store = configureStore({
                     REGISTER,
                 ],
             },
-        }).concat(gdakonService.middleware, logger),
+        }).concat(logger),
 });
 
 export const persistor = persistStore(store);

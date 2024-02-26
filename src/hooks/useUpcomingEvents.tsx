@@ -2,11 +2,11 @@ import { useMemo } from "react";
 import { chain } from "lodash";
 import dayjs from "dayjs";
 
-import { NormalizedEventScheduleItem } from "../store/gdakon.types";
-
 import { useNow } from "./useNow";
 
-export const useUpcomingEvents = (events: NormalizedEventScheduleItem[]) => {
+import { EventScheduleItemModel } from "~modules/Schedule";
+
+export const useUpcomingEvents = (events: EventScheduleItemModel[]) => {
     const now = useNow();
 
     return useMemo(

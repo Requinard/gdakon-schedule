@@ -24,7 +24,10 @@
             "unplugin-icons/types/react",
             "vite-plugin-pwa/client",
             "./src/auto-import.d.ts"
-        ]
+        ],
+        "paths": {
+            "~modules/Schedule": ["./src/modules/Schedule/index.ts"]
+        }
     },
     "include": [
         "src",
@@ -34,5 +37,6 @@
         {
             "path": "./tsconfig.node.json"
         }
-    ]
+    ],
+
 }

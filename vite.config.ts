@@ -4,9 +4,10 @@ import { VitePWA } from "vite-plugin-pwa";
 import { checker } from "vite-plugin-checker";
 import Icons from "unplugin-icons/vite";
 import { imagetools } from "vite-imagetools";
-import AutoImport from 'unplugin-auto-import/vite'
+import AutoImport from "unplugin-auto-import/vite";
 //@ts-expect-error but it's on?
 import PackageJSON from "./package.json";
+import tsconfigPaths from "vite-tsconfig-paths";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -36,13 +37,13 @@ export default defineConfig({
             defaultClass: "iconified",
         }),
         AutoImport({
-            imports: ["react", "react-router-dom", "react-i18next", "ahooks"],
-            dts: "./src/auto-import.d.ts"
+            imports: ["react", "react-router-dom", "react-i18next", "ahooks", { imports: ["z"], from: "zod",type: true }],
+            dts: "./src/auto-import.d.ts",
         }),
         checker({
             typescript: true,
             overlay: {
-                initialIsOpen: false
+                initialIsOpen: false,
             },
             eslint: {
                 lintCommand: "eslint ./src",
@@ -73,5 +74,6 @@ export default defineConfig({
             },
         }),
         imagetools(),
+        tsconfigPaths()
     ],
 });

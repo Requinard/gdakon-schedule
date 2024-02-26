@@ -2,7 +2,7 @@ import { chain } from "lodash";
 import dayjs from "dayjs";
 
 /**
- * This is a date string in the format of "13 Mar 20223"
+ * This is a date string in the format of "13 Mar @20223"
  */
 type AppDateString = string;
 
@@ -43,6 +43,9 @@ type EventScheduleResponse = {
     events: EventScheduleDay[];
 };
 
+/**
+ * @deprecated use `EventScheduleItemModel` instead
+ */
 export type NormalizedEventScheduleItem = EventScheduleItem & {
     startTime: number;
     endTime: number;

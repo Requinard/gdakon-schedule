@@ -4,12 +4,13 @@ import { flatMap, groupBy, keys, map, partition, values } from "lodash";
 import { Box, Container, Typography } from "@mui/material";
 import dayjs from "dayjs";
 
-import { NormalizedEventScheduleItem } from "../../store/gdakon.types";
 import { useNow } from "../../hooks/useNow";
 
 import { useEventFilter } from "./EventFilter.Provider";
 import { EventScheduleItemCard } from "./EventScheduleItemCard";
 import { EventSearch } from "./Search/EventSearch";
+
+import { EventScheduleItemModel } from "~modules/Schedule";
 
 type VirtuosoProps<T> = {
     groupCounts: number[];
@@ -19,10 +20,10 @@ type VirtuosoProps<T> = {
 
 export const EventListVirtualized = () => {
     const now = useNow();
-    const { filtered } = useEventFilter();
+    const { filtered = [] } = useEventFilter();
 
     const { groupCounts, groups, items } =
-        useMemo((): VirtuosoProps<NormalizedEventScheduleItem> => {
+        useMemo((): VirtuosoProps<EventScheduleItemModel> => {
             const [expired, upcoming] = partition(filtered, (it) =>
                 now.isAfter(it.endTime)
             );
@@ -48,7 +49,7 @@ export const EventListVirtualized = () => {
                     <EventSearch />
                 </Box>
             </Container>
-            <GroupedVirtuoso<NormalizedEventScheduleItem>
+            <GroupedVirtuoso<EventScheduleItemModel>
                 groupCounts={groupCounts}
                 height={"100%"}
                 groupContent={(index) => (
