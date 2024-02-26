@@ -12,9 +12,11 @@ declare global {
   const Route: typeof import('react-router-dom')['Route']
   const Routes: typeof import('react-router-dom')['Routes']
   const createRef: typeof import('react')['createRef']
+  const d: typeof import('typeFrom')['d']
   const forwardRef: typeof import('react')['forwardRef']
   const lazy: typeof import('react')['lazy']
   const memo: typeof import('react')['memo']
+  const o: typeof import('typeFrom')['o']
   const startTransition: typeof import('react')['startTransition']
   const useAntdTable: typeof import('ahooks')['useAntdTable']
   const useAsyncEffect: typeof import('ahooks')['useAsyncEffect']
@@ -120,4 +122,11 @@ declare global {
   const useVirtualList: typeof import('ahooks')['useVirtualList']
   const useWebSocket: typeof import('ahooks')['useWebSocket']
   const useWhyDidYouUpdate: typeof import('ahooks')['useWhyDidYouUpdate']
+  const z: typeof import('typeFrom')['z']
+}
+// for type re-export
+declare global {
+  // @ts-ignore
+  export type { z } from 'zod'
+  import('zod')
 }

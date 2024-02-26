@@ -3,13 +3,13 @@ import { match } from "ts-pattern";
 import { useTranslation } from "react-i18next";
 import dayjs from "dayjs";
 
-import { NormalizedEventScheduleItem } from "../store/gdakon.types";
-
 import { useNow } from "./useNow";
 import { useEventState } from "./useEventState";
 
+import { EventScheduleItemModel } from "~modules/Schedule";
+
 export const useEventSubtitle = (
-    event: NormalizedEventScheduleItem,
+    event: EventScheduleItemModel,
     room: string | null
 ) => {
     const now = useNow();

@@ -1,9 +1,9 @@
 import { useTranslation } from "react-i18next";
 import { useMemo } from "react";
 
-import { NormalizedEventScheduleItem } from "../store/gdakon.types";
+import { EventScheduleItemModel } from "~modules/Schedule";
 
-export const useLocalizedEvent = (event: NormalizedEventScheduleItem) => {
+export const useLocalizedEvent = (event: EventScheduleItemModel) => {
     const { i18n } = useTranslation();
 
     const name = useMemo(() => {

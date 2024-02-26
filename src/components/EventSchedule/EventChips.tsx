@@ -3,8 +3,6 @@ import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import dayjs from "dayjs";
 
-import { NormalizedEventScheduleItem } from "../../store/gdakon.types";
-
 import { useEventFilter } from "./EventFilter.Provider";
 
 import CheckedIcon from "~icons/ic/baseline-check-circle-outline";
@@ -14,8 +12,9 @@ import BookmarkIcon from "~icons/mdi/bookmark";
 import ClockIcon from "~icons/mdi/clock-outline";
 import PawIcon from "~icons/mdi/paw";
 import SignUprequiredIcon from "~icons/mdi/lock";
+import { EventScheduleItemModel } from "~modules/Schedule";
 
-export const DayFilterChip = ({ timestamp }: { timestamp: number }) => {
+export const DayFilterChip = ({ timestamp }: { timestamp: string }) => {
     const { toggleDate, dayEnabled } = useEventFilter();
 
     const day = useMemo(() => dayjs(timestamp), [timestamp]);
@@ -57,7 +56,7 @@ export const RoomFilterChip = ({ room }: { room: string | null }) => {
     );
 };
 
-export const HourChip = ({ timestamp }: { timestamp: number }) => {
+export const HourChip = ({ timestamp }: { timestamp: string }) => {
     return (
         <Chip
             color={"primary"}
@@ -113,11 +112,7 @@ export const OrganizerChips = ({ organizers }: { organizers: string[] }) => {
     );
 };
 
-export const SignUpChip = ({
-    event,
-}: {
-    event: NormalizedEventScheduleItem;
-}) => {
+export const SignUpChip = ({ event }: { event: EventScheduleItemModel }) => {
     const { t } = useTranslation("EventChips");
 
     if (!event.requiresSignUps) {

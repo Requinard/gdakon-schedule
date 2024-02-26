@@ -1,13 +1,11 @@
 import { useMemo } from "react";
 
-import { NormalizedEventScheduleItem } from "../store/gdakon.types";
-
 import { useNow } from "./useNow";
 
+import { EventScheduleItemModel } from "~modules/Schedule";
+
 type EventState = "upcoming" | "current" | "scheduled" | "expired";
-export const useEventState = (
-    event: NormalizedEventScheduleItem
-): EventState => {
+export const useEventState = (event: EventScheduleItemModel): EventState => {
     const now = useNow();
     return useMemo((): EventState => {
         if (

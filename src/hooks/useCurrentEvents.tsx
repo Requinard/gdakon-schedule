@@ -1,11 +1,11 @@
 import { useMemo } from "react";
 import { chain } from "lodash";
 
-import { NormalizedEventScheduleItem } from "../store/gdakon.types";
-
 import { useNow } from "./useNow";
 
-export const useCurrentEvents = (events: NormalizedEventScheduleItem[]) => {
+import { EventScheduleItemModel } from "~modules/Schedule";
+
+export const useCurrentEvents = (events: EventScheduleItemModel[]) => {
     const now = useNow();
 
     return useMemo(

@@ -5,15 +5,15 @@ import {
     ListItemText,
 } from "@mui/material";
 
-import { NormalizedEventScheduleItem } from "../../store/gdakon.types";
 import { useLocalizedEvent } from "../../hooks/useLocalizedEvent";
 import { useEventSubtitle } from "../../hooks/useEventSubtitle";
 import { useAppSelector } from "../../store";
 
 import BookmarkIcon from "~icons/mdi/bookmark";
+import { EventScheduleItemModel } from "~modules/Schedule";
 
 type EventListItemProps = {
-    event: NormalizedEventScheduleItem;
+    event: EventScheduleItemModel;
 };
 
 export const EventListItem = ({ event }: EventListItemProps) => {

@@ -3,11 +3,12 @@ import { createContext, PropsWithChildren, useContext, useMemo } from "react";
 import { every, isEqual, noop, some } from "lodash";
 import { Dayjs } from "dayjs";
 
-import { NormalizedEventScheduleItem } from "../../store/gdakon.types";
 import { useAppSelector } from "../../store";
 
+import { EventScheduleItemModel } from "~modules/Schedule";
+
 type EventFilterProviderProps = {
-    events: NormalizedEventScheduleItem[];
+    events: EventScheduleItemModel[];
 };
 
 type EventFilters = {
@@ -26,8 +27,8 @@ export const defaultEventFilters = {
 
 type EventFilterContextProps = {
     reset: () => void;
-    original: NormalizedEventScheduleItem[];
-    filtered: NormalizedEventScheduleItem[];
+    original: EventScheduleItemModel[];
+    filtered: EventScheduleItemModel[];
     filters: EventFilters;
     setSearch: (search: string) => void;
     toggleDate: (date: Dayjs) => void;
@@ -52,10 +53,7 @@ const EventFilterContext = createContext<EventFilterContextProps>({
 
 export const useEventFilter = () => useContext(EventFilterContext);
 
-const eventSearch = (
-    query: string,
-    event: NormalizedEventScheduleItem
-): boolean => {
+const eventSearch = (query: string, event: EventScheduleItemModel): boolean => {
     const lowered = query.toLocaleLowerCase();
 
     if (lowered.length < 3) {

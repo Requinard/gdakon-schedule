@@ -1,21 +1,25 @@
 import { Card, CardHeader, List, Alert, useTheme } from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { useQuery } from "@tanstack/react-query";
 
 import { useCurrentEvents } from "../../hooks/useCurrentEvents";
 import { useUpcomingEvents } from "../../hooks/useUpcomingEvents";
 import { ListSection } from "../Common/ListSection";
-import { useGetEventScheduleQuery } from "../../store/gdakon.service";
 import { ServiceWorker } from "../Common/ServiceWorker";
 
 import { EventList } from "./EventList";
 
 import ScheduleIcon from "~icons/ic/sharp-schedule";
+import { scheduleClient } from "~modules/Schedule";
 
 export const OverviewCard = () => {
     const theme = useTheme();
     const { t } = useTranslation("EventSchedule");
-    const { data = [] } = useGetEventScheduleQuery({});
+    const { data = [] } = useQuery({
+        queryKey: ["schedule"],
+        queryFn: scheduleClient.getSchedule,
+    });
     const current = useCurrentEvents(data);
     const upcoming = useUpcomingEvents(data);
 
