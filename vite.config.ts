@@ -4,7 +4,7 @@ import { VitePWA } from "vite-plugin-pwa";
 import { checker } from "vite-plugin-checker";
 import Icons from "unplugin-icons/vite";
 import { imagetools } from "vite-imagetools";
-
+import AutoImport from 'unplugin-auto-import/vite'
 //@ts-expect-error but it's on?
 import PackageJSON from "./package.json";
 
@@ -35,8 +35,15 @@ export default defineConfig({
             jsx: "react",
             defaultClass: "iconified",
         }),
+        AutoImport({
+            imports: ["react", "react-router-dom", "react-i18next", "ahooks"],
+            dts: "./src/auto-import.d.ts"
+        }),
         checker({
             typescript: true,
+            overlay: {
+                initialIsOpen: false
+            },
             eslint: {
                 lintCommand: "eslint ./src",
             },

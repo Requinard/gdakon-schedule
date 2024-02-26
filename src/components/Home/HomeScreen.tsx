@@ -1,6 +1,5 @@
 import { animated, useSpring } from "@react-spring/web";
 import { Box, Grid, styled, useTheme } from "@mui/material";
-import { useWindowSize } from "usehooks-ts";
 import { useMemo } from "react";
 
 import { BackgroundBanner } from "../images/BackgroundBanner";
@@ -20,7 +19,6 @@ const AnimatedPage = styled(animated.div)({
 
 export const HomeScreen = () => {
     const theme = useTheme();
-    const { width, height } = useWindowSize();
     const [{ xy }, set] = useSpring(() => ({
         xy: [0, 0],
         config: { mass: 10, tension: 550, friction: 140 },
@@ -28,13 +26,16 @@ export const HomeScreen = () => {
 
     const { calc, background, foreground } = useMemo(
         () => ({
-            calc: (x: number, y: number) => [x - width / 2, y - height / 2],
+            calc: (x: number, y: number) => [
+                x - window.innerWidth / 2,
+                y - window.innerHeight / 2,
+            ],
             background: (x: number, y: number) =>
                 `translate3d(${x / 60}px,${y / 40}px,0)`,
             foreground: (x: number, y: number) =>
                 `translate3d(${x / 30}px,${y / 20}px,0)`,
         }),
-        [width, height]
+        []
     );
 
     return (

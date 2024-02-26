@@ -1,9 +1,6 @@
 /**
  * Loop through a list in a circular manner.
  */
-import { useEffect, useRef, useState } from "react";
-import { useInterval } from "usehooks-ts";
-
 const getItemsFromTicker = <T>(
     items: T[],
     amount: number,

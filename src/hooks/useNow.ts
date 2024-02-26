@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
 import dayjs, { Dayjs } from "dayjs";
-import { useInterval } from "usehooks-ts";
 
 import { useAppSelector } from "../store";
 import { useLocale } from "../i18n";
