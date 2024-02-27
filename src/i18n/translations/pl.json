@@ -6,6 +6,13 @@
         }
     },
     "EventSchedule": {
+        "Search": {
+            "search_label": "Szukaj punktów programu",
+            "search_placeholder": "Oficjalne Rozpoczęcie . . .",
+            "date_subheader": "Filtruj po dacie",
+            "room_subheader": "Filtruj po sali",
+            "no_results": "Brak wyników"
+        },
         "title": "Punkty programu",
         "EventChips": {
             "BookmarkChip": {
@@ -14,6 +21,9 @@
         },
         "EventListVirtualized": {
             "header": "$t(EventSchedule:title)"
+        },
+        "Groups": {
+            "expired": "Zakończone"
         },
         "Overview": {
             "title": "Ne",
@@ -34,7 +44,8 @@
         },
         "useEventSubtitle": {
             "starting": "Od godziny {{start}} ({{time}})",
-            "taking_place": "Obecnie odbywają się"
+            "taking_place": "Właśnie trwa",
+            "expired": "To wydarzenie już się odbyło"
         }
     },
     "Home": {
@@ -59,10 +70,7 @@
     },
     "Settings": {
         "LanguageSettings": {
-            "title": "Wybór języka i lokalizacji",
-            "english": "Angielski",
-            "polish": "Polski",
-            "dutch": "Holenderski"
+            "title": "Wybór języka i lokalizacji"
         },
         "TimeTravelSettings": {
             "title": "Podróż w czasie",
@@ -74,5 +82,17 @@
                 "label": "Zmień czas"
             }
         }
+    },
+    "EventChips": {
+        "signup_required": "Wymagane zapisanie się",
+        "signup_required_tooltip": "Możesz dołączyć do tego wydarzenia tylko po zapisaniu się na stronie",
+        "organizer_tooltip": "To jeden z organizatorów tego wydarzenia"
+    },
+    "LoadingIndicator": {
+        "loading": "Proszę czekać, trwa ładowanie . . ."
+    },
+    "ServiceWorker": {
+        "update_available_title": "Dostępna jest nowa wersja",
+        "update_available_subtitle": "Zaktualizuj do najnowszej wersji, aby być na bieżąco z Gdakonem"
     }
 }

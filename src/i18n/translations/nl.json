@@ -59,10 +59,7 @@
     },
     "Settings": {
         "LanguageSettings": {
-            "title": "Taal- en Lokalisatieinstellingen",
-            "english": "Engels",
-            "polish": "Pools",
-            "dutch": "Nederlands"
+            "title": "Taal- en Lokalisatieinstellingen"
         },
         "TimeTravelSettings": {
             "title": "Tijdreizen",

@@ -48,18 +48,20 @@ export const EventSearch = () => {
                         variant={"text"}
                         color={"inherit"}
                     >
-                        <Button
-                            onClick={() => {
-                                setSearch("");
-                            }}
-                            disabled={filters.search.length === 0}
-                        >
-                            <ClearIcon fontSize={"1.4rem"} />
-                        </Button>
-                        <ResetButton />
+                        {filters.search.length !== 0 && (
+                            <Button
+                                onClick={() => {
+                                    setSearch("");
+                                }}
+                                color={"error"}
+                            >
+                                <ClearIcon fontSize={"1.4rem"} />
+                            </Button>
+                        )}
                         <BookmarkFilterButton />
                         <RoomFilterMenu />
                         <DayFilterMenu />
+                        <ResetButton />
                     </ButtonGroup>
                 ),
             }}

@@ -1,4 +1,5 @@
 import {
+    Badge,
     Button,
     ListItemIcon,
     ListItemText,
@@ -6,6 +7,7 @@ import {
     MenuItem,
     MenuList,
     Popover,
+    useTheme,
 } from "@mui/material";
 import {
     bindPopover,
@@ -22,6 +24,7 @@ import CheckIcon from "~icons/ic/round-check";
 import RoomIcon from "~icons/ic/baseline-room";
 
 export const RoomFilterMenu = () => {
+    const theme = useTheme();
     const { t, i18n } = useTranslation("EventSchedule", {
         keyPrefix: "Search",
     });
@@ -48,8 +51,17 @@ export const RoomFilterMenu = () => {
         return null;
     }
     return (
-        <Button {...bindToggle(popover)}>
-            <RoomIcon fontSize={"1.4rem"} />
+        <Button
+            {...bindToggle(popover)}
+            sx={{
+                color: filters.rooms.length
+                    ? theme.palette.warning.main
+                    : undefined,
+            }}
+        >
+            <Badge badgeContent={filters.rooms.length} color={"warning"}>
+                <RoomIcon fontSize={"1.4rem"} />
+            </Badge>
             <Popover
                 {...bindPopover(popover)}
                 anchorOrigin={{

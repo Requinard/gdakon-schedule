@@ -11,6 +11,7 @@ import { useLocalizedEvent } from "../../hooks/useLocalizedEvent";
 import { useEventSubtitle } from "../../hooks/useEventSubtitle";
 import { useAppDispatch, useAppSelector } from "../../store";
 import { toggleEventBookmark } from "../../store/bookmarks";
+import { useEventState } from "../../hooks/useEventState";
 
 import {
     BookmarkedFilterChip,
@@ -33,6 +34,7 @@ export const EventScheduleItemCard = ({
     event,
 }: EventScheduleItemCardProps) => {
     const dispatch = useAppDispatch();
+    const state = useEventState(event);
     const isBookmarked = useAppSelector((state) =>
         state.bookmarks.events.includes(event.id)
     );
@@ -45,7 +47,7 @@ export const EventScheduleItemCard = ({
     }, [dispatch]);
 
     return (
-        <Card>
+        <Card sx={{ border: state === "current" ? 1 : 0 }}>
             <CardHeader
                 title={name}
                 subheader={subheader}

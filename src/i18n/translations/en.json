@@ -10,7 +10,8 @@
             "search_label": "Search the schedule",
             "search_placeholder": "Opening Ceremony . . .",
             "date_subheader": "Filter by date",
-            "room_subheader": "Filter by room"
+            "room_subheader": "Filter by room",
+            "no_results": "No results"
         },
         "title": "Event Schedule",
         "EventChips": {
@@ -20,6 +21,9 @@
         },
         "EventListVirtualized": {
             "header": "$t(EventSchedule:title)"
+        },
+        "Groups": {
+            "expired": "Expired"
         },
         "Overview": {
             "title": "Up Next",
@@ -66,10 +70,7 @@
     },
     "Settings": {
         "LanguageSettings": {
-            "title": "Language & Locale Selection",
-            "english": "English",
-            "polish": "Polish",
-            "dutch": "Dutch"
+            "title": "Language & Locale Selection"
         },
         "TimeTravelSettings": {
             "title": "Time Travel",
