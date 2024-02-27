@@ -67,10 +67,19 @@ export const EventListVirtualized = () => {
                         </Box>
                     </Container>
                 )}
-                itemContent={(index) => {
+                itemContent={(index, groupIndex) => {
                     const item = items[index];
                     return (
-                        <Container sx={{ pb: 1 }} key={item.id}>
+                        <Container
+                            sx={{
+                                pb: 1,
+                                opacity:
+                                    groups[groupIndex] === t("expired")
+                                        ? 0.4
+                                        : 1,
+                            }}
+                            key={item.id}
+                        >
                             <EventScheduleItemCard event={item} />
                         </Container>
                     );
