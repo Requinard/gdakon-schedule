@@ -7,6 +7,7 @@ import {
     MenuItem,
     MenuList,
     Popover,
+    useTheme,
 } from "@mui/material";
 import {
     bindPopover,
@@ -24,6 +25,7 @@ import DayIcon from "~icons/mdi/calendar-today";
 import CheckIcon from "~icons/ic/round-check";
 
 export const DayFilterMenu = () => {
+    const theme = useTheme();
     const { t } = useTranslation("EventSchedule", { keyPrefix: "Search" });
 
     const { toggleDate, original, filters } = useEventFilter();
@@ -39,7 +41,14 @@ export const DayFilterMenu = () => {
         [original]
     );
     return (
-        <Button {...bindToggle(popover)}>
+        <Button
+            {...bindToggle(popover)}
+            sx={{
+                color: filters.dates.length
+                    ? theme.palette.warning.main
+                    : undefined,
+            }}
+        >
             <Badge badgeContent={filters.dates.length} color={"warning"}>
                 <DayIcon fontSize={"1.4rem"} />
             </Badge>
