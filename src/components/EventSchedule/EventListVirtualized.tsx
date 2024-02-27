@@ -31,7 +31,9 @@ export const EventListVirtualized = () => {
                 dayjs(it.startTime).format("LL")
             );
 
-            groups["Expired"] = expired;
+            if (expired.length) {
+                groups["Expired"] = expired;
+            }
 
             const groupCounts = map(groups, (values) => values.length);
 
