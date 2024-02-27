@@ -44,7 +44,7 @@
         },
         "useEventSubtitle": {
             "starting": "Od godziny {{start}} ({{time}})",
-            "taking_place": "Obecnie odbywają się",
+            "taking_place": "Właśnie trwa",
             "expired": "To wydarzenie już się odbyło"
         }
     },
