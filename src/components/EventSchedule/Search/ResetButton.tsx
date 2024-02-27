@@ -9,6 +9,7 @@ export const ResetButton = () => {
     const { filters, reset } = useEventFilter();
     return (
         <Button
+            color={"error"}
             disabled={isEqual(filters, defaultEventFilters)}
             onClick={reset}
         >
