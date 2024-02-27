@@ -59,10 +59,7 @@
     },
     "Settings": {
         "LanguageSettings": {
-            "title": "Wybór języka i lokalizacji",
-            "english": "Angielski",
-            "polish": "Polski",
-            "dutch": "Holenderski"
+            "title": "Wybór języka i lokalizacji"
         },
         "TimeTravelSettings": {
             "title": "Podróż w czasie",

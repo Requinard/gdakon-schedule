@@ -24,9 +24,7 @@ export const LanguageSettings = () => {
                 <ListItemIcon sx={{ pr: 2 }}>
                     <Avatar>🇬🇧</Avatar>
                 </ListItemIcon>
-                <ListItemText
-                    primary={t("LanguageSettings.english")}
-                ></ListItemText>
+                <ListItemText primary="English"></ListItemText>
             </MenuItem>
             <MenuItem
                 selected={locale === "pl"}
@@ -35,9 +33,7 @@ export const LanguageSettings = () => {
                 <ListItemIcon sx={{ pr: 2 }}>
                     <Avatar>🇵🇱</Avatar>
                 </ListItemIcon>
-                <ListItemText
-                    primary={t("LanguageSettings.polish")}
-                ></ListItemText>
+                <ListItemText primary="Polski"></ListItemText>
             </MenuItem>
 
             <MenuItem
@@ -47,9 +43,7 @@ export const LanguageSettings = () => {
                 <ListItemIcon sx={{ pr: 2 }}>
                     <Avatar>🇳🇱</Avatar>
                 </ListItemIcon>
-                <ListItemText
-                    primary={t("LanguageSettings.dutch")}
-                ></ListItemText>
+                <ListItemText primary="Nederlands"></ListItemText>
             </MenuItem>
         </>
     );

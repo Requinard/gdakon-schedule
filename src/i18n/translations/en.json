@@ -66,10 +66,7 @@
     },
     "Settings": {
         "LanguageSettings": {
-            "title": "Language & Locale Selection",
-            "english": "English",
-            "polish": "Polish",
-            "dutch": "Dutch"
+            "title": "Language & Locale Selection"
         },
         "TimeTravelSettings": {
             "title": "Time Travel",
