@@ -1,5 +1,6 @@
-import { GroupedVirtuoso } from "react-virtuoso";
 import { useMemo } from "react";
+import { GroupedVirtuoso } from "react-virtuoso";
+import { useTranslation } from "react-i18next";
 import { flatMap, groupBy, keys, map, partition, values } from "lodash";
 import { Box, Container, Typography } from "@mui/material";
 import dayjs from "dayjs";
@@ -19,6 +20,9 @@ type VirtuosoProps<T> = {
 };
 
 export const EventListVirtualized = () => {
+    const { t } = useTranslation("EventSchedule", {
+        keyPrefix: "Groups",
+    });
     const now = useNow();
     const { filtered = [] } = useEventFilter();
 
@@ -32,7 +36,7 @@ export const EventListVirtualized = () => {
             );
 
             if (expired.length) {
-                groups["Expired"] = expired;
+                groups[t("expired")] = expired;
             }
 
             const groupCounts = map(groups, (values) => values.length);

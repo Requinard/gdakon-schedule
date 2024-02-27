@@ -21,6 +21,9 @@
         "EventListVirtualized": {
             "header": "$t(EventSchedule:title)"
         },
+        "Groups": {
+            "expired": "Zakończone"
+        },
         "Overview": {
             "title": "Ne",
             "current": {
