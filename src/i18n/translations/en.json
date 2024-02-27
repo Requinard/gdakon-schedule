@@ -10,7 +10,8 @@
             "search_label": "Search the schedule",
             "search_placeholder": "Opening Ceremony . . .",
             "date_subheader": "Filter by date",
-            "room_subheader": "Filter by room"
+            "room_subheader": "Filter by room",
+            "no_results": "No results"
         },
         "title": "Event Schedule",
         "EventChips": {

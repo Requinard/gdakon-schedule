@@ -10,7 +10,8 @@
             "search_label": "Szukaj punktów programu",
             "search_placeholder": "Oficjalne Rozpoczęcie . . .",
             "date_subheader": "Filtruj po dacie",
-            "room_subheader": "Filtruj po sali"
+            "room_subheader": "Filtruj po sali",
+            "no_results": "Brak wyników"
         },
         "title": "Punkty programu",
         "EventChips": {
